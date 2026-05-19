@@ -1,0 +1,13 @@
+pandas>=3.0.1
+python-dotenv>=1.0.0
+openpyxl>=3.1.5
+requests>=2.32.0
+
+# SBOM engine (install before batch run):
+#   pip install -e /path/to/python-uswid-sbom
+#
+# SBOM4EDK2 orchestration (not on PyPI — install from your checkout):
+#   pip install -e /path/to/SBOM4EDK2
+#
+# uswid pin (MatchPoint fork with UEFI SBOM + --primary-dir):
+uswid @ git+https://github.com/MatchPoint/python-uswid-sbom.git@main

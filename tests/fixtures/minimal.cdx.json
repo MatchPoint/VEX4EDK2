@@ -1,0 +1,23 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "firmware",
+      "bom-ref": "cpe:2.3:a:tianocore:edk2:202411:*:*:*:*:*:*:*",
+      "name": "EDK II",
+      "version": "edk2-stable202411",
+      "cpe": "cpe:2.3:a:tianocore:edk2:202411:*:*:*:*:*:*:*"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "cpe:2.3:a:openssl:openssl:3.5.1:*:*:*:*:*:*:*",
+      "name": "openssl",
+      "version": "3.5.1",
+      "cpe": "cpe:2.3:a:openssl:openssl:3.5.1:*:*:*:*:*:*:*"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "releases": [
+    {
+      "tag": "edk2-stable202405",
+      "started_at": "2026-05-19T16:47:45Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202405\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202405\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 40,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:48:29Z"
+    },
+    {
+      "tag": "edk2-stable202408",
+      "started_at": "2026-05-19T16:49:08Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202408\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202408\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 40,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:49:56Z"
+    },
+    {
+      "tag": "edk2-stable202411",
+      "started_at": "2026-05-19T16:50:32Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202411\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202411\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 31,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:51:23Z"
+    },
+    {
+      "tag": "edk2-stable202502",
+      "started_at": "2026-05-19T16:41:45Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202502\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202502\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 40,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:42:10Z"
+    },
+    {
+      "tag": "edk2-stable202505",
+      "started_at": "2026-05-19T16:42:20Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202505\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202505\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 37,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:42:44Z"
+    },
+    {
+      "tag": "edk2-stable202508",
+      "started_at": "2026-05-19T16:42:53Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202508\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202508\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 36,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:43:18Z"
+    },
+    {
+      "tag": "edk2-stable202511",
+      "started_at": "2026-05-19T16:43:25Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202511\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202511\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": false,
+      "vulnerability_count": 35,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:43:47Z"
+    },
+    {
+      "tag": "edk2-stable202602",
+      "started_at": "2026-05-19T16:33:18Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202602\\edk2.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\releases\\edk2-stable202602\\edk2.csaf.json",
+      "status": "ok",
+      "edk2_dir": "C:\\temp\\test\\SBOM4EDK2\\edk2",
+      "use_current": true,
+      "vulnerability_count": 40,
+      "uswid_version": "0.2.1.dev3",
+      "finished_at": "2026-05-19T16:33:34Z"
+    }
+  ],
+  "updated_at": "2026-05-19T16:51:57Z",
+  "vex4edk2_version": "0.1.0"
+}
