@@ -30,7 +30,13 @@
         "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202511. SBOM produced by USWID SBOM (uswid 0.2.1.dev3). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
         "title": "Summary"
       }
-    ]
+    ],
+    "publisher": {
+      "category": "vendor",
+      "name": "Brian Mullen",
+      "namespace": "https://github.com/MatchPoint/VEX4EDK2",
+      "contact_details": "Brian Mullen <brian.desmond.mullen@gmail.com>"
+    }
   },
   "product_tree": {
     "branches": [

@@ -14,8 +14,24 @@ from . import __version__ as vex4edk2_version
 
 logger = logging.getLogger(__name__)
 
+VEX_DOCUMENT_AUTHOR_NAME = "Brian Mullen"
+VEX_DOCUMENT_AUTHOR_EMAIL = "brian.desmond.mullen@gmail.com"
+VEX_PUBLISHER_NAMESPACE = "https://github.com/MatchPoint/VEX4EDK2"
+
 _CVE_RE = re.compile(r"^CVE-\d{4}-\d+$", re.I)
 _PRODUCT_ID_SAFE = re.compile(r"[^A-Za-z0-9._-]+")
+
+
+def document_publisher() -> dict:
+    """CSAF document publisher (author name and contact email)."""
+    return {
+        "category": "vendor",
+        "name": VEX_DOCUMENT_AUTHOR_NAME,
+        "namespace": VEX_PUBLISHER_NAMESPACE,
+        "contact_details": (
+            f"{VEX_DOCUMENT_AUTHOR_NAME} <{VEX_DOCUMENT_AUTHOR_EMAIL}>"
+        ),
+    }
 
 
 def product_id_from_bom_ref(bom_ref: str) -> str:
@@ -305,6 +321,7 @@ def build_csaf_document(
         "document": {
             "category": "csaf_vex",
             "title": f"VEX for {release_tag}",
+            "publisher": document_publisher(),
             "tracking": {
                 "id": doc_id,
                 "version": "1.0.0",
@@ -323,7 +340,7 @@ def build_csaf_document(
                         "name": "VEX4EDK2",
                         "version": vex4edk2_version,
                     },
-                    "author": "Brian Mullen",
+                    "author": VEX_DOCUMENT_AUTHOR_NAME,
                     "date": now,
                 },
             },
