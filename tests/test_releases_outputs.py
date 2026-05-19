@@ -24,6 +24,11 @@ class TestCommittedReleases(unittest.TestCase):
                 )
 
     def test_csaf_author_and_category(self) -> None:
+        from vex4edk2.csaf import (
+            VEX_DOCUMENT_AUTHOR_EMAIL,
+            VEX_DOCUMENT_AUTHOR_NAME,
+        )
+
         _, csaf_path = release_output_paths(
             os.path.join(_REPO_ROOT, "releases"),
             QUARTERLY_TAGS_LAST_TWO_YEARS[0],
@@ -32,7 +37,10 @@ class TestCommittedReleases(unittest.TestCase):
             doc = json.load(fh)
         self.assertEqual(doc["document"]["category"], "csaf_vex")
         generator = doc["document"]["tracking"]["generator"]
-        self.assertEqual(generator["author"], "Brian Mullen")
+        self.assertEqual(generator["author"], VEX_DOCUMENT_AUTHOR_NAME)
+        publisher = doc["document"]["publisher"]
+        self.assertEqual(publisher["name"], VEX_DOCUMENT_AUTHOR_NAME)
+        self.assertIn(VEX_DOCUMENT_AUTHOR_EMAIL, publisher["contact_details"])
 
 
 if __name__ == "__main__":
