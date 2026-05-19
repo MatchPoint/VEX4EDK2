@@ -1,0 +1,18 @@
+# Local caches and clones (never commit)
+cache/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+
+# Optional local Excel from --write-xlsx
+releases/**/*.xlsx

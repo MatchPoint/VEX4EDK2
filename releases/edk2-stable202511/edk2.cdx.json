@@ -1,0 +1,4148 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:e3f0ffc2-7de4-47d5-bf29-fb8238cdf213",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-05-19T16:43:42Z",
+    "tools": [
+      {
+        "vendor": "MatchPoint",
+        "name": "USWID SBOM",
+        "version": "0.2.1.dev3"
+      }
+    ],
+    "authors": [
+      {
+        "name": "Richard Hughes",
+        "email": "richard@hughsie.com"
+      },
+      {
+        "name": "Brian Mullen",
+        "email": "brian.desmond.mullen@gmail.com"
+      }
+    ],
+    "lifecycles": [
+      {
+        "phase": "pre-build"
+      }
+    ],
+    "component": {
+      "type": "firmware",
+      "cpe": "cpe:2.3:a:tianocore:edk2:202511:*:*:*:*:*:*:*",
+      "name": "EDK II",
+      "version": "edk2-stable202511",
+      "description": "A cross-platform firmware development environment for UEFI and PI specifications",
+      "bom-ref": "cpe:2.3:a:tianocore:edk2:202511:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tianocore/edk2",
+          "hashes": [
+            {
+              "content": "46548b1adac82211d8d11da12dd914f41e7aa775",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-2-Clause.html",
+            "id": "BSD-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+            "id": "BSD-3-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "id": "MIT"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/PSF-2.0.html",
+            "id": "PSF-2.0"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Zlib.html",
+            "id": "Zlib"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "EDK II developers"
+      },
+      "authors": [
+        {
+          "name": "Liming Gao, Laszlo Ersek, Ard Biesheuvel, Ray Ni, qhuang8, klu2, Star Zeng, vanjeff, Eric Dong, qwang12, jljusten, mdkinney, jwang36, Hao A Wu, oliviermartin, Michael D Kinney, Jordan Justen, Jiewen Yao, Dandan Bi, Olivier Martin, Gerd Hoffmann, Jiaxin Wu, Michael Kubacki, Jeff Fan, Pierre Gondois, xli24, eric_tian, andrewfish, Yonghong Zhu, lhauch, jcarsey, Sami Mujawar, Rebecca Cran, Shenglei Zhang, yshang1, bbahnsen, rsun3, Leif Lindholm, Carsey, Jaben, jlin16, Michael Kinney, gikidy, Abner Chang, Oliver Smith-Denny, Qiu Shumin, Fu Siyuan, Jian J Wang, Jaben Carsey, Kun Qin, Zhiguang Liu, Tom Lendacky, Feng Tian, erictian, Dun Tan, Feng, Bob C, Gary Lin, jji4, li-elvin, wuyizhong, Chao Li, Zhichao Gao, Zhang, Chao B, hche10x, Hot Tian, AJFISH, darylm503, Anthony PERARD, Brijesh Singh, Chasel Chiu, Min M Xu, alfred, sfu5, qouyang, Min Xu, Antoine Cœur, Abdul Lateef Attar, Yunhua Feng, Zhang Lubo, Samer El-Haj-Mahmoud, gdong1, xdu2, Hess Chen, Wei6 Xu, Bret Barkelew, bxing, Shumin Qiu, jchen20, tye1, Ronald Cron, Philippe Mathieu-Daudé, Qin Long, Krzysztof Koch, Nickle Wang, Bob Feng, Fan, ZhijuX, ywu21, Guo Dong, Tapan Shah, Chen A Chen, Jeff Brasen, Elvin Li, Marvin Häuser, czhang46, Ceping Sun, hhuan13, Heyi Guo, Kinney, Michael D, Sean Brogan, Yi Li, Tuan Phan, Daryl McDaniel, Levi Yun, Maurice Ma, Sunil V L, qianouyang, Chen Fan, Mike Maslenkin, Oliver Steffen, lpleahy, Harry Liebel, Gua Guo, Joey Vagedes, jgong5, Wenxing Hou, Yingke Liu, Chao Zhang, Bi, Dandan, Doug Flick, Feng, YunhuaX, vprabhal, Chris Phillips, Sarah Walker, chenc2, Brendan Jackman, Cinnamon Shia, Hongbin1 Zhang, Nhi Pham, Pete Batard, Sebastien Boeuf, Albecki, Mateusz, Andrew Fish, Eugene Cohen, Qi Zhang, Scott Duplichan, Chris Jones, Leo Duran, Supreeth Venkatesh, Taylor Beebe, ajfish, Long Qin, Mike Beaton, zliu3, Dong, Guo, Guomin Jiang, Luigi Leonardi, Nate DeSimone, Song, BinX, Thomas Palmer, Leahy, Leroy P, Ryan Harkin, htao, Haojian Zhuang, Huajing Li, Konstantin Aladyshev, xgu3, Erik Bjorge, davidhuang, niry, BobCF, Corvin Köhne, David Woodhouse, Dhaval, Gao Qihang, Giri P Mudusuru, tgingold, Ashish Singhal, Marc-André Lureau, Pedro Falcato, Phil Noh, Qing Huang, Shi, Steven, Dionna Glaze, Dong Guo, Dongyan Qian, Liran Alon, Wang Fan, Ajan Zhong, GuoMinJ, Paulo Alcantara, levi.yun, Achin Gupta, Evan Lloyd, Girish Pathak, Xie, Yuanhao, Brijesh Singh, Dov Murik, Oleksiy Yakovlev, Saloni Kasbekar, Sean Rhodes, Sergii Dmytruk, Sheng Wei, Shifei Lu, Stefan Berger, Tan, Dun, Zhijux Fan, jjin9, myronporter, xieyuanh, Gowtham M, Wu, Jiaxin, Ye Ting, YuanhaoXie, Gabriel Somlo, Linus Liu, Paolo Bonzini, Siyuan Fu, Yuanhao Xie, fanwang2, ywang, Grzegorz Bernacki, Jason1 Lin, Matthew Carlson, Tian, Feng, Wu Jiaxin, Yang Gang, Yu Pu, yshi8, zhijufan, Aaron Li, Andrei Warkentin, James Bottomley, Jim Dailey, Kuo, Ted, Marcin Wojtas, Ming Tan, Zhang, Lubo, pkandel, tye, Bruce Cran, David Wei, Lou, Yun, Michael Zimmermann, Nikita Leshenko, Patrick Rudolph, Suqiang Ren, Vitaly Cheptsov, duntan, jiaxinwu, Anderw Fish, Ankur Arora, Cecil Sheng, Chen, Christine, Christopher Zurcher, Daocheng Bu, Jiahui Cen, Ken Lautner, Ming Huang, Mudusuru, Giri P, Sughosh Ganu, Tian Feng, Tomas Pilar, Vivian Nowka-Keane, Yuwei Chen, Zhaozh1x, gtian, jaben carsey, ljin6, Aaron Pop, Baraneedharan Anbazhagan, Eric Jin, Fu, Siyuan, Gary Ching-Pang Lin, Heinrich Schuchardt, Jeremy Linton, Long, Qin, Michael Roth, Prachotan Bathi, Roy Franz, Thomas Huth, Tim He, Wenyi Xie, Xiaoyu Lu, hegdenag, tding1, Alexander Gryanko, Chris Ruffin, Derek Lin, Imran Desai, Jason Lou, Jun Nie, KasimX Liu, Mark Rutland, Meenakshi Aggarwal, Ranbir Singh, Rodriguez, Christian, Sathya Ravichandran, Sunny Wang, Vishal Oliyil Kunnil, Vladimir Olovyannikov, Yu-Chen Lin, Zhihao Li, wenyi,xie, Aaron Young, Akshay Behl, Ashraf Ali, Christopher J Zurcher, Jake Garver, Jason, Jianyong Wu, Lee Leahy, Maciej Rabeda, MarsX Lin, Matt DeVillier, Ted Kuo, Tormod Volden, Wei Liu, Zenith432, kuqin12, Ashraf Ali S, Bhavani Subramanian, Brit Chesley, Carsten Haitzler, Chris Johnson, Chu, Maggie, Daniil Egranov, Dongao Guo, Doug Flick, Heng Luo, Hou, Wenxing, Igor Kulchytskyy, Jeff Westfahl, Jeshua Smith, Joey Gouly, Nagaraj Hegde, Nicolas Ojeda Leon, Nikolai Saoukh, Rohit Mathew, Sachin Ganesh, Steven Shi, Wang, Jian J, Zachary Clark-Williams, jtang12, lgr, lushifex, Aleksandr Goncharov, Brian J. Johnson, Dimitrije Pavlov, Douglas Flick [MSFT], Flickdm, Foster Nong, Garrett Kirkendall, Giri Mudusuru, Jose Marinho, Lin, Gary (HPS OE-Linux), Luo, Heng, Michael Brown, Mike Turner, Ning Feng, Paul Grimes, Paweł Poławski, Qingyu, Robert Phelps, Sam Kaynor, Sebastian Witt, Zailiang Sun, Zhao, ZhiqiangX, hfang"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:google:brotli:1.2.0:*:*:*:*:*:*:*",
+      "name": "Brotli",
+      "version": "1.2.0",
+      "description": "A generic-purpose lossless compression algorithm",
+      "bom-ref": "cpe:2.3:a:google:brotli:1.2.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/google/brotli",
+          "hashes": [
+            {
+              "content": "e230f474b87134e8c6c85b630084c612057f253e",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Brotli developers"
+      },
+      "authors": [
+        {
+          "name": "Eugene Kliuchnikov, Zoltan Szabadka, szabadka, Evgenii Kliuchnikov, eustas, Cosimo Lupo, Copybara-Service, Joe Tsai, Brotli, Alex Nicksay, Evan Nemerson, Lode Vandevenne, lvandeve, Eugene Klyuchnikov, Frédéric Wang, Ende, Piotr Sikora, Stephen Kyle"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:cmocka:cmocka:1.1.7:*:*:*:*:*:*:*",
+      "name": "cmocka",
+      "version": "1.1.7",
+      "description": "A unit testing framework for C with support for mock objects",
+      "bom-ref": "cpe:2.3:a:cmocka:cmocka:1.1.7:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://gitlab.com/cmocka/cmocka.git",
+          "hashes": [
+            {
+              "content": "a01cc69ee9536f90e57c61a198f2d1944d3d4313",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "cmocka developers"
+      },
+      "authors": [
+        {
+          "name": "Andreas Schneider, stewartamiles, Jakub Hrozek, Arnaud Gelas, Joseph Ates, Anderson Toshiyuki Sasaki, Lukas Slebodnik, Steve Byan, ademin",
+          "url": [
+            "https://gitlab.com/cmocka/cmocka/-/raw/master/AUTHORS"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:google:googletest:1.11.0:*:*:*:*:*:*:*",
+      "name": "GoogleTest",
+      "version": "1.11.0",
+      "description": "A xUnit test framework",
+      "bom-ref": "cpe:2.3:a:google:googletest:1.11.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/google/googletest",
+          "hashes": [
+            {
+              "content": "86add13493e5c881d7e4ba77fb91c1f57752b3a4",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Google"
+      },
+      "authors": [
+        {
+          "name": "Gennadiy Civil, Abseil Team, zhanyong.wan, Billy Donahue, vladlosev, kosak, misterg, Krystian Kuzniarek, Herbert Thielen, shiqian, dmauro, Derek Mauro, Copybara-Service, Carlos O'Ryan, Jerry Turcios, vslashg, Gennadiy Rozental, Mark Barolak, Xiaoyi Zhang, Chris, Enji Cooper, Joshua Cannon, Andy Getz, Aaron Jacobs, Andy Soffer, Chris Johnson, Jonny007-MKD, Tanzinul Islam, CJ Johnson, Arkady Shapkin, Fabrice de Gans-Riberi, Hossein Ghahramanzadeh, Vladimir Goncharov, jgm, Samuel Roth, bryanzim, drgler, Anton Klautsan, Arthur O'Dwyer, David Benjamin, Gaspard Petit, dinord, durandal, David Sunderland, Hyuk Myeong, Mark Mentovai, Zulkarnine Mahmud, gennadiycivil, gpetit, preston.a.jackson, srz_zumix, tisi1988, James Dennett, Maurice Gilden, Piotr Nycz, Scott Graham, Victor Costan, ofats",
+          "url": [
+            "https://raw.githubusercontent.com/google/googletest/refs/heads/main/CONTRIBUTORS"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:gost_engine_project:gost_engine:3.0.3:*:*:*:*:*:*:*",
+      "name": "GOST Engine",
+      "version": "3.0.3",
+      "description": "A reference implementation of the Russian GOST crypto algorithms",
+      "bom-ref": "cpe:2.3:a:gost_engine_project:gost_engine:3.0.3:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/gost-engine/engine",
+          "hashes": [
+            {
+              "content": "74b1f4fddbc2d6de969815b1992ddc1ae7c643fe",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "GOST Engine Team"
+      },
+      "authors": [
+        {
+          "name": "Dmitry Belyavskiy, Vitaly Chikunov, Richard Levitte, Ilya Shipitsin, dmitry dulesov, Nikolay Morozov, Billy Brumley, Max, Mouse, Victor Wagner"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:akheron:jansson:2.13.1:*:*:*:*:*:*:*",
+      "name": "Jansson",
+      "version": "2.13.1",
+      "description": "A C library for encoding, decoding and manipulating JSON data",
+      "bom-ref": "cpe:2.3:a:akheron:jansson:2.13.1:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/akheron/jansson",
+          "hashes": [
+            {
+              "content": "e9ebfa7e77a6bee77df44e096b100e7131044059",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Jansson developers"
+      },
+      "authors": [
+        {
+          "name": "Petri Lehtinen, Sean Middleditch, Corey Farrell, Joakim Soderberg, Isaac Hier, allen, Chip Salzenberg, Max Dymond, Jason Choy, Nathaniel McCallum"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "semver"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:mit:kerberos_5:NOASSERTION:*:*:*:*:*:*:*",
+      "name": "krb5",
+      "version": "0.0.0",
+      "description": "Reference implementation of Kerberos, a network authentication protocol",
+      "bom-ref": "cpe:2.3:a:mit:kerberos_5:NOASSERTION:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/krb5/krb5",
+          "hashes": [
+            {
+              "content": "784c38f50e70a739400cdd3f2620bac2e2788e6c",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-2-Clause.html",
+            "id": "BSD-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+            "id": "BSD-3-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-4-Clause.html",
+            "id": "BSD-4-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Brian-Gladman-2-Clause.html",
+            "id": "Brian-Gladman-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/FSFULLRWD.html",
+            "id": "FSFULLRWD"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/HPND.html",
+            "id": "HPND"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/HPND-export-US.html",
+            "id": "HPND-export-US"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/HPND-export2-US.html",
+            "id": "HPND-export2-US"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/HPND-export-US-acknowledgement.html",
+            "id": "HPND-export-US-acknowledgement"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/HPND-export-US-modify.html",
+            "id": "HPND-export-US-modify"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/ISC.html",
+            "id": "ISC"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/CMU-Mach-nodoc.html",
+            "id": "CMU-Mach-nodoc"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/GPL-2.0-or-later.html",
+            "id": "GPL-2.0-or-later"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "id": "MIT"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT-CMU.html",
+            "id": "MIT-CMU"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/OLDAP-2.8.html",
+            "id": "OLDAP-2.8"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/OpenVision.html",
+            "id": "OpenVision"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Massachusetts Institute of Technology"
+      },
+      "authors": [
+        {
+          "name": "Ken Raeburn, Greg Hudson, Theodore Tso, Tom Yu, John Kohl, Ezra Peisach, Sam Hartman, Mark Eichin, Jeffrey Altman, Alexandra Ellwood, Paul Park, Richard Basch, Zhanna Tsitkov, Barry Jaspan, Miro Jurisic, Chris Provenzano, Ben Kaduk, John Carr, Keith Vetter, Danilo Almeida, Robbie Harwood, John Gilmore, Kevin Wasserman, Nalin Dahyabhai, Kevin Koch, Isaac Boukris, Simo Sorce, Justin Anderson, Russ Allbery, Matt Rogers, Nicolas Williams, Jeff Bigler, Luke Howard, Sarah Day, Andreas Schneider, Nathaniel McCallum, Jonathan Kamens, Bill Sommerfeld, Marc Horowitz, Geoffrey King, Tomas Kuthan, Jen Selby, Kevin Coffman, Ken Hornstein, Michael Shanzer, Mitchell Berger, Will Fiveash, sashan, Jon Rochlis, Michael Mattioli, Wilfredo Sanchez, Dan Winship, edg, Matthew Hancher, Benjamin Kaduk, Julien Rische, Nancy Gilman, Scott McGuire, Brad Thompson, Kevin Mitchell, Marshall Vale, Robbie Harwood (frozencemetery), Lukas Slebodnik, Martin Kittel, Pavel Březina, Thomas Sondergaard, W. Trevor King"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:dgibson:libfdt:1.6.1:*:*:*:*:*:*:*",
+      "name": "libfdt",
+      "version": "1.6.1",
+      "description": "Utility library for reading and manipulating the FDT binary format",
+      "bom-ref": "cpe:2.3:a:dgibson:libfdt:1.6.1:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dgibson/dtc",
+          "hashes": [
+            {
+              "content": "cfff805481bdea27f900c32698171286542b8d3c",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-2-Clause.html",
+            "id": "BSD-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/GPL-2.0-or-later.html",
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "libfdt developers"
+      },
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:provider-corner:libprov:NOASSERTION:*:*:*:*:*:*:*",
+      "name": "libprov",
+      "version": "0.0.0",
+      "description": "Small library of helpers for OpenSSL 3 providers",
+      "bom-ref": "cpe:2.3:a:provider-corner:libprov:NOASSERTION:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/provider-corner/libprov",
+          "hashes": [
+            {
+              "content": "0b445c73ae1e87577430c6884cdeeca1afa36dbd",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/CC0-1.0.html",
+            "id": "CC0-1.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Richard Levitte"
+      },
+      "authors": [
+        {
+          "name": "Richard Levitte"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:dmtf:libspdm:3.5.0:*:*:*:*:*:*:*",
+      "name": "libspdm",
+      "version": "3.5.0",
+      "description": "Sample implementation of DMTF SPDM",
+      "bom-ref": "cpe:2.3:a:dmtf:libspdm:3.5.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/DMTF/libspdm",
+          "hashes": [
+            {
+              "content": "98ef964e1e9a0c39c7efb67143d3a13a819432e0",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "libspdm developers"
+      },
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:mbed:mbedtls:3.3.0:*:*:*:*:*:*:*",
+      "name": "mbedtls",
+      "version": "3.3.0",
+      "description": "Implements cryptographic primitives, X.509 certificate manipulation and SSL/TLS and DTLS protocols",
+      "bom-ref": "cpe:2.3:a:mbed:mbedtls:3.3.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/Mbed-TLS/mbedtls",
+          "hashes": [
+            {
+              "content": "8c89224991adff88d53cd380f42a2baa36f91454",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/GPL-2.0-or-later.html",
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "The Mbed TLS Contributors"
+      },
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "semver"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:mipi:public-mipi-sys-t:1.12:*:*:*:*:*:*:*",
+      "name": "MIPI SyS-T",
+      "version": "1.1",
+      "description": "MIPI Alliance Specification for System Software-Trace defines a platform-independent, low bandwidth trace data protocol and software API",
+      "bom-ref": "cpe:2.3:a:mipi:public-mipi-sys-t:1.12:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/MIPI-Alliance/public-mipi-sys-t",
+          "hashes": [
+            {
+              "content": "370b5944c046bab043dd8b133727b2135af7747a",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "MIPI Alliance developers"
+      },
+      "authors": [
+        {
+          "name": "lauranixon, Norbert Schulz, Gua Guo, Przemyslaw Romaniak, Ted Kuo",
+          "url": [
+            "https://github.com/MIPI-Alliance/public-mipi-sys-t/blob/main/CODEOWNERS"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:kkos:oniguruma:6.9.10:*:*:*:*:*:*:*",
+      "name": "oniguruma",
+      "version": "6.9.10",
+      "description": "A modern and flexible regular expressions library",
+      "bom-ref": "cpe:2.3:a:kkos:oniguruma:6.9.10:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/kkos/oniguruma",
+          "hashes": [
+            {
+              "content": "4ef89209a239c1aea328cf13c05a2807e5c146d1",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-2-Clause.html",
+            "id": "BSD-2-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "oniguruma developers"
+      },
+      "authors": [
+        {
+          "name": "K.Kosako, kosako, Peter Kokot, K.Takata, Ruslan Kuprieiev",
+          "url": [
+            "https://raw.githubusercontent.com/kkos/oniguruma/refs/heads/master/AUTHORS"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "semver"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:openssl:openssl:3.5.1:*:*:*:*:*:*:*",
+      "name": "OpenSSL",
+      "version": "3.5.1",
+      "description": "TLS/SSL and crypto library",
+      "bom-ref": "cpe:2.3:a:openssl:openssl:3.5.1:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/openssl/openssl",
+          "hashes": [
+            {
+              "content": "aea7aaf2abb04789f5868cbabec406ea43aa84bf",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "The OpenSSL Project"
+      },
+      "authors": [
+        {
+          "name": "Richard Levitte, Dr. Stephen Henson, Matt Caswell, Andy Polyakov, Pauli, Bodo Möller, Tomas Mraz, Rich Salz, Dr. David von Oheimb, Hugo Landau, Ben Laurie, Ulf Möller, Shane Lontis, Geoff Thorpe, Bernd Edlinger, Neil Horman, Lutz Jänicke, Viktor Dukhovni, Kurt Roeckx, FdaSilvaYY, Dr. Matthias St. Pierre, Benjamin Kaduk, Emilia Kasper, slontis, Nils Larsch, Dmitry Belyavskiy, Ralf S. Engelschall, Todd Short, Nicola Tuveri, Paul Yang, Rob Percival, Patrick Steuer, David Benjamin, Jiasheng Jiang, Jon Spillett, Frederik Wedel-Heinen, Peiwei Hu, David Woodhouse, Alessandro Ghedini, Billy Brumley, Hubert Kario, Jonathan M. Wilbur, Michael Baentsch, David von Oheimb, Jonas Maebe, Randall S. Becker, Daniel Bevenius, Daniel Fiala, Andrew Dinh, Dimitri John Ledkov, Ingo Franzki, James Muir, Juergen Christ, John Baldwin, Dimitri Papadopoulos, Simo Sorce, Tom Cosgrove, Adam Langley, Beat Bolli, Dmitry Misharov, erbsland-dev, Alex Gaynor, EasySec, Tanzinul Islam, Viktor Szakats, PW Hu, Sebastian Andrzej Siewior, Mat, Matthias St. Pierre, Tim Hudson, Antoine Salon, Alexandr Nedvedicky, Niels Dossche, Jean-Frederic Clere, Johannes Bauer, Mark J. Cox, raja-ashok, Clemens Lang, Eneas U de Queiroz, Felix Laurie von Massenbach, Petr Gotthard, Tianjia Zhang, olszomal, Hongren (Zenithal) Zheng, Kazuki Yamaguchi, Martin Schwenke, sashan, Boris Pismenny, Jeffrey Walton, Mike Bland, xkernel, Andrea Grandi, Bodo Moeller, Damian Hobson-Garcia, Dmitry-Me, Joey Yandle, Xiaoyin Liu, openssl-machine, Čestmír Kalina, Christian Heimes, Christoph Müllner, JiashengJiang, Kurt Cancemi, Nan Xiao, Phoebe Chen, Rob Stradling, pohsingwu, x2018, Amitay Isaacs, Daniel Kahn Gillmor, Gerd Hoffmann, Holger Dengler, J Mohan Rao Arisankala, J.W. Jagersma, Jakub Zelenka, Paul Kehrer, David Carlier, David Makepeace, Nick Mathewson, Nikolay Morozov, Sam James, TJ Saunders, Vitezslav Cizek, atishkov, jwalch, willmafh, Christos Zoulas, Joachim Vandersmissen, Job Snijders, Paul C. Sutton, Rohan McLure, Tobias Nießen, Vladimir Kotal, ndossche, Adam Eijdenberg, Daiki Ueno, Georgi Valkov, Kelvin Lee, Rajeev Ranjan, Tatsuhiro Tsujikawa, Xu Yizhou, fangming.fang, yangyangtiantianlonglong, zhangzhilei, Alexey Moksyakov, Ben Kaduk, Davide Galassi, Fangming.Fang, Jack Lloyd, Pascal Cuoq, Robbie Harwood, Roumen Petrov, Vadim Fedorenko, Veronika Hanulíková, Xi Ruoyao, Cesar Pereida Garcia, H.J. Lu, Jakub Wilk, Jerry Shih, Matthias Kraft, Peter Wu, Theo Buehler, shridhar kalavagunta, наб, Andrey Matyukov, Cory Benfield, Cristian Stoica, Dmitry Belyavsky, Guido Vranken, Hongren Zheng, Iaroslav Gridin, Jakub Jelen, Kan, Lutz Jaenicke, Mathias Berchtold, Michael Richardson, Philip Prindeville, Robert Scheck, Scott Deboy, Shakti Shah, Vladimír Kotal, XiaokangQian, Zhiguo Zhou, Alok Menghrajani, Arne Schwabe, Bartel Artem, Benny Baumann, Daniel Hu, David Cooper, Josh Soref, Kai Pastor, Kirill Marinushkin, Ladislav Marko, Marc, Norbert Pocs, Pavel Kopyl, Philippe Antoine, Rainer Jung, Ronald Tse, Sahana Prasad, Sumitra Sharma, Xiaofei Bai, Zhou Qingyang, lan1120, mrpre",
+          "url": [
+            "https://raw.githubusercontent.com/openssl/openssl/refs/heads/master/AUTHORS.md"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:open_quantum_safe:oqsprovider:0.8.0:*:*:*:*:*:*:*",
+      "name": "oqsprovider",
+      "version": "0.8.0",
+      "description": "Open Quantum Safe provider for OpenSSL",
+      "bom-ref": "cpe:2.3:a:open_quantum_safe:oqsprovider:0.8.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-quantum-safe/oqs-provider",
+          "hashes": [
+            {
+              "content": "7bc597c04b534ddea9b6654481deb31ded8e1bbc",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "The OQS core team"
+      },
+      "authors": [
+        {
+          "name": "Michael Baentsch, Pravek Sharma, Basil Hess, thb-sb, Richard Levitte, rtjk, thomas, Norman Ashley"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:latchset:pkcs11-provider:1.0:*:*:*:*:*:*:*",
+      "name": "pkcs11-provider",
+      "version": "1.0",
+      "description": "OpenSSL 3.x provider to access Hardware and Software Tokens using the PKCS#11 Cryptographic Token Interface",
+      "bom-ref": "cpe:2.3:a:latchset:pkcs11-provider:1.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/latchset/pkcs11-provider",
+          "hashes": [
+            {
+              "content": "898b1079d95453dc5d0f378dd15a75b99252caf3",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "pkcs11-provider developers"
+      },
+      "authors": [
+        {
+          "name": "Simo Sorce, Jakub Jelen, Ondřej Surý, Clemens Lang, Ondrej Moris, Timo Teräs, Daiki Ueno, Florian Wernli, manison, Holger Dengler, Sahana Prasad"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:pugixml_project:pugixml:1.9:*:*:*:*:*:*:*",
+      "name": "pugixml",
+      "version": "1.9",
+      "description": "C++ XML processing library",
+      "bom-ref": "cpe:2.3:a:pugixml_project:pugixml:1.9:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/zeux/pugixml",
+          "hashes": [
+            {
+              "content": "c53fdab93af76106b963216d85897614b996f8b6",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/MIT.html",
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "pugixml developers"
+      },
+      "authors": [
+        {
+          "name": "Arseny Kapoulkine, arseny.kapoulkine, Ivan Gagis, Stephan Beyer"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:cryptography.io:cryptography:38.0.0:*:*:*:*:python:*:*",
+      "name": "Python Cryptography",
+      "version": "38.0.0",
+      "description": "Cryptographic standard library for Python",
+      "bom-ref": "cpe:2.3:a:cryptography.io:cryptography:38.0.0:*:*:*:*:python:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/pyca/cryptography",
+          "hashes": [
+            {
+              "content": "7e33b0e7739d633c77b8c478620167f693ed13f4",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        },
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-3-Clause.html",
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "cryptography.io"
+      },
+      "authors": [
+        {
+          "name": "Paul Kehrer, Alex Gaynor, David Reid, Alex Stapleton, Donald Stufft, Ayrx, Terry Chia, Laurens Van Houtven, Mohammed Attia, Ian Cordasco, Hynek Schlawack, Jean-Paul Calderone, Andre Caron, cyli, Cory Benfield, Erik Trauschke, Glyph, Christian Heimes, michael-hart, Nick Bastin, David Benjamin, Mathias Ertl, Aviv Palivoda, Maximilian Hils, Phoebe Queen, Simo Sorce, Gregory Haynes, Eeshan Garg, Julian Krause, Marko Kreen, Peter Odding, Jeremy Lainé, Jiangge Zhang, Ofek Lev, Cédric Krier, Mark Adams, William Woodruff, Ashwini Oruganti, Richard Wall, Sviatoslav Sydorenko, Benjamin Peterson, Dominic Chen, Felix Fontein, PhiBo, Stanisław Pitucha"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:cloudflare:quiche:0.18.0:*:*:*:*:*:*:*",
+      "name": "quiche",
+      "version": "0.18.0",
+      "description": "An implementation of the QUIC transport protocol and HTTP/3",
+      "bom-ref": "cpe:2.3:a:cloudflare:quiche:0.18.0:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/cloudflare/quiche",
+          "hashes": [
+            {
+              "content": "7ab6a55cfe471267d61e4d28ba43d41defcd87e0",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/BSD-2-Clause.html",
+            "id": "BSD-2-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Cloudflare, Inc"
+      },
+      "authors": [
+        {
+          "name": "Alessandro Ghedini, Junho Choi, lucas, Lucas Pardue, Eric Rosenberg, Norman Maurer, Vlad Krasnov, Ingvar Stepanyan, Lohith Bellad, Joshua Nelson"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "cpe": "cpe:2.3:a:tlsfuzzer:tlsfuzzer:NOASSERTION:*:*:*:*:*:*:*",
+      "name": "tlsfuzzer",
+      "version": "0.0.0",
+      "description": "Test suite for SSLv2, SSLv3, TLS 1.0, TLS 1.1, TLS 1.2, and TLS 1.3 implementations",
+      "bom-ref": "cpe:2.3:a:tlsfuzzer:tlsfuzzer:NOASSERTION:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tlsfuzzer/tlsfuzzer",
+          "hashes": [
+            {
+              "content": "61f45d9701294fd87ef92d2a7e3dfb076653a562",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/GPL-2.0.html",
+            "id": "GPL-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "tlsfuzzer developers"
+      },
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "cpe": "cpe:2.3:a:c2sp:wycheproof:NOASSERTION:*:*:*:*:*:*:*",
+      "name": "Project Wycheproof",
+      "version": "0.0.0",
+      "description": "Test crypto libraries against known attacks",
+      "bom-ref": "cpe:2.3:a:c2sp:wycheproof:NOASSERTION:*:*:*:*:*:*:*",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/google/wycheproof",
+          "hashes": [
+            {
+              "content": "2196000605e45d91097147c9c71f26b72af58003",
+              "alg": "SHA-1"
+            }
+          ]
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "url": "https://spdx.org/licenses/Apache-2.0.html",
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Project Wycheproof Team"
+      },
+      "authors": [
+        {
+          "name": "bleichen, Thai Duong, Daniel Bleichenbacher, Wycheproof Team, thaidn"
+        }
+      ],
+      "properties": [
+        {
+          "name": "versionScheme",
+          "value": "alphanumeric"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cmocka",
+      "version": "1.1.5",
+      "bom-ref": "pkg:github/tianocore/edk2-cmocka@1cc9cde3448cdd2e000886a26acf1caac2db7cf1",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tianocore/edk2-cmocka.git"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/546bd50924245f4ca7292a3ef6a92504aa375455"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmocka: check MALLOC_ALIGNMENT macro"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/9aa64bb7f8aa89bd918bb797f56a512de92c5800"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmocka: Fix C4703 build error on UWP"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/aed0d9dd55b1d9fb68c0e37addc2898ed838a58b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "meson: Initial Meson build system support"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/33d48bfaa7579072b25bb520ca4dd592e3765c24"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "meson: Build and run unit tests"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/2f9c815defffcc78c204e329d4fd1bff9340b8ea"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "gitlab-ci: Add a Meson runner"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/c151f45ed0fd0f2f9b5d5d1526d208471009b0fe"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix in INSTALL.md cmake required version (i.e. >= 3.5.0)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/86681906ba64b21010282ab81405e67165f80d0f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmake: Make shared lib optional"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/ea10b513756257d75ea5ecb4dccd9519a09d9c0b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "CI: Attemp to fix MSVC pipeline"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/f90eb49488673b99bb9a73c41dae70886542e79e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "gitlab-ci: Set the build type to Debug"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/0be5fb3c9c9d2d68ac3f09bef3afb007bcc4f500"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmake: Create a static cmocka library for testing"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/5f0c2fe370ce9eb0a7a2f6b6acbb0cc1a07144dd"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix possible loss of data reported by MSVC"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/3f82b50d57f17cf04793351117d590aba224239b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix MSVC warning on conversion from 'time_t' to 'double'"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/8e60ec80b6d721772d933fe9a09624366bb343e8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmocka: Cast return to int in _cmocka_run_group_tests()"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/1a41f98a6ba0fedcb6338396b27bea1ecf4a3998"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmake: Fix usage of cmocka with build tree"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/ff70e53b65e700db6c53c48eaa84fba77b815450"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmake: Link compile database to source dir for clangd"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/1e21400a7923a2e539c7a4b078fb3e445a493c35"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmocka: Fix indentation"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/226a89cc434649ca4a4230cccac81976dfda9592"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmocka: Add new assert macros to compare 2 double given an epsilon."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/61ab1b920753ec72a80b03dc12432d13c3aa19c7"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "gitlab-ci: Remove Debian MIPS as they dropped support for it"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/7cc94638ef7b3dd09b5845a12fa73d57488d8760"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix comparison between pointer and integer in Doxigen example"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/28ce16b29911e5adc60140b572dee177adc7a178"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't redefine uintptr_t"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/e4c51ce9a4792d7d301d49e4e962036bfaa7f75e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmake: Export cmake config for cmocka"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/22264569de1a894991b8876caf420b09bab1aa46"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "cmake: Add options for BUILD_SHARED_LIBS"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tianocore/edk2-cmocka.git/commit/1cc9cde3448cdd2e000886a26acf1caac2db7cf1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "build: Export CMake config with namespace 'cmocka::'"
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "tianocore"
+      }
+    },
+    {
+      "type": "library",
+      "name": "subhook",
+      "version": "0.0.0",
+      "bom-ref": "pkg:github/tianocore/edk2-subhook@83d4e1ebef3588fae48b69a7352cc21801cb70bc",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tianocore/edk2-subhook.git"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "No release tag found; pinned at commit 83d4e1e"
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "tianocore"
+      }
+    },
+    {
+      "type": "library",
+      "name": "python-ecdsa",
+      "version": "0.19.0",
+      "bom-ref": "pkg:github/tlsfuzzer/python-ecdsa@4096fa01715929e08b97e73f3173aee9d57f2a3f",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tlsfuzzer/python-ecdsa"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/0bdcf5ecb13d1f370c39470e0cdbf0e770edcd12"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "fix mutation testing in CI"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/469d127ad50d4b39d2cd88c331bb9e3bacef3bff"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "trim more usage of six.b()"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/bfce13b5edb3b8d7e2f601e641beadaa7d34a684"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "tox -e codeformat"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/96382a01bf9e530d84d3b2ec0ac83d8f1a07e98b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "drop python 3.5"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/1ca8c56d33cd73f9a63657b9fca51198bc9aa2b5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "use release version of cosmic-ray"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/82540382009f19c3cc93f98827bf99d47bc6cc81"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "handle non-prime order curves more gracefully"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/3d00b320fa675d79a5c1e00dc4bac41abf968d91"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "work with curves that have x=0, y=0 as point on the curve"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/7426df8ba1a64c34f0e9fae25c72560da0e81861"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "better test coverage for ellipticcurve"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/python-ecdsa/commit/de9141cded117fe4b4a8a3c241d5da89cc6d749a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "formatting fixups"
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "tlsfuzzer"
+      }
+    },
+    {
+      "type": "library",
+      "name": "tlslite-ng",
+      "version": "0.8.0",
+      "bom-ref": "pkg:github/tlsfuzzer/tlslite-ng@77ef321dde1a9e6bcf94d73c80f8789a770d8031",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tlsfuzzer/tlslite-ng"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/tlslite-ng/commit/05df7816bf4645bb01d0b8b8bc5807286b3e2a5e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "make int_to_bytes and numberToByteArray encode 0 as b'\\x00'"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/tlsfuzzer/tlslite-ng/commit/d586c42dde2f419b87075e4943a42566cb1773d2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "ClientKeyExchange: correctly detect too short key shares"
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "tlsfuzzer"
+      }
+    },
+    {
+      "type": "library",
+      "name": "corpora",
+      "version": "0.0.0",
+      "bom-ref": "pkg:github/openssl/fuzz-corpora@ce771805c094d098c25a218bc8e9f7344eccbc5a",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/openssl/fuzz-corpora"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "No release tag found; pinned at commit ce771805"
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "openssl"
+      }
+    },
+    {
+      "type": "library",
+      "name": "boringssl",
+      "version": "20210429",
+      "bom-ref": "pkg:github/google/boringssl@f1c75347daa2ea81a941e953f2263e0a4d970c8d",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/google/boringssl.git"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c52b6c1ee2e30914ce4e5714992df2a622109878"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Pack an SSL* a little better."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4d1ffb873b9b58239ae2b0d95688b654d0ff3982"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Revert \"Pack an SSL* a little better.\""
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/fe049e4d186f253140e3d4a2570bba93386b75d8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document expected use of BTI and PAC macros."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/94a63a5b6e883b3cec48f0765b38ae36b807e4f8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Implement ECH draft 10 and update HPKE to draft 08."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1264f0ce35d548cf3fd947149b1a82059e3a4955"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Correctly order PKCS#7 certificates and CRLs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9f70097eff06351a07b48d581e51034d6ef82a8c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove HKDF-SHA384 and HKDF-SHA512 from HPKE."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e4d65564836ded46f9538dfaf25a531e17afa602"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove HPKE PSK mode."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/198c5f56f6573d2f8e62168044f7c584d9aec58c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix a memory leak with d2i_ASN1_OBJECT object reuse."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/da4390f4ef86da5167fa1c755ed7934f6bb87a84"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Revise the deterministic for_test variant of HPKE's SetupBaseS."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1d842c65e60583888891abd032e6034475949f7b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't mark up the first word in a collective comment."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/f39c81d5249ed59cc67d7930f64cec46bc184ec8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Introduce EVP_HPKE_{AEAD,KDF} types."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/2b2cb7d93cdf428fb8a484bb01eb72dce52e5028"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Switch HPKE to a three-parameter output buffer."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9fc6174162473252e573a13ded1c2e644885b272"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "acvp: move hash iterations into modulewrapper."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9f55d972854d0b34dae39c7cd3679d6ada3dfd5b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make X509_SIG and X509_CERT_AUX opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9b2cdb769ac420b0f98ff7ef5df61115bbddc3d8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add SSL_can_release_private_key."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/f0e5ea2d7440f1f25e2cd0a1bfc76298f326e65b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Update ACVP URLs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1d58cd1fd3b242910ec1371fab82c9e6a96d7089"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Shift the KEM dependency in HPKE up a step."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1eb7769e1189f90e41b81118d903090dbbe98ea6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Refer to EVP_HPKE_CTX by a consistent name."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/070a6c3e023195d26f2b28738b424926d0d26edc"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Export the HPKE implementation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/8349dfc87e46d5914b0fefbb33241a95a9eef07d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix the ech_accept comment."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/962b375bcb7de6422c2bc5c4ef6e527d8f74c74d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move session ID assignment out of ssl_get_new_session."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1f6c3dc7d736357d5454a73217d47ce93d2fb240"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Simplify renego + resumption handling."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6ff942985389b9b64b944b98ab3e8a66e1eb436d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't use SHA256(ticket) as the signaling session ID for tickets."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/71a3b826636eee85c20f064ef318f0935416a479"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Check for resumption identifiers in SSL_SESSION_is_resumable."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4b066b0e35dee8704de473490a0eacbd4d4b77a4"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add APIs to manually fill in signatures for CRLs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/29507b81845c25590433a4cf99b915ce99bad155"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Validate RSA public keys more consistently."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/940475da0c607eddc7c3e336284613f94632d99e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Be clearer which signing inputs are digests."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/a4646740ecee1190a5f0d085b4aa172311a16ad8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix some includes."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ddecaabdc8c950d1417ed69785ac17c3400bae4c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Check hs->early_session, not ssl->session, for the early data limit."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/aaecb82c6b805849a12c43f097959b265c0d977b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make X509_REQ and X509_REQ_INFO opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/d89ec688f2296f41b4999b9db6e8bfba79c18050"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove draft tokbind implementation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/747229ec7e0871a253dbbe79f78da9c2cf6c777a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add a missing case to SSL_error_description."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5e7229488844e987207b377968b3cf0340bc4ccf"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "fuzz/minimise_corpora.sh: Add shebang and chmod +x"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/49ee62fe13adacfc89d3d612f79e3a8425b500c5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Update the ECH GREASE size selection."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b778b9c1b3d21450025e2cb22587bf79714912eb"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Const-correct SSL_get_srtp_profiles."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/aef0a88e5193b70ebe36d08ec1adfe6c9e06e167"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Reject all zero client and server randoms."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/3675eb3f2ac2b65ec82c3d89af9813332977773c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "GREASE is now RFC 8701."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ef1d779d7b82ead5c66c4f0bd103593afa08003e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't try to write empty early data in the tool."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4749d8fb89ba5d765e0afa1799805b5096cb337b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Implement fuzzer mode for ECH server."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/d13dbf8e2ad489e1b410ef988badc876b3913a6e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Refresh SSL corpora after adding ECH fuzzer mode."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/3dd9864feace08641e1f856edd2bcca63ba7887f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Test ECH server with unique and repeated config IDs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/47cefed43f1003ac939489712b261eb91beb3835"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't copy client's session ID into server's session."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/92c6fbfc4c44dc8462d260d836020d2b793e7804"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix array-parameter warnings"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/d4c3f2a59911e200b75fca5c53073aac520330ac"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Ensure name not null in EVP_get_cipherbyname"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4320bc47617a66d4219e66e2420311dbfb6c3cb0"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Pull HASH_TRANSFORM out of md32_common.h."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/597ffef971dd980b7de5e97a0c9b7ca26eec94bc"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make md32_common.h single-included and use an unsized helper for SHA-256."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/cf816d08252a63ed41c788d4a263b4e88aa9aa2b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add compatibility impl for EVP_PKEY_get0"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/a1d3bfb64fd7ef2cb178b5b515522ffd75d7b8c5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Cite an RFC over 9000 (draft-ietf-quic-tls is now RFC 9001)."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7a3e801217d2e052062fff2293156b7ba9e5e796"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "fix #415: Perl scripts fail when building from a path with spaces"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4848294f43c34268181510a50a747e7b31bc8183"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove impossible ssl->s3 null check."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/bc4c91ab4655d10b55427ad7d4f1ae21fe2df06b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "DTLS-SRTP is only defined for DTLS."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/8acec00e9eaf4d69297a67c0c10729470b4bd764"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Manage Channel ID handshake state better."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b5879118ac2067f036f55497eba034940fbb791c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove the Channel ID callback."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/bcef51424b591707f3949f771f1eebd9c9935984"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Const-correct message creation hooks."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/da15f2910d339d81e3125fa85b6d91783a52621d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move ECH-related APIs to encrypted_client_hello.cc."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5b7ec8329eca73d79e1b5f5e345b3e1c9054edfe"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Reject the ECH extension in TLS 1.2 ServerHello."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/3a036c76eb53d9b0f26415b94471fcea6830c230"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add SSL_ech_accepted API and ech_is_required alerts."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/88df13d73d5a74505f046f0bf37fb2fb3e1f1a58"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix ECH-Server-RepeatedConfigID test."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/124122878245e9c3be5ad9e625a1af447236169e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Revise ECHConfig type in preparation for client implementation"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/00bccd6eefa162fb05da6a7621eaebb43b0c035a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Make echIsInner a boolean."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1f54fd9864c054dc33e15b1144e2a6a19fa0a52e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Parse the status_request extension more strictly."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7fffa4636cf7647daf981914286d5d32f1beab6d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Implement ECH server for testing."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/26f186bcabd9fe8221f6c732d13118120315a1f5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Implement a handshake hint for certificate compression."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4e93cd487f0a7f447d194621a59018a88d246379"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move the early_data_{offered,reason} logic out of extension callbacks."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6c9758fa9a35b8996a82a0867127af41ca82bcb0"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Release some temporaries outside of ClientHello callbacks."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/97ede40d43e4c16db2c5422515ee3bbeaa280d25"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move key_share computation out of ClientHello callbacks."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/52b3638f0ae24605ae9c131af9477c3d58f7f2a1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove the extension init hook."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/33e8c7893bd36c9aa88e1a4c9c5a0b4cb8177899"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Initialize grease_seed on construction."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/43ab56c618fc5212e36b9e20ad48549d3bbcc0ec"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Pick up the GREASE ECH config ID from grease_seed."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/246c556b65c3235c8eb082c15017c9669815943a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Compute the ECH GREASE payload outside of the callbacks."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5fd91dba0301b4fd7efa38ac618ac8b2a814993d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix documentation typo."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/14e51ad4164a28a8a1dabd634ea63b28212975b1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make add_clienthello callbacks const."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5acf9f42c2e853c660d1bc1c64da9d6e6dfab1e9"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Replace hs->needs_psk_binder with an output parameter."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e9109cb8ff454087acbb2a494db5935094618bc6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add move support to EVP_MD_CTX."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9052286dab3508855c130a5e8a9fd2c0857e7869"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add a note about extension callback names."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/fb4d2571f3faa85ce14bbc086f3fcfbb7043f944"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Shift some complexity out of ssl_add_clienthello_tlsext."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c89ce97a2d3795d6aff8d9da252220503fc3e60f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move the TLS vs DTLS header length adjustment into ssl_add_clienthello_tlsext."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b32aa05538113798a07e086102ffb9d57dcdc6a8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Tidy up the PSK binder logic."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/350fe3bf32dcf87f281685b1e7fc8df876f396a8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix ext_pre_shared_key_clienthello_length calculation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/cd89004847ad1a58722a5cde0e1d8d25f506b01f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't pad the second ClientHello."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/0724e3d5525b0d872320deee3d565a4737ac3cde"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Self-check tests more accurately and earlier."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c3b373bf4f4b2e2fba2578d1d5b5fe04e410f7cb"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Rename SSL_ECH_SERVER_CONFIG_LIST to SSL_ECH_KEYS."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c890ae519582d988d93d333dca9a39ee44f413ee"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make ECH server APIs take EVP_HPKE_KEY."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/24545c541c424b4f9bd8f42edc06d84d6542e764"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add a basic API to make ECHConfigs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/83a49939abb5a15508548ed1d33af8128d70cab5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add most of an ECH client implementation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/878795cac3947f37e7852122ebaf53e7c420d69a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove outdated comment in primality testing."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5358cb50446ff38d7b41e84274bc36582cced621"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Check the test name against the protocol being tested."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e9c5d72c09e01a0f71f30f7c3454e5e7f8711476"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add an option to permute ClientHello extension order."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9734e4453bd755562e40388fc7e6d36933b10edc"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "More reliably report handshake errors through SSL_write."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/160a8891ae9a1d03f29aec079a67d97bc773990e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add util/fetch_ech_config_list.go"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9a5abe05cc999177bc55949c9243b3bc360595cb"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Revert \"Add util/fetch_ech_config_list.go\""
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/995574c22569576f024ce730fecec9678dfc63ed"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Reland \"Add util/fetch_ech_config_list.go\""
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6d3d0690f542473a7bf8064cb46021c8d8d5fcaa"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Reformat x509_vfy.h and convert comments."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/36ea4d11341182715e1dfe4e49cfb32219c2435b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move crypto/x509/vpm_int.h into internal.h."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/58abd2e6fa9cb8547f5a435c1a6921712a0578c5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make X509_VERIFY_PARAM opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/869bf9f3afc52d901efb9f838ddbb28e5fa63570"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fold X509_VERIFY_PARAM_ID into X509_VERIFY_PARAM."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/9cbe737ec4697f5f6ac0c5d9f4ea814b7087d90a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Validate ECH public names."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/f315a86df3d5cd51135db996c9d5747ec2641331"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix a -Wdeprecated-copy warning."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/f25ada3a793e101855f6306565a8161330b3dd31"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Prefix and unexport a2i_ipadd."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ec552cab81ce984a148eb40f240b27306da763ad"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Rename t1_lib.cc to extensions.cc."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7f85116bedfb7b95f87e2f62d84ce425ef8ac095"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Unexport almost all of LHASH."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ec8c67dfbc01eb13f16a40f6c8da6299a65a540c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Prefix internal LHASH functions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/cafb9921149dd713ce2c2de2d057664575bedd93"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove lh_FOO_doall."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/52067828463443821e175975d19085b2c8bf2f54"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Compute ASN.1 BIT STRING sizes more consistently."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5f8c681d7897a6a7dea5daa8ab361b73e2dd7500"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Const-correct ASN1_item_verify a bit more."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/87be6592255359481390f7ac90cd1401ecca35e8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document ASN1_STRING_to_UTF8."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b147c99ddca966a57068919ff6e9cca813bbfddd"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document some ASN1_INTEGER and ASN1_ENUMERATED functions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/479adf98d54a21c1d154aac59b2ce120e1d1a6d6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove old ASN.1 SET macros."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c41a3a937309f0ebfe33e2314a8f5b9838d6f5cc"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Fix process exit timeout."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5d224a559ceec2b45811c3f9080744ad8bb2391c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Clean up test logic."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/afa867be8f6dce3e416b8e5f54013cbf970b5609"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Test that clients actually use renewed tickets."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/10a76acb0f2564a525887f88c4e3aea10f3fc1f2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Only clear not_resumable after the handshake."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/a10017c548b0805eb98e7847c37370dbd37cd8d6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Reduce bouncing on the cache lock in ssl_update_cache."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ca7ef8c855398302a04cbcdff8c7a943923bf934"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Add a convenience function for base64 flags."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ba423c9a1bbbc130f376df054ba59a4f0fb031a8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Implement ClientHelloOuter handshakes."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b90cdddcdc27995abe530c3805adb8ccca594aa4"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "swtb is another AArch64 magic tweak."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/25d501c775b04ab3e0855552f61f9219668be96a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "SHA-256 is used on AArch64, even if NO_ASM."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c220b5fa69e11c2dac0d0df89785d1a9f6927281"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Decorate x509v3_a2i_ipadd declaration as its definition."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5514476c406b3d9e6630f14414dcb6ea9e7eb597"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Update hpke_test.go."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e3a7bd0a812c063e7c457d3c5e3808b4670b1049"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Rename asn1_locl.h to internal.h."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/170045f4900cf6ffc2d5bf162a4ef196b2400e1a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make ASN1_OBJECT opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ae7c17868992ac2c64c46ba418d46cf75374054f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add some OpenSSL compatibility aliases."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/919a973930adf7fb9853fd5c3ae722a1d5e2cf59"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "conf: don't crash when parsing."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7ada8466927864b6427277f455483c61081a32db"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "conf: fix getting keys from the default section."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/957f23d2c4cf5b54352f202f3fff062fba216e65"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document a batch of extension-related functions in x509.h."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/2cf7a2cdea9af3a76b0b4cf6316e02cdfa8fe284"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove X509at_get0_data_by_OBJ."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/62d6ed60dc192433d05fcc786a8dc0df23e80c96"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove -2 return value from X509*_get_*_by_NID."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ad5db965845a12fbd69bd23eab00dd6b9e5998f6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Handle the server case in SSL_get0_ech_name_override."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/61a21e7ec5ab9cd81bdc7616d8a110d7ccf58ea3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix sign bit in BN_div if numerator and quotient alias."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/268a4a6ff3bd656ae65fe41ef1185daa85cfae21"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove unused field in X509_NAME_ENTRY."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ecc301ca0f77dd5d78de4b22d25713e63d18168a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add a pointer alignment helper function."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b86dcfefeb0ab890113635cfe021b8bd01de5554"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Switch another malloc to bssl::Array."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/a5a9b54d84e60e6a63f64cd001db1baf131b91a1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make X509_CRL opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/94a608a1f5d4339d95252902a9e9381c2cc1c225"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make X509_EXTENSION opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7153013019544f0314dfbf61c2a7010a82c8c53a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "hrss: use less stack space."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/519c2986c73c23461b130ad19b93fd7d081353d5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Always have CRYPTO_sysrand_for_seed."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6191cc95a1ef9a7b0a3f79ac23cbbbba85698c0f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document that SSL_PRIVATE_KEY_METHOD should configure signing prefs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/897a2ca3f184b34278641138c726ef902ab1fab2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add convenience functions to malloc EVP_HPKE_CTX and EVP_HPKE_KEY."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/17be3872ab3243fff6014f66d196d77b79d18119"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Check strtoul return for overflow error in GetUnsigned()"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e38cf79cdf47606f6768fb85dc066d7ebce304ac"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't enable atomics in NO_THREADS configurations."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7a817f48bafee508b2d23ad278f892ee1cb32b91"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add 'generate-ech' command to bssl tool"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c1571feb5faf5cce844354c63d0f3e842464bea3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "acvp: add HKDF support."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/d422d2c4aada2218b12916d6989424ee0bee7907"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Revert \"Revert \"Revert \"Disable check that X.509 extensions implies v3.\"\"\""
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5799ebfe5f895ecd29fcd699789854fc1790d6cd"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "acvp: recognise another style of JSON."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/f1d153dc3619eaea7fac176716c53824f5584830"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Don't overread in poly_Rq_mul"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/0768d42c283dcf077520c8fc9ad952309950fa48"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "generate_ech.cc: include needed headers"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e9fae77c06df5dfa7d30545bcd0b3e357e586bc9"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Clarify BIO_new_mum_buf's lifetime rules."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/116d9250a996c6627bda53b7f1e4cba503785b86"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document another batch of functions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/046fc130d1cd8c78365e00f4781f4c94eb159188"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove ASN1_STRING_FLAG_MSTRING."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/46e0523ead99c4417c7933caae829691563d5c72"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add some tests for time_t to ASN1_TIME conversions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/ead57c3004fea4dede45a4005d7789eef7d18749"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Reject years outside 0000-9999 in ASN1_GENERALIZEDTIME_adj."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7e265971c0b9188261fe6e2b7526535e95d9badc"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Avoid double-expanding variables in CMake."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/549e4e7995a90964e92f22af6229d92c1283693b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Align with upstream on 'close STDOUT' lines."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/47c5f9d2f6c294622baf07c3373de752fd518b03"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Update ghashv8-armx.pl from upstream."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6d84569802d8f164b85cc31750b3e379f23d6711"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document ASN1_mbstring_copy."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/f8b3961b0209d85382ea2b19609d787dd7c50c08"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Always use an ASN1_STRING_TABLE global mask of UTF8String."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/11a24ae021d3b1008f640e2b51a8cc2ea7115a60"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Unexport ub_* constants."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/8627e97433c8857874d4078ec01ea1aae608d160"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Unexport BIT_STRING_BITNAME."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/28d7252d22bedf0f054fb88d4385056531fab801"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move X509_ALGOR to x509.h."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b9ec9dee569854ac3dee909b9dfe8c1909a6c751"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove OPENSSL_NO_FP_API ifdefs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/7a6066ca659b3bb0a4c3be019b7f6006ed0e5677"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Implement ASN1_STRING_print_ex_fp, etc., with file BIOs."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1201c9ad8ea81eee1c2a98fa987ea7d4f71f586a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Unwind io_ch abstraction in print functions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/0dcbc6e14aa3376aca4e5272d54223bdb3aff7bb"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move a_strex.c back to asn1, split X509_NAME bits out."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/07a6628e4b1b0a3ad0464285c3cd66a9d18424af"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Move some ASN1 printing functions to crypto/asn1."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4c993da66019b2f15cae1462c15dba8d8a8f5e0b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Document ASN.1 printing functions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e3a365554293d2629f5eeb901db811c8c0213de8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Check i2d_ASN1_TYPE's return value in ASN1_STRING_print_ex."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b319e3b89f08961ab27599ef2101b3361ef01e5a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix ASN1_STRING_print_ex with negative integers."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/eb17de499a366ed306aacd0690bc80cf508cb11a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove ASN1_TFLG_SET_ORDER."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/1b2db8c7c4abba4bd8d820421fc911c1a5317cbe"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add a test for ASN1_mbstring_copy and clean up."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b9ee7b143135e6e070e4d6582ac7d8121978f53a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix negative ENUMERATED values in multi-strings."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/69ec7c8de73e8cd66f62a8ace6e574b9f0683914"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix some error returns from SSL_read and SSL_write."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/2e68a05c9943a8dec1758d4a393b2ae906fd3295"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Simplify built-in BIOs slightly."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/006f20ad7f9a6ce53b44390c0689f3690bf73ad1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add Span::first() and Span::last()."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/a603c828dc29443907c25b81c820bc2c44d9490d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Bump minimum GCC version and note impending VS2015 deprecation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/80df7398ce52574801821ce7a76c031c35d6b882"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Guard use of sdallocx with BORINGSSL_SDALLOCX"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/05ce773cae196ba0ca9e186ef24ad11a2e996c24"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Process the TLS 1.3 cipher suite in one place."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/16c3e3ae0e60b7273697412a9f7e23993161b8b3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "runner: Test session IDs over 32 bytes."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/8648c5369020d180acbb22bd3036fa356ee26a4c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Refer to RFCs consistently."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/047ff6428714afed823815e53c26ffc3e9bf8cd3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Linkify RFCs in documentation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/954506271422245ac264fc8f4d0598edb59ddf75"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add a CBB_add_zeros helper."
+              }
+            ]
+          },
+          {
+            "type": "security",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4f9a7ba47ef46f67d300913460977bcd0a60edfa"
+            },
+            "resolves": [
+              {
+                "type": "security",
+                "description": "Do not rely on ASN1_STRING being NUL-terminated.",
+                "references": [
+                  "CVE-2021-3712"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/2d10c18b3ae99feb87593ddb888a13556c1da5f4"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix i2v_GENERAL_NAME to not assume NUL terminated strings"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/04601b026a5d3212a8fa00c1c06c28b7474c9cfe"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Add some tests for name constraints."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/b27438e1268d3ef645c6f8ce10c184bb7d57825d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Rewrite name constraints matching with CBS."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/5984cfe8e428fa6a126c3bd2ec54e1639244ab05"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "OPENSSL_strndup should not return NULL given {NULL, 0}."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/4bf0a19ac8437c9a1e9b032cd50da47c34011238"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix typo."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/cdfc2595bc330ba284216b9fde5b8ed06e17604d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix some error-handling in i2v functions."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6038ac5ce113d54589c18a8c8d3fa35dd285dc8d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Run X509_print in the certificate fuzzer."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/61f320874be3541087c9ba5e2f21c1ebbc90dbce"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Merge in OpenSSL's X.509 corpus."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/e2cb423767cc39f187da28ef6f1facf31d5b76f8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Deduplicate our three ServerHello parsers."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/a75027b0401cf55158dfb5dd745b1fdb62d4a9c7"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make ssl_parse_extensions a little easier to use."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/d55f450c4fa666b43618ed95f9759ed0b6ff0dba"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Avoid re-hashing the transcript multiple times."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c6d3fd1d0972d17b2b115f6b7482b62e50406f56"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Work around yet another MSVC 2015 SFINAE bug."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/417010f9b775d899c823e6dc7f95669b745fd282"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Benchmark RSA private key parsing."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/c65543b7a900740f83379315bc9747a20f620f44"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make RSA_check_key more than 2x as fast."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/96181288c5ee9e3783514a2bf827774830358adf"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "NUL is not printable."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/31f462a1eff308d86604ed0bc9ca1cf6e7f133d4"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Include SHA512-256 in EVP_get_digestbyname and EVP_MD_do_all."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/6b7525a9fab38f408651bf5c39804c65103969f6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Rewrite ASN1_PRINTABLE_type and add tests."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/59aff62ca8c5b8f0249beee5a73da970486867ce"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove V_ASN1_APP_CHOOSE."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/dddb60eb9700110835ff6e2b429de40a17006429"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Make most of crypto/x509 opaque."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/07b365f63aaede8a1eb03b243aac15bd55272a26"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Remove SSL_set_verify_result."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/37a3c70c0eba2cecb61b943bb12624871cc2d822"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Reword SSL_get0_ech_name_override documentation."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/18b6836b2f6340187a7981c82be9be9d092d36d6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Update to draft-ietf-tls-esni-13."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/google/boringssl.git/commit/19fe7943ce593068bf447f05c2dbed4a324146ef"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "Fix calculation of draft-13 ECH confirmation signal."
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "google"
+      }
+    },
+    {
+      "type": "library",
+      "name": "framework",
+      "version": "0.0.0",
+      "bom-ref": "pkg:github/Mbed-TLS/mbedtls-framework@94599c0e3b5036e086446a51a3f79640f70f22f6",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/Mbed-TLS/mbedtls-framework"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "No release tag found; pinned at commit 94599c0e3"
+              }
+            ]
+          }
+        ]
+      },
+      "supplier": {
+        "name": "Mbed-TLS"
+      }
+    },
+    {
+      "type": "library",
+      "name": "wolfssl",
+      "version": "184",
+      "bom-ref": "pkg:github/wolfSSL/wolfssl@bc29a21d44b01396223c152a4834e52318591770",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wolfSSL/wolfssl.git"
+        }
+      ],
+      "supplier": {
+        "name": "wolfSSL"
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "cpe:2.3:a:cloudflare:quiche:0.18.0:*:*:*:*:*:*:*",
+      "dependsOn": [
+        "pkg:github/google/boringssl@f1c75347daa2ea81a941e953f2263e0a4d970c8d"
+      ]
+    },
+    {
+      "ref": "cpe:2.3:a:dmtf:libspdm:3.5.0:*:*:*:*:*:*:*",
+      "dependsOn": [
+        "pkg:github/Mbed-TLS/mbedtls-framework@94599c0e3b5036e086446a51a3f79640f70f22f6",
+        "cpe:2.3:a:cmocka:cmocka:1.1.7:*:*:*:*:*:*:*"
+      ]
+    },
+    {
+      "ref": "cpe:2.3:a:gost_engine_project:gost_engine:3.0.3:*:*:*:*:*:*:*",
+      "dependsOn": [
+        "cpe:2.3:a:provider-corner:libprov:NOASSERTION:*:*:*:*:*:*:*"
+      ]
+    },
+    {
+      "ref": "cpe:2.3:a:mipi:public-mipi-sys-t:1.12:*:*:*:*:*:*:*",
+      "dependsOn": [
+        "cpe:2.3:a:pugixml_project:pugixml:1.9:*:*:*:*:*:*:*"
+      ]
+    },
+    {
+      "ref": "cpe:2.3:a:openssl:openssl:3.5.1:*:*:*:*:*:*:*",
+      "dependsOn": [
+        "cpe:2.3:a:cryptography.io:cryptography:38.0.0:*:*:*:*:python:*:*",
+        "cpe:2.3:a:latchset:pkcs11-provider:1.0:*:*:*:*:*:*:*",
+        "cpe:2.3:a:open_quantum_safe:oqsprovider:0.8.0:*:*:*:*:*:*:*",
+        "pkg:github/tlsfuzzer/python-ecdsa@4096fa01715929e08b97e73f3173aee9d57f2a3f",
+        "pkg:github/openssl/fuzz-corpora@ce771805c094d098c25a218bc8e9f7344eccbc5a",
+        "cpe:2.3:a:c2sp:wycheproof:NOASSERTION:*:*:*:*:*:*:*",
+        "pkg:github/tlsfuzzer/tlslite-ng@77ef321dde1a9e6bcf94d73c80f8789a770d8031",
+        "cpe:2.3:a:tlsfuzzer:tlsfuzzer:NOASSERTION:*:*:*:*:*:*:*",
+        "cpe:2.3:a:mit:kerberos_5:NOASSERTION:*:*:*:*:*:*:*"
+      ]
+    },
+    {
+      "ref": "cpe:2.3:a:tianocore:edk2:202511:*:*:*:*:*:*:*",
+      "dependsOn": [
+        "pkg:github/tianocore/edk2-cmocka@1cc9cde3448cdd2e000886a26acf1caac2db7cf1",
+        "pkg:github/tianocore/edk2-subhook@83d4e1ebef3588fae48b69a7352cc21801cb70bc",
+        "pkg:github/tlsfuzzer/python-ecdsa@4096fa01715929e08b97e73f3173aee9d57f2a3f",
+        "pkg:github/tlsfuzzer/tlslite-ng@77ef321dde1a9e6bcf94d73c80f8789a770d8031",
+        "pkg:github/openssl/fuzz-corpora@ce771805c094d098c25a218bc8e9f7344eccbc5a",
+        "pkg:github/google/boringssl@f1c75347daa2ea81a941e953f2263e0a4d970c8d",
+        "pkg:github/Mbed-TLS/mbedtls-framework@94599c0e3b5036e086446a51a3f79640f70f22f6",
+        "pkg:github/wolfSSL/wolfssl@bc29a21d44b01396223c152a4834e52318591770",
+        "cpe:2.3:a:google:brotli:1.2.0:*:*:*:*:*:*:*",
+        "cpe:2.3:a:google:googletest:1.11.0:*:*:*:*:*:*:*",
+        "cpe:2.3:a:kkos:oniguruma:6.9.10:*:*:*:*:*:*:*",
+        "cpe:2.3:a:mbed:mbedtls:3.3.0:*:*:*:*:*:*:*",
+        "cpe:2.3:a:akheron:jansson:2.13.1:*:*:*:*:*:*:*",
+        "cpe:2.3:a:dgibson:libfdt:1.6.1:*:*:*:*:*:*:*"
+      ]
+    }
+  ]
+}
