@@ -1,0 +1,2 @@
+# Keep example env files LF so WSL/bash sourcing and python-dotenv stay clean.
+.env.example text eol=lf

@@ -10,10 +10,34 @@ import unittest
 from contextlib import redirect_stdout
 from unittest import mock
 
-from vex4edk2.batch import main, outputs_complete, release_output_paths
+from vex4edk2.batch import (
+    load_project_env,
+    main,
+    normalize_env_value,
+    outputs_complete,
+    release_output_paths,
+)
 
 
 class TestBatchHelpers(unittest.TestCase):
+    def test_normalize_env_value_strips_crlf(self) -> None:
+        self.assertEqual(normalize_env_value("abc\r\n"), "abc")
+        self.assertEqual(normalize_env_value("  key-with-cr\r  "), "key-with-cr")
+
+    def test_load_project_env_strips_crlf_from_dotenv(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            env_path = os.path.join(tmp, ".env")
+            with open(env_path, "wb") as fh:
+                fh.write(b"NVD_API_KEY=test-key-value\r\n")
+            with mock.patch("vex4edk2.batch.load_dotenv") as load_mock:
+                def _inject(**_kwargs):
+                    os.environ["NVD_API_KEY"] = "test-key-value\r"
+
+                load_mock.side_effect = _inject
+                load_project_env()
+            self.assertEqual(os.environ.get("NVD_API_KEY"), "test-key-value")
+            os.environ.pop("NVD_API_KEY", None)
+
     def test_outputs_complete_false(self) -> None:
         self.assertFalse(outputs_complete("/nonexistent/a.cdx.json", "/nonexistent/b.csaf.json"))
 
