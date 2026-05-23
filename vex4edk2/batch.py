@@ -23,6 +23,24 @@ from .releases import quarterly_tags
 
 logger = logging.getLogger(__name__)
 
+# Env vars that must not carry Windows CRLF into HTTP headers or git paths.
+_ENV_KEYS_TO_NORMALIZE = ("NVD_API_KEY", "GITHUB_TOKEN", "EDK2_DIR")
+
+
+def normalize_env_value(value: Optional[str]) -> Optional[str]:
+    """Strip whitespace and CR/LF from a dotenv or shell-sourced value."""
+    if value is None:
+        return None
+    return value.strip().strip("\r\n")
+
+
+def load_project_env() -> None:
+    """Load ``.env`` and normalize known keys (safe for CRLF-encoded files on WSL)."""
+    load_dotenv()
+    for key in _ENV_KEYS_TO_NORMALIZE:
+        if key in os.environ:
+            os.environ[key] = normalize_env_value(os.environ[key]) or ""
+
 
 def _import_sbom4edk2():
     try:
@@ -190,7 +208,7 @@ def update_manifest(manifest_path: str, entry: Dict[str, Any]) -> None:
 
 
 def main(argv: Optional[List[str]] = None) -> None:
-    load_dotenv()
+    load_project_env()
     parser = argparse.ArgumentParser(
         description="Generate quarterly EDK II SBOM + CSAF VEX bundles.",
     )
@@ -283,7 +301,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     else:
         tags = quarterly_tags()
 
-    edk2_dir = args.edk2_dir or os.environ.get("EDK2_DIR")
+    edk2_dir = normalize_env_value(args.edk2_dir or os.environ.get("EDK2_DIR"))
     if edk2_dir:
         edk2_dir = os.path.abspath(edk2_dir)
 
@@ -305,7 +323,7 @@ def main(argv: Optional[List[str]] = None) -> None:
 
     uswid_data = args.uswid_data or ensure_uswid_data(cache_dir)
 
-    api_key = args.apikey or os.environ.get("NVD_API_KEY")
+    api_key = normalize_env_value(args.apikey or os.environ.get("NVD_API_KEY"))
     use_nvd = not args.no_nvd
     if use_nvd and not api_key:
         logger.error("NVD_API_KEY required (use --no-nvd to skip NVD)")

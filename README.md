@@ -2,6 +2,8 @@
 
 Batch-generate **CycloneDX SBOMs** and **CSAF 2.0 VEX** documents for quarterly [TianoCore EDK II](https://github.com/tianocore/edk2) stable releases (last two years).
 
+> **AI agents / contributors:** See [`AGENTS.md`](AGENTS.md) for repo boundaries vs python-uswid-sbom and SBOM4EDK2.
+
 Each release is stored under `releases/<tag>/`:
 
 | File | Description |
