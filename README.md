@@ -4,16 +4,16 @@ Batch-generate **CycloneDX SBOMs** and **CSAF 2.0 VEX** documents for quarterly 
 
 > **AI agents / contributors:** See [`AGENTS.md`](AGENTS.md) for repo boundaries vs python-uswid-sbom and SBOM4EDK2.
 
-Each release is stored under `releases/<tag>/`:
+Each release is stored as flat files under `sbom/` and `vex/` (release tag in the filename):
 
 | File | Description |
 |------|-------------|
-| `edk2.cdx.json` | Source SBOM (via [SBOM4EDK2](https://github.com/MatchPoint/python-uswid-sbom) + `uswid --primary-dir`) |
-| `edk2.csaf.json` | CSAF VEX profile document (NVD component CVEs + applicable TianoCore GHSA advisories) |
+| `sbom/<tag>.cdx.json` | Source SBOM (via [SBOM4EDK2](https://github.com/MatchPoint/python-uswid-sbom) + `uswid --primary-dir`) |
+| `vex/<tag>.csaf.json` | CSAF VEX profile document (NVD component CVEs + applicable TianoCore GHSA advisories) |
 
-The `releases/` tree is **version-controlled**: each quarterly tag folder contains the
-generated `edk2.cdx.json` and `edk2.csaf.json` artifacts (Excel CVE reports stay
-gitignored). See `manifest.json` for batch scan metadata.
+The `sbom/` and `vex/` trees are **version-controlled**: each quarterly tag has a
+matching SBOM and CSAF pair (Excel CVE reports stay gitignored). See `manifest.json`
+for batch scan metadata.
 
 ## License
 
@@ -61,10 +61,13 @@ python -m vex4edk2.batch --all --edk2-dir /path/to/edk2 --skip-existing
 # Single release (debug)
 python -m vex4edk2.batch --tag edk2-stable202411
 
-# Resume: skip folders that already have both outputs
+# Resume: skip tags that already have both sbom/<tag>.cdx.json and vex/<tag>.csaf.json
 python -m vex4edk2.batch --all --skip-existing
 
-# Optional: keep CVE Excel reports in each release folder
+# Refresh VEX from committed SBOMs (no EDK II checkout):
+python -m vex4edk2.batch --all --vex-only
+
+# Optional: keep CVE Excel reports under cache/scratch/<tag>/
 python -m vex4edk2.batch --tag edk2-stable202411 --write-xlsx
 ```
 
@@ -99,10 +102,8 @@ Quarterly stable only (no `-rc`, no `.01` point releases):
 ```
 VEX4EDK2/
   cache/              # gitignored: edk2 mirror, worktrees, uswid-data
-  releases/           # committed: per-tag edk2.cdx.json + edk2.csaf.json
-    edk2-stable202411/
-      edk2.cdx.json
-      edk2.csaf.json
+  sbom/               # committed: edk2-stableYYYYMM.cdx.json per tag
+  vex/                # committed: edk2-stableYYYYMM.csaf.json per tag
   manifest.json       # scan status per tag (updated by batch)
   vex4edk2/
     batch.py          # CLI orchestrator
@@ -129,7 +130,7 @@ python -m pytest tests/ -v
 ```
 
 Tests include unit checks for CSAF/CLI/checkout logic and a guard that all eight
-quarterly folders under `releases/` contain both JSON artifacts.
+quarterly tags have both JSON artifacts under `sbom/` and `vex/`.
 
 ## Related projects
 

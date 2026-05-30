@@ -56,12 +56,11 @@ def _import_sbom4edk2():
     return generate_sbom_from_checkout, generate_cve_report, scan_sbom_with_ghsa
 
 
-def release_output_paths(releases_dir: str, tag: str) -> tuple[str, str]:
-    """Return (cdx_path, csaf_path) under releases/<tag>/."""
-    base = os.path.join(releases_dir, tag)
+def release_output_paths(repo_root: str, tag: str) -> tuple[str, str]:
+    """Return (cdx_path, csaf_path) under sbom/ and vex/ with the release tag in each filename."""
     return (
-        os.path.join(base, "edk2.cdx.json"),
-        os.path.join(base, "edk2.csaf.json"),
+        os.path.join(repo_root, "sbom", f"{tag}.cdx.json"),
+        os.path.join(repo_root, "vex", f"{tag}.csaf.json"),
     )
 
 
@@ -73,7 +72,7 @@ def scan_release(
     tag: str,
     *,
     cache_dir: str,
-    releases_dir: str,
+    repo_root: str,
     uswid_data: str,
     api_key: Optional[str],
     sbom_type: str = "source",
@@ -88,8 +87,13 @@ def scan_release(
     """Run the full pipeline for one release tag; return manifest entry dict."""
     generate_sbom, generate_cve_report, scan_sbom_with_ghsa = _import_sbom4edk2()
 
-    cdx_path, csaf_path = release_output_paths(releases_dir, tag)
-    os.makedirs(os.path.dirname(cdx_path), exist_ok=True)
+    cdx_path, csaf_path = release_output_paths(repo_root, tag)
+    sbom_dir = os.path.dirname(cdx_path)
+    vex_dir = os.path.dirname(csaf_path)
+    os.makedirs(sbom_dir, exist_ok=True)
+    os.makedirs(vex_dir, exist_ok=True)
+    scratch_dir = os.path.join(cache_dir, "scratch", tag)
+    os.makedirs(scratch_dir, exist_ok=True)
 
     entry: Dict[str, Any] = {
         "tag": tag,
@@ -110,14 +114,13 @@ def scan_release(
         restore_after=restore_after,
     ) as (tree_path, mirror, wt_path):
         try:
-            release_dir = os.path.join(releases_dir, tag)
             old_cwd = os.getcwd()
             try:
-                os.chdir(release_dir)
+                os.chdir(sbom_dir)
                 logger.info("Generating SBOM for %s from %s", tag, tree_path)
                 generated = generate_sbom(
                     location=tree_path,
-                    output_name="edk2",
+                    output_name=tag,
                     uswid_data=uswid_data,
                     sbom_type=sbom_type,
                 )
@@ -135,21 +138,11 @@ def scan_release(
                     raise RuntimeError(
                         "NVD_API_KEY required for NVD scan (or pass --no-nvd)"
                     )
-                xlsx = (
-                    os.path.join(release_dir, "CVE_List.xlsx")
-                    if write_xlsx
-                    else os.path.join(cache_dir, "scratch", tag, "CVE_List.xlsx")
-                )
-                os.makedirs(os.path.dirname(xlsx), exist_ok=True)
+                xlsx = os.path.join(scratch_dir, "CVE_List.xlsx")
                 nvd_df = generate_cve_report(cdx_path, api_key, output_xlsx=xlsx)
 
             if use_ghsa:
-                ghsa_xlsx = (
-                    os.path.join(release_dir, "CVE_List_ghsa_edk2.xlsx")
-                    if write_xlsx
-                    else os.path.join(cache_dir, "scratch", tag, "CVE_List_ghsa.xlsx")
-                )
-                os.makedirs(os.path.dirname(ghsa_xlsx), exist_ok=True)
+                ghsa_xlsx = os.path.join(scratch_dir, "CVE_List_ghsa.xlsx")
                 ghsa_df = scan_sbom_with_ghsa(cdx_path, output_xlsx=ghsa_xlsx)
 
             write_csaf(
@@ -181,12 +174,76 @@ def scan_release(
             entry["finished_at"] = datetime.now(timezone.utc).strftime(
                 "%Y-%m-%dT%H:%M:%SZ"
             )
-            logger.info("Completed %s → %s", tag, release_dir)
+            logger.info("Completed %s → %s and %s", tag, cdx_path, csaf_path)
             return entry
 
         finally:
             if mirror and wt_path and not keep_worktree:
                 remove_worktree(mirror, wt_path)
+
+
+def regenerate_vex_from_sbom(
+    tag: str,
+    *,
+    cache_dir: str,
+    repo_root: str,
+    api_key: Optional[str],
+    use_nvd: bool = True,
+    use_ghsa: bool = True,
+) -> Dict[str, Any]:
+    """Rebuild CSAF VEX from an existing sbom/<tag>.cdx.json without regenerating the SBOM."""
+    _, generate_cve_report, scan_sbom_with_ghsa = _import_sbom4edk2()
+
+    cdx_path, csaf_path = release_output_paths(repo_root, tag)
+    if not os.path.isfile(cdx_path):
+        raise FileNotFoundError(f"SBOM not found: {cdx_path}")
+
+    os.makedirs(os.path.dirname(csaf_path), exist_ok=True)
+    scratch_dir = os.path.join(cache_dir, "scratch", tag)
+    os.makedirs(scratch_dir, exist_ok=True)
+
+    entry: Dict[str, Any] = {
+        "tag": tag,
+        "started_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "cdx": cdx_path,
+        "csaf": csaf_path,
+        "status": "failed",
+        "vex_only": True,
+    }
+
+    nvd_df = None
+    ghsa_df = None
+
+    if use_nvd:
+        if not api_key:
+            raise RuntimeError("NVD_API_KEY required for NVD scan (or pass --no-nvd)")
+        xlsx = os.path.join(scratch_dir, "CVE_List.xlsx")
+        nvd_df = generate_cve_report(cdx_path, api_key, output_xlsx=xlsx)
+
+    if use_ghsa:
+        ghsa_xlsx = os.path.join(scratch_dir, "CVE_List_ghsa.xlsx")
+        ghsa_df = scan_sbom_with_ghsa(cdx_path, output_xlsx=ghsa_xlsx)
+
+    write_csaf(
+        cdx_path,
+        csaf_path,
+        release_tag=tag,
+        nvd_df=nvd_df,
+        ghsa_df=ghsa_df,
+    )
+
+    entry["status"] = "ok"
+    entry["vulnerability_count"] = 0
+    try:
+        with open(csaf_path, encoding="utf-8") as fh:
+            csaf_doc = json.load(fh)
+        entry["vulnerability_count"] = len(csaf_doc.get("vulnerabilities") or [])
+    except OSError:
+        pass
+
+    entry["finished_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    logger.info("Refreshed VEX for %s → %s", tag, csaf_path)
+    return entry
 
 
 def update_manifest(manifest_path: str, entry: Dict[str, Any]) -> None:
@@ -216,6 +273,11 @@ def main(argv: Optional[List[str]] = None) -> None:
     group.add_argument("--all", action="store_true", help="Process all quarterly tags")
     group.add_argument("--tag", metavar="TAG", help="Process a single edk2-stableYYYYMM tag")
     parser.add_argument(
+        "--vex-only",
+        action="store_true",
+        help="Regenerate vex/<tag>.csaf.json from existing sbom/<tag>.cdx.json (skip SBOM generation)",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="List tags that would be processed and exit",
@@ -223,7 +285,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     parser.add_argument(
         "--skip-existing",
         action="store_true",
-        help="Skip tags that already have edk2.cdx.json and edk2.csaf.json",
+        help="Skip tags that already have sbom/<tag>.cdx.json and vex/<tag>.csaf.json",
     )
     parser.add_argument(
         "--cache-dir",
@@ -231,9 +293,9 @@ def main(argv: Optional[List[str]] = None) -> None:
         help="Directory for edk2 mirror, worktrees, uswid-data (default: cache)",
     )
     parser.add_argument(
-        "--releases-dir",
-        default="releases",
-        help="Output directory for per-tag folders (default: releases)",
+        "--repo-root",
+        default=".",
+        help="Repository root containing sbom/ and vex/ outputs (default: .)",
     )
     parser.add_argument(
         "--uswid-data",
@@ -250,7 +312,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     parser.add_argument(
         "--write-xlsx",
         action="store_true",
-        help="Write CVE_List.xlsx files into each release folder",
+        help="Keep CVE_List.xlsx files under cache/scratch/<tag>/ (default: same, flag retained for scripts)",
     )
     parser.add_argument(
         "--keep-worktree",
@@ -294,7 +356,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     )
 
     cache_dir = os.path.abspath(args.cache_dir)
-    releases_dir = os.path.abspath(args.releases_dir)
+    repo_root = os.path.abspath(args.repo_root)
 
     if args.tag:
         tags = [args.tag]
@@ -314,14 +376,15 @@ def main(argv: Optional[List[str]] = None) -> None:
 
     if args.dry_run:
         for tag in tags:
-            cdx, csaf = release_output_paths(releases_dir, tag)
-            mode = f"edk2-dir={edk2_dir}" if edk2_dir else "worktree"
-            if edk2_dir and args.use_current:
-                mode = f"edk2-dir={edk2_dir} (current HEAD)"
+            cdx, csaf = release_output_paths(repo_root, tag)
+            if args.vex_only:
+                mode = "vex-only (existing SBOM)"
+            else:
+                mode = f"edk2-dir={edk2_dir}" if edk2_dir else "worktree"
+                if edk2_dir and args.use_current:
+                    mode = f"edk2-dir={edk2_dir} (current HEAD)"
             print(f"{tag} [{mode}]\n  {cdx}\n  {csaf}")
         return
-
-    uswid_data = args.uswid_data or ensure_uswid_data(cache_dir)
 
     api_key = normalize_env_value(args.apikey or os.environ.get("NVD_API_KEY"))
     use_nvd = not args.no_nvd
@@ -329,12 +392,50 @@ def main(argv: Optional[List[str]] = None) -> None:
         logger.error("NVD_API_KEY required (use --no-nvd to skip NVD)")
         sys.exit(1)
 
-    manifest_path = os.path.join(releases_dir, "..", "manifest.json")
-    manifest_path = os.path.abspath(manifest_path)
+    if args.vex_only:
+        manifest_path = os.path.join(repo_root, "manifest.json")
+        failures = 0
+        for tag in tags:
+            cdx_path, csaf_path = release_output_paths(repo_root, tag)
+            if args.skip_existing and os.path.isfile(csaf_path):
+                logger.info("Skipping %s (VEX exists)", tag)
+                continue
+            logger.info("=== Refreshing VEX for %s ===", tag)
+            try:
+                entry = regenerate_vex_from_sbom(
+                    tag,
+                    cache_dir=cache_dir,
+                    repo_root=repo_root,
+                    api_key=api_key,
+                    use_nvd=use_nvd,
+                    use_ghsa=not args.no_ghsa,
+                )
+                update_manifest(manifest_path, entry)
+            except Exception as exc:
+                failures += 1
+                logger.error("Failed %s: %s", tag, exc, exc_info=True)
+                update_manifest(
+                    manifest_path,
+                    {
+                        "tag": tag,
+                        "status": "failed",
+                        "error": str(exc),
+                        "finished_at": datetime.now(UTC).strftime(
+                            "%Y-%m-%dT%H:%M:%SZ"
+                        ),
+                    },
+                )
+        if failures:
+            sys.exit(1)
+        return
+
+    uswid_data = args.uswid_data or ensure_uswid_data(cache_dir)
+
+    manifest_path = os.path.join(repo_root, "manifest.json")
 
     failures = 0
     for tag in tags:
-        cdx_path, csaf_path = release_output_paths(releases_dir, tag)
+        cdx_path, csaf_path = release_output_paths(repo_root, tag)
         if args.skip_existing and outputs_complete(cdx_path, csaf_path):
             logger.info("Skipping %s (outputs exist)", tag)
             continue
@@ -344,7 +445,7 @@ def main(argv: Optional[List[str]] = None) -> None:
             entry = scan_release(
                 tag,
                 cache_dir=cache_dir,
-                releases_dir=releases_dir,
+                repo_root=repo_root,
                 uswid_data=uswid_data,
                 api_key=api_key,
                 sbom_type=args.sbom_type,

@@ -29,8 +29,8 @@ from vex4edk2.batch import load_project_env
 from vex4edk2.csaf import write_csaf
 
 TAG = os.environ.get("VEX4EDK2_TAG", "edk2-stable202411")
-CDX = os.path.join(_REPO, "releases", TAG, "edk2.cdx.json")
-BASELINE = os.path.join(_REPO, "releases", TAG, "edk2.csaf.json")
+CDX = os.path.join(_REPO, "sbom", f"{TAG}.cdx.json")
+BASELINE = os.path.join(_REPO, "vex", f"{TAG}.csaf.json")
 FRESH = os.path.join(_REPO, "cache", "scratch", TAG, "edk2.csaf.fresh.json")
 
 
