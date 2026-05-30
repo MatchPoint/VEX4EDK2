@@ -1,4 +1,4 @@
-# Normalize line endings for Windows + WSL development.
+# Normalize line endings for OS-agnostic development (Windows, WSL, Linux CI).
 * text=auto eol=lf
 
 # Example env files must stay LF for bash and python-dotenv.
