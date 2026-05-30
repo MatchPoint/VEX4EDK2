@@ -15,19 +15,19 @@
       "revision_history": [
         {
           "number": "1.0.0",
-          "date": "2026-05-30T18:22:21Z",
+          "date": "2026-05-30T18:40:26Z",
           "summary": "Automated VEX from SBOM4EDK2 scan of edk2-stable202508"
         }
       ],
-      "initial_release_date": "2026-05-30T18:22:21Z",
-      "current_release_date": "2026-05-30T18:22:21Z",
+      "initial_release_date": "2026-05-30T18:40:26Z",
+      "current_release_date": "2026-05-30T18:40:26Z",
       "generator": {
         "engine": {
           "name": "VEX4EDK2",
-          "version": "0.1.1"
+          "version": "0.2.0"
         },
         "author": "Brian Mullen",
-        "date": "2026-05-30T18:22:21Z"
+        "date": "2026-05-30T18:40:26Z"
       }
     },
     "notes": [
