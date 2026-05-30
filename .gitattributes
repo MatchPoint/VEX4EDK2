@@ -1,2 +1,10 @@
-# Keep example env files LF so WSL/bash sourcing and python-dotenv stay clean.
+# Normalize line endings for Windows + WSL development.
+* text=auto eol=lf
+
+# Example env files must stay LF for bash and python-dotenv.
 .env.example text eol=lf
+
+# Windows-only scripts keep CRLF when present.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
