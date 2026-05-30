@@ -4,13 +4,13 @@ Instructions for AI agents working in **MatchPoint/VEX4EDK2**.
 
 ## Role in the ecosystem
 
-VEX4EDK2 is a **quarterly batch publisher**: for each `edk2-stableYYYYMM` tag it produces committed artifacts under `releases/<tag>/`.
+VEX4EDK2 is a **quarterly batch publisher**: for each `edk2-stableYYYYMM` tag it produces committed artifacts under `sbom/` and `vex/`.
 
 | Repo | Role |
 |------|------|
 | **python-uswid-sbom** | SBOM creation (`uswid --primary-dir`) |
 | **SBOM4EDK2** | Orchestration + CVE scanners (NVD, Grype, GHSA) |
-| **VEX4EDK2** (this repo) | Git checkout per tag → invoke SBOM4EDK2 → write CSAF VEX → commit `edk2.cdx.json` + `edk2.csaf.json` |
+| **VEX4EDK2** (this repo) | Git checkout per tag → invoke SBOM4EDK2 → write CSAF VEX → commit `sbom/<tag>.cdx.json` + `vex/<tag>.csaf.json` |
 
 **Related agent docs:** [python-uswid-sbom `AGENTS.md`](https://github.com/MatchPoint/python-uswid-sbom/blob/main/AGENTS.md), [SBOM4EDK2 `AGENTS.md`](https://github.com/MatchPoint/SBOM4EDK2/blob/main/AGENTS.md).
 
@@ -27,8 +27,8 @@ vex4edk2.batch
     └── csaf.py              build_csaf_document / write_csaf
             │
             ▼
-    releases/<tag>/edk2.cdx.json
-    releases/<tag>/edk2.csaf.json
+    sbom/<tag>.cdx.json
+    vex/<tag>.csaf.json
 ```
 
 ### What belongs in this repo
@@ -74,7 +74,7 @@ python scripts/regen_and_compare_csaf.py
 
 - **Do not implement SBOM assembly here.** Call `generate_sbom_from_checkout`; never add per-`.inf` pools or CDX merge helpers.
 - **Do not duplicate CVE scanner logic.** Import from `sbom4edk2` on `PYTHONPATH`; extend scanners there if needed.
-- **`releases/` is version-controlled.** Batch output updates belong in git unless the user says otherwise; `cache/` and `.env` stay gitignored.
+- **`sbom/` and `vex/` are version-controlled.** Batch output updates belong in git unless the user says otherwise; `cache/` and `.env` stay gitignored.
 - **Submodule scrub between tags** (`edk2_checkout.scrub_submodules`) is required for older EDK2 tags; do not skip without cause.
 - **CSAF v1 is machine-generated only** — NVD component CVEs + applicable GHSA advisories; no manual VEX justifications in scope.
 - **Full batch is long-running** (submodule init + NVD per tag). Use `--skip-existing` for resume.

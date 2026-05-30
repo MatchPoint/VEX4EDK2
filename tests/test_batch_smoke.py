@@ -42,9 +42,9 @@ class TestBatchHelpers(unittest.TestCase):
         self.assertFalse(outputs_complete("/nonexistent/a.cdx.json", "/nonexistent/b.csaf.json"))
 
     def test_release_output_paths(self) -> None:
-        cdx, csaf = release_output_paths("/tmp/releases", "edk2-stable202411")
-        self.assertTrue(cdx.endswith(os.path.join("edk2-stable202411", "edk2.cdx.json")))
-        self.assertTrue(csaf.endswith(os.path.join("edk2-stable202411", "edk2.csaf.json")))
+        cdx, csaf = release_output_paths("/tmp/repo", "edk2-stable202411")
+        self.assertTrue(cdx.endswith(os.path.join("sbom", "edk2-stable202411.cdx.json")))
+        self.assertTrue(csaf.endswith(os.path.join("vex", "edk2-stable202411.csaf.json")))
 
 
 class TestBatchEdk2DirCli(unittest.TestCase):
@@ -60,8 +60,8 @@ class TestBatchEdk2DirCli(unittest.TestCase):
                         "--edk2-dir",
                         tmp,
                         "--use-current",
-                        "--releases-dir",
-                        os.path.join(tmp, "releases"),
+                        "--repo-root",
+                        tmp,
                     ]
                 )
             out = buf.getvalue()
@@ -87,8 +87,8 @@ class TestBatchEdk2DirCli(unittest.TestCase):
                             "--tag",
                             "edk2-stable202411",
                             "--dry-run",
-                            "--releases-dir",
-                            os.path.join(tmp, "releases"),
+                            "--repo-root",
+                            tmp,
                         ]
                     )
             self.assertIn(os.path.realpath(tmp), buf.getvalue())
