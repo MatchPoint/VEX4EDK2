@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vex4edk2"
-version = "0.1.0"
+version = "0.2.0"
 description = "Quarterly EDK II SBOM + CSAF VEX batch generator"
 readme = "README.md"
 license = "BSD-2-Clause"
