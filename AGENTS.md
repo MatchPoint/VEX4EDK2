@@ -8,11 +8,12 @@ VEX4EDK2 is a **quarterly batch publisher**: for each `edk2-stableYYYYMM` tag it
 
 | Repo | Role |
 |------|------|
-| **python-uswid-sbom** | SBOM creation (`uswid --primary-dir`) |
-| **SBOM4EDK2** | Orchestration + CVE scanners (NVD, Grype, GHSA) |
+| **SBOM4EDK2** | EDK2 **source** CycloneDX SBOM only (native; uswid-data templates) |
+| **uswid-data** | Curated CDX templates (Hughsie; data-only checkout) |
+| **python-uswid** | Optional build/binary SBOM tooling (not required by VEX4EDK2) |
 | **VEX4EDK2** (this repo) | Git checkout per tag → invoke SBOM4EDK2 → write CSAF VEX → commit `sbom/<tag>.cdx.json` + `vex/<tag>.csaf.json` |
 
-**Related agent docs:** [python-uswid-sbom `AGENTS.md`](https://github.com/MatchPoint/python-uswid-sbom/blob/main/AGENTS.md), [SBOM4EDK2 `AGENTS.md`](https://github.com/MatchPoint/SBOM4EDK2/blob/main/AGENTS.md).
+**Related agent docs:** [SBOM4EDK2 `AGENTS.md`](https://github.com/MatchPoint/SBOM4EDK2/blob/main/AGENTS.md).
 
 ## Architecture
 
@@ -21,8 +22,8 @@ vex4edk2.batch
     │
     ├── edk2_checkout.py     git mirror / worktree / --edk2-dir checkout + submodule scrub
     │
-    ├── sbom4edk2.sbom       generate_sbom_from_checkout → uswid CLI  (PYTHONPATH)
-    ├── sbom4edk2.cve_analyzer + nvd + ghsa   NVD + GHSA DataFrames
+    ├── sbom4edk2.sbom       generate_sbom_from_checkout (source SBOM; PYTHONPATH)
+    ├── vex4edk2.cve_analyzer + nvd + ghsa + grype (cve_scan)   CVE DataFrames
     │
     └── csaf.py              build_csaf_document / write_csaf
             │
@@ -35,17 +36,17 @@ vex4edk2.batch
 
 | In scope | Out of scope (other repos) |
 |----------|----------------------------|
-| Quarterly tag list, manifest.json | Submodule version normalization → `uswid.submodule` |
-| EDK2 mirror/worktree/`--edk2-dir` lifecycle | CycloneDX merge / `.inf` parsing → `uswid` |
-| CSAF VEX document structure | NVD CPE matching logic → `sbom4edk2.nvd` / `cpe.py` |
-| `load_project_env()` CRLF-safe `.env` loading | GHSA applicability rules → `sbom4edk2.ghsa` |
+| Quarterly tag list, manifest.json | Submodule version normalization → `sbom4edk2` |
+| EDK2 mirror/worktree/`--edk2-dir` lifecycle | Per-`.inf` build SBOMs → `python-uswid` |
+| CSAF VEX document structure | Source SBOM assembly → `sbom4edk2` |
+| `vex4edk2/` CVE scanners (`nvd`, `grype`, `ghsa`, `cve_scan`) | Source SBOM assembly → `sbom4edk2` |
+| `load_project_env()` CRLF-safe `.env` loading | |
 
 ## Environment setup
 
 ```bash
 python -m venv venv && source venv/bin/activate   # or Windows equivalent
 pip install -r requirements.txt
-pip install -e /path/to/python-uswid-sbom
 pip install -e .
 
 # SBOM4EDK2 is not on PyPI:
@@ -73,7 +74,8 @@ python scripts/regen_and_compare_csaf.py
 ## Gotchas
 
 - **Do not implement SBOM assembly here.** Call `generate_sbom_from_checkout`; never add per-`.inf` pools or CDX merge helpers.
-- **Do not duplicate CVE scanner logic.** Import from `sbom4edk2` on `PYTHONPATH`; extend scanners there if needed.
+- **CVE scanners live in `vex4edk2/`** (`cve_analyzer`, `nvd`, `grype`, `ghsa`, `cve_scan`). SBOM4EDK2 produces `.cdx.json` only.
+- **Scenario 3 (CVE-only):** `python scripts/get_cve_response.py <sbom.cdx.json>` or `vex4edk2-cve-scan`.
 - **`sbom/` and `vex/` are version-controlled.** Batch output updates belong in git unless the user says otherwise; `cache/` and `.env` stay gitignored.
 - **Submodule scrub between tags** (`edk2_checkout.scrub_submodules`) is required for older EDK2 tags; do not skip without cause.
 - **CSAF v1 is machine-generated only** — NVD component CVEs + applicable GHSA advisories; no manual VEX justifications in scope.
@@ -82,5 +84,11 @@ python scripts/regen_and_compare_csaf.py
 ## Tests
 
 ```bash
-PYTHONPATH=/path/to/SBOM4EDK2:$PYTHONPATH python -m unittest discover -s tests -v
+pip install -e .
+export PYTHONPATH=/path/to/SBOM4EDK2:$PYTHONPATH
+python -m unittest discover -s tests -v
 ```
+
+See [docs/testing.md](docs/testing.md). Committed `vex/*.csaf.json` files must carry
+`tracking.generator.engine.version` equal to `vex4edk2.__version__`; regenerate with
+`python -m vex4edk2.batch --all --vex-only` after a version bump.

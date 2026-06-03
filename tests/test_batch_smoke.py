@@ -10,12 +10,14 @@ import unittest
 from contextlib import redirect_stdout
 from unittest import mock
 
+from vex4edk2 import __version__ as vex4edk2_version
 from vex4edk2.batch import (
     load_project_env,
     main,
     normalize_env_value,
     outputs_complete,
     release_output_paths,
+    update_manifest,
 )
 
 
@@ -94,21 +96,34 @@ class TestBatchEdk2DirCli(unittest.TestCase):
             self.assertIn(os.path.realpath(tmp), buf.getvalue())
 
 
-@unittest.skipUnless(
-    "sbom4edk2" in sys.modules
-    or any(
-        os.path.isdir(os.path.join(p, "sbom4edk2"))
-        for p in os.environ.get("PYTHONPATH", "").split(os.pathsep)
-        if p
-    ),
-    "sbom4edk2 not on PYTHONPATH",
-)
-class TestSbom4edk2Import(unittest.TestCase):
-    def test_import_sbom4edk2(self) -> None:
-        from vex4edk2.batch import _import_sbom4edk2
+class TestManifest(unittest.TestCase):
+    def test_update_manifest_records_vex4edk2_version(self) -> None:
+        import json
 
-        generate_sbom, generate_cve, scan_ghsa = _import_sbom4edk2()
+        with tempfile.TemporaryDirectory() as tmp:
+            manifest_path = os.path.join(tmp, "manifest.json")
+            with open(manifest_path, "w", encoding="utf-8") as fh:
+                json.dump({"releases": []}, fh)
+            update_manifest(
+                manifest_path,
+                {"tag": "edk2-stable202411", "status": "ok"},
+            )
+            with open(manifest_path, encoding="utf-8") as fh:
+                data = json.load(fh)
+            self.assertEqual(data["vex4edk2_version"], vex4edk2_version)
+
+
+class TestPipelineImports(unittest.TestCase):
+    def test_import_sbom_generator(self) -> None:
+        from vex4edk2.batch import _import_sbom_generator
+
+        generate_sbom = _import_sbom_generator()
         self.assertTrue(callable(generate_sbom))
+
+    def test_import_cve_scanners(self) -> None:
+        from vex4edk2.batch import _import_cve_scanners
+
+        generate_cve, scan_ghsa = _import_cve_scanners()
         self.assertTrue(callable(generate_cve))
         self.assertTrue(callable(scan_ghsa))
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vex4edk2"
-version = "0.2.0"
+version = "0.3.0"
 description = "Quarterly EDK II SBOM + CSAF VEX batch generator"
 readme = "README.md"
 license = "BSD-2-Clause"
@@ -21,6 +21,7 @@ dependencies = [
 
 [project.scripts]
 vex4edk2-batch = "vex4edk2.batch:main"
+vex4edk2-cve-scan = "vex4edk2.cve_scan:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

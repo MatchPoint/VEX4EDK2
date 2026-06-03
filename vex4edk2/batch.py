@@ -42,18 +42,22 @@ def load_project_env() -> None:
             os.environ[key] = normalize_env_value(os.environ[key]) or ""
 
 
-def _import_sbom4edk2():
+def _import_sbom_generator():
     try:
-        from sbom4edk2.cve_analyzer import generate_cve_report
-        from sbom4edk2.ghsa import scan_sbom_with_ghsa
         from sbom4edk2.sbom import generate_sbom_from_checkout
     except ImportError as exc:
         raise SystemExit(
             "sbom4edk2 is not installed. Install SBOM4EDK2 first, e.g.:\n"
             "  pip install -e /path/to/SBOM4EDK2\n"
-            "  pip install -e /path/to/python-uswid-sbom\n"
         ) from exc
-    return generate_sbom_from_checkout, generate_cve_report, scan_sbom_with_ghsa
+    return generate_sbom_from_checkout
+
+
+def _import_cve_scanners():
+    from vex4edk2.cve_analyzer import generate_cve_report
+    from vex4edk2.ghsa import scan_sbom_with_ghsa
+
+    return generate_cve_report, scan_sbom_with_ghsa
 
 
 def release_output_paths(repo_root: str, tag: str) -> tuple[str, str]:
@@ -85,7 +89,8 @@ def scan_release(
     restore_edk2: bool = True,
 ) -> Dict[str, Any]:
     """Run the full pipeline for one release tag; return manifest entry dict."""
-    generate_sbom, generate_cve_report, scan_sbom_with_ghsa = _import_sbom4edk2()
+    generate_sbom = _import_sbom_generator()
+    generate_cve_report, scan_sbom_with_ghsa = _import_cve_scanners()
 
     cdx_path, csaf_path = release_output_paths(repo_root, tag)
     sbom_dir = os.path.dirname(cdx_path)
@@ -165,11 +170,11 @@ def scan_release(
                 pass
 
             try:
-                from uswid import __version__ as uswid_version
+                from sbom4edk2 import __version__ as sbom4edk2_version
 
-                entry["uswid_version"] = uswid_version
+                entry["sbom4edk2_version"] = sbom4edk2_version
             except ImportError:
-                entry["uswid_version"] = None
+                entry["sbom4edk2_version"] = None
 
             entry["finished_at"] = datetime.now(timezone.utc).strftime(
                 "%Y-%m-%dT%H:%M:%SZ"
@@ -192,7 +197,7 @@ def regenerate_vex_from_sbom(
     use_ghsa: bool = True,
 ) -> Dict[str, Any]:
     """Rebuild CSAF VEX from an existing sbom/<tag>.cdx.json without regenerating the SBOM."""
-    _, generate_cve_report, scan_sbom_with_ghsa = _import_sbom4edk2()
+    generate_cve_report, scan_sbom_with_ghsa = _import_cve_scanners()
 
     cdx_path, csaf_path = release_output_paths(repo_root, tag)
     if not os.path.isfile(cdx_path):

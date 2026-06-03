@@ -2,13 +2,13 @@
 
 Batch-generate **CycloneDX SBOMs** and **CSAF 2.0 VEX** documents for quarterly [TianoCore EDK II](https://github.com/tianocore/edk2) stable releases (last two years).
 
-> **AI agents / contributors:** See [`AGENTS.md`](AGENTS.md) for repo boundaries vs python-uswid-sbom and SBOM4EDK2.
+> **AI agents / contributors:** See [`AGENTS.md`](AGENTS.md) for repo boundaries vs SBOM4EDK2.
 
 Each release is stored as flat files under `sbom/` and `vex/` (release tag in the filename):
 
 | File | Description |
 |------|-------------|
-| `sbom/<tag>.cdx.json` | Source SBOM (via [SBOM4EDK2](https://github.com/MatchPoint/python-uswid-sbom) + `uswid --primary-dir`) |
+| `sbom/<tag>.cdx.json` | Source SBOM (via [SBOM4EDK2](https://github.com/MatchPoint/SBOM4EDK2)) |
 | `vex/<tag>.csaf.json` | CSAF VEX profile document (NVD component CVEs + applicable TianoCore GHSA advisories) |
 
 The `sbom/` and `vex/` trees are **version-controlled**: each quarterly tag has a
@@ -24,7 +24,7 @@ BSD 2-Clause — see [LICENSE](LICENSE) (same as [SBOM4EDK2](https://github.com/
 - Python 3.10+
 - `git` (worktrees + submodules)
 - [SBOM4EDK2](https://github.com/MatchPoint/SBOM4EDK2) checkout — provides `sbom4edk2` on `PYTHONPATH`
-- [python-uswid-sbom](https://github.com/MatchPoint/python-uswid-sbom) — provides `uswid` (SBOM engine)
+- [hughsie/uswid-data](https://github.com/hughsie/uswid-data) — CDX templates for `--uswid-data`
 - NVD API key (free) for component CVE lookup
 
 ## Setup
@@ -35,7 +35,6 @@ python -m venv venv
 # Linux:   source venv/bin/activate
 
 pip install -r requirements.txt
-pip install -e /path/to/python-uswid-sbom
 pip install -e .
 
 # SBOM4EDK2 is not packaged on PyPI; add its repo root to PYTHONPATH:
@@ -69,6 +68,10 @@ python -m vex4edk2.batch --all --vex-only
 
 # Optional: keep CVE Excel reports under cache/scratch/<tag>/
 python -m vex4edk2.batch --tag edk2-stable202411 --write-xlsx
+
+# CVE-only on an existing SBOM (Scenario 3)
+python scripts/get_cve_response.py sbom/edk2-stable202411.cdx.json
+# or: vex4edk2-cve-scan sbom/edk2-stable202411.cdx.json
 ```
 
 ### Using an existing EDK II clone
@@ -107,9 +110,15 @@ VEX4EDK2/
   manifest.json       # scan status per tag (updated by batch)
   vex4edk2/
     batch.py          # CLI orchestrator
-    csaf.py           # CSAF VEX writer
+    csaf.py           # CSAF VEX writer (generator.engine.version = package version)
+    cve_scan.py       # NVD / Grype / GHSA orchestration
+    nvd.py, ghsa.py, grype.py, cpe.py, cve_analyzer.py
     edk2_checkout.py  # git mirror, worktrees, or --edk2-dir checkout
+  scripts/
+    get_cve_response.py   # Scenario 3 CVE scan on existing SBOM
+    regen_and_compare_csaf.py
   docs/
+    testing.md        # unit tests, CSAF version metadata, refresh gate
     edk2-checkout.md  # --edk2-dir / --use-current guide
 ```
 
@@ -126,16 +135,19 @@ Manual VEX justifications (`not_affected`, etc.) are out of scope for v1.
 
 ```bash
 pip install -e .
-python -m pytest tests/ -v
+export PYTHONPATH=/path/to/SBOM4EDK2:$PYTHONPATH   # import smoke only
+python -m unittest discover -s tests -v
 ```
 
-Tests include unit checks for CSAF/CLI/checkout logic and a guard that all eight
-quarterly tags have both JSON artifacts under `sbom/` and `vex/`.
+Details: [docs/testing.md](docs/testing.md). Tests cover CSAF/CLI/CVE modules and
+verify all eight quarterly tags have `sbom/` + `vex/` artifacts whose CSAF
+`generator.engine.version` matches the installed package (0.3.0 after refresh).
 
 ## Related projects
 
 | Project | Role |
 |---------|------|
-| [python-uswid-sbom](https://github.com/MatchPoint/python-uswid-sbom) | CycloneDX SBOM generation, UEFI SBOM Guidelines |
-| SBOM4EDK2 | Clone/scan orchestration, NVD + GHSA scanners |
+| SBOM4EDK2 | EDK2 **source** CycloneDX SBOM (native; v0.6.0+) |
+| VEX4EDK2 (this repo) | Quarterly batch + NVD / Grype / GHSA → CSAF VEX (v0.3.0+) |
+| [python-uswid](https://github.com/hughsie/python-uswid) | Optional build/binary SBOM tooling |
 | [uswid-data](https://github.com/hughsie/uswid-data) | Submodule CDX templates with `@VCS_*@` placeholders |

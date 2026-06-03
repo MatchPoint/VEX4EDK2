@@ -313,9 +313,9 @@ def build_csaf_document(
     doc_id = f"vex4edk2-{release_tag}"
 
     try:
-        from uswid import __version__ as uswid_version
+        from sbom4edk2 import __version__ as sbom4edk2_version
     except ImportError:
-        uswid_version = "unknown"
+        sbom4edk2_version = "unknown"
 
     return {
         "document": {
@@ -330,7 +330,7 @@ def build_csaf_document(
                     {
                         "number": "1.0.0",
                         "date": now,
-                        "summary": f"Automated VEX from SBOM4EDK2 scan of {release_tag}",
+                        "summary": f"Automated VEX from VEX4EDK2 CVE scan of {release_tag}",
                     }
                 ],
                 "initial_release_date": now,
@@ -349,7 +349,7 @@ def build_csaf_document(
                     "category": "summary",
                     "text": (
                         f"Machine-generated CSAF VEX for TianoCore {release_tag}. "
-                        f"SBOM produced by USWID SBOM (uswid {uswid_version}). "
+                        f"SBOM produced by SBOM4EDK2 ({sbom4edk2_version}). "
                         "Component CVEs from NVD CPE matching; platform advisories "
                         "from TianoCore GitHub Security Advisories."
                     ),

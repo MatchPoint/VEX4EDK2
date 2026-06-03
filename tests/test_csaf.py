@@ -4,10 +4,14 @@ from __future__ import annotations
 
 import json
 import os
+import sys
+import types
 import unittest
+from unittest.mock import patch
 
 import pandas as pd
 
+from vex4edk2 import __version__ as vex4edk2_version
 from vex4edk2.csaf import build_csaf_document, product_id_from_bom_ref, write_csaf
 from vex4edk2.releases import quarterly_tags, yyyymm_from_tag
 
@@ -72,6 +76,23 @@ class TestCsaf(unittest.TestCase):
         self.assertIn("CVE-2025-3770", cves)
         openssl = next(v for v in vulns if v["cve"] == "CVE-2024-0001")
         self.assertTrue(openssl["product_status"]["known_affected"])
+
+    def test_generator_engine_metadata(self) -> None:
+        fake_sbom4edk2 = types.ModuleType("sbom4edk2")
+        fake_sbom4edk2.__version__ = "0.6.0"
+        with patch.dict(sys.modules, {"sbom4edk2": fake_sbom4edk2}):
+            doc = build_csaf_document(
+                _FIXTURE,
+                release_tag="edk2-stable202411",
+                nvd_df=pd.DataFrame(),
+                ghsa_df=pd.DataFrame(),
+            )
+        engine = doc["document"]["tracking"]["generator"]["engine"]
+        self.assertEqual(engine["name"], "VEX4EDK2")
+        self.assertEqual(engine["version"], vex4edk2_version)
+        summary = doc["document"]["notes"][0]["text"]
+        self.assertIn("SBOM4EDK2 (0.6.0)", summary)
+        self.assertNotIn("USWID", summary)
 
     def test_write_csaf_file(self) -> None:
         import tempfile

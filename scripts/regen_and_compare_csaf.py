@@ -50,10 +50,13 @@ def _normalize_csaf(doc: Dict[str, Any]) -> Dict[str, Any]:
     for note in notes:
         if note.get("category") == "summary" and isinstance(note.get("text"), str):
             note["text"] = re.sub(
-                r"uswid [^\s)]+",
-                "uswid NORMALIZED",
+                r"SBOM4EDK2 \([^)]+\)|uswid [^\s)]+",
+                "SBOM4EDK2 NORMALIZED",
                 note["text"],
             )
+    engine = gen.get("engine") or {}
+    if "version" in engine:
+        engine["version"] = "NORMALIZED"
     # Stable ordering for product_tree branches
     pt = out.get("product_tree") or {}
     if "branches" in pt:

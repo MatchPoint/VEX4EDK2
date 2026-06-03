@@ -2,6 +2,9 @@
 cache/
 *.log
 
+# SBOM4EDK2 CPE dictionary omission sidecars (next to each .cdx.json)
+*.cpe-omissions.log
+
 # Python
 __pycache__/
 *.py[cod]
