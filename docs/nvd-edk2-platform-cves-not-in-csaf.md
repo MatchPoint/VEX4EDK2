@@ -24,34 +24,49 @@ Related GHSA-only platform CVEs (not in this table) are tracked in CSAF when adv
 
 ## CVE catalog (26)
 
-| CVE | NVD vulnerable CPE criteria | Version bounds (NVD) |
-|-----|----------------------------|----------------------|
-| [CVE-2014-4859](https://nvd.nist.gov/vuln/detail/CVE-2014-4859) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2014-4860](https://nvd.nist.gov/vuln/detail/CVE-2014-4860) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2014-8271](https://nvd.nist.gov/vuln/detail/CVE-2014-8271) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndExcluding=svn_16280` |
-| [CVE-2017-5731](https://nvd.nist.gov/vuln/detail/CVE-2017-5731) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndExcluding=2017-11-07` |
-| [CVE-2019-14553](https://nvd.nist.gov/vuln/detail/CVE-2019-14553) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2019-14559](https://nvd.nist.gov/vuln/detail/CVE-2019-14559) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2019-14562](https://nvd.nist.gov/vuln/detail/CVE-2019-14562) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2019-14563](https://nvd.nist.gov/vuln/detail/CVE-2019-14563) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2019-14575](https://nvd.nist.gov/vuln/detail/CVE-2019-14575) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2019-14584](https://nvd.nist.gov/vuln/detail/CVE-2019-14584) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndExcluding=2020-10-21` |
-| [CVE-2019-14586](https://nvd.nist.gov/vuln/detail/CVE-2019-14586) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2019-14587](https://nvd.nist.gov/vuln/detail/CVE-2019-14587) | `cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*` | — |
-| [CVE-2021-28210](https://nvd.nist.gov/vuln/detail/CVE-2021-28210) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndExcluding=202008` |
-| [CVE-2021-28211](https://nvd.nist.gov/vuln/detail/CVE-2021-28211) | `cpe:2.3:a:tianocore:edk2:202008:*:*:*:*:*:*:*` | — |
-| [CVE-2021-28213](https://nvd.nist.gov/vuln/detail/CVE-2021-28213) | `cpe:2.3:a:tianocore:edk2:201905:*:*:*:*:*:*:*` | — |
-| [CVE-2021-38575](https://nvd.nist.gov/vuln/detail/CVE-2021-38575) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202105` |
-| [CVE-2021-38576](https://nvd.nist.gov/vuln/detail/CVE-2021-38576) | `cpe:2.3:a:tianocore:edk2:201808:*:*:*:*:*:*:*` … `202105:*:*:*:*:*:*:*` (12 discrete versions; see [NVD](https://nvd.nist.gov/vuln/detail/CVE-2021-38576)) | — |
-| [CVE-2021-38578](https://nvd.nist.gov/vuln/detail/CVE-2021-38578) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202202` |
-| [CVE-2023-45230](https://nvd.nist.gov/vuln/detail/CVE-2023-45230) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45231](https://nvd.nist.gov/vuln/detail/CVE-2023-45231) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45232](https://nvd.nist.gov/vuln/detail/CVE-2023-45232) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45233](https://nvd.nist.gov/vuln/detail/CVE-2023-45233) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45234](https://nvd.nist.gov/vuln/detail/CVE-2023-45234) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45235](https://nvd.nist.gov/vuln/detail/CVE-2023-45235) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45236](https://nvd.nist.gov/vuln/detail/CVE-2023-45236) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
-| [CVE-2023-45237](https://nvd.nist.gov/vuln/detail/CVE-2023-45237) | `cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*` | `versionEndIncluding=202311` |
+<!-- HTML table: nowrap CVE column; GitHub/Cursor ignore most width hints but honor white-space -->
+<table>
+<colgroup>
+<col style="width: 10em">
+<col>
+<col style="width: 16em">
+</colgroup>
+<thead>
+<tr>
+<th style="white-space: nowrap">CVE</th>
+<th>NVD vulnerable CPE criteria</th>
+<th style="white-space: nowrap">Version bounds (NVD)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2014-4859">CVE-2014-4859</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2014-4860">CVE-2014-4860</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2014-8271">CVE-2014-8271</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndExcluding=svn_16280</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-5731">CVE-2017-5731</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndExcluding=2017-11-07</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14553">CVE-2019-14553</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14559">CVE-2019-14559</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14562">CVE-2019-14562</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14563">CVE-2019-14563</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14575">CVE-2019-14575</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14584">CVE-2019-14584</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndExcluding=2020-10-21</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14586">CVE-2019-14586</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-14587">CVE-2019-14587</a></td><td><code>cpe:2.3:a:tianocore:edk2:-:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28210">CVE-2021-28210</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndExcluding=202008</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28211">CVE-2021-28211</a></td><td><code>cpe:2.3:a:tianocore:edk2:202008:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-28213">CVE-2021-28213</a></td><td><code>cpe:2.3:a:tianocore:edk2:201905:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-38575">CVE-2021-38575</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202105</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-38576">CVE-2021-38576</a></td><td><code>cpe:2.3:a:tianocore:edk2:201808:*:*:*:*:*:*:*</code> … <code>202105:*:*:*:*:*:*:*</code> (12 discrete versions; see <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-38576">NVD</a>)</td><td style="white-space: nowrap">—</td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-38578">CVE-2021-38578</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202202</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45230">CVE-2023-45230</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45231">CVE-2023-45231</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45232">CVE-2023-45232</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45233">CVE-2023-45233</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45234">CVE-2023-45234</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45235">CVE-2023-45235</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45236">CVE-2023-45236</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+<tr><td style="white-space: nowrap"><a href="https://nvd.nist.gov/vuln/detail/CVE-2023-45237">CVE-2023-45237</a></td><td><code>cpe:2.3:a:tianocore:edk2:*:*:*:*:*:*:*:*</code></td><td style="white-space: nowrap"><code>versionEndIncluding=202311</code></td></tr>
+</tbody>
+</table>
 
 ### CVE-2021-38576 — discrete NVD version CPEs
 
@@ -65,12 +80,24 @@ Same advisory family as [CVE-2023-45229](https://nvd.nist.gov/vuln/detail/CVE-20
 
 These **are** mapped into CSAF when the release version matches; they are **not** duplicated in the table above:
 
-| CVE | In NVD `edk2` union? |
-|-----|----------------------|
-| CVE-2022-36763, CVE-2022-36764, CVE-2022-36765 | Yes |
-| CVE-2023-45229 | Yes |
-| CVE-2024-1298, CVE-2024-38796, CVE-2024-38797, CVE-2024-38798, CVE-2024-38805 | GHSA only (not in NVD `edk2` union at last review) |
-| CVE-2025-2295, CVE-2025-2296, CVE-2025-3770 | GHSA only |
+<table>
+<colgroup>
+<col style="width: 28em">
+<col>
+</colgroup>
+<thead>
+<tr>
+<th style="white-space: nowrap">CVE</th>
+<th>In NVD <code>edk2</code> union?</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="white-space: nowrap">CVE-2022-36763, CVE-2022-36764, CVE-2022-36765</td><td>Yes</td></tr>
+<tr><td style="white-space: nowrap">CVE-2023-45229</td><td>Yes</td></tr>
+<tr><td style="white-space: nowrap">CVE-2024-1298, CVE-2024-38796, CVE-2024-38797, CVE-2024-38798, CVE-2024-38805</td><td>GHSA only (not in NVD <code>edk2</code> union at last review)</td></tr>
+<tr><td style="white-space: nowrap">CVE-2025-2295, CVE-2025-2296, CVE-2025-3770</td><td>GHSA only</td></tr>
+</tbody>
+</table>
 
 ## Maintenance
 
