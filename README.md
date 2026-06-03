@@ -2,8 +2,6 @@
 
 Batch-generate **CycloneDX SBOMs** and **CSAF 2.0 VEX** documents for [TianoCore EDK II](https://github.com/tianocore/edk2) stable releases, a single release, or the current development tip.
 
-> **AI agents / contributors:** See [`AGENTS.md`](AGENTS.md) for repo boundaries vs SBOM4EDK2.
-
 ## What VEX4EDK2 produces
 
 For each EDK II release label (quarterly stable tag or tip `git describe` name), a batch run writes paired artifacts and records progress in `manifest.json`:
@@ -50,9 +48,12 @@ VEX4EDK2 can build component CVE lists from **NVD** (live API, CPE-based) or **G
 | **Requirements** | Free `NVD_API_KEY` ([request here](https://nvd.nist.gov/developers/request-an-api-key)); network access | `grype` binary on PATH (or `~/.local/bin/grype` on Linux/WSL; `winget install Anchore.Grype` on Windows) |
 | **Matching** | CPE 2.3 patterns built from SBOM metadata | CPE and PURL; merges NVD, GitHub Advisory, OSV, and other DBs Grype ships |
 | **Output** | `CVE_List.xlsx` | `CVE_List_grype_<sbom>.xlsx` (includes EPSS when available) |
-| **Rate / offline** | API rate limits; concurrent per-component HTTP calls | Local DB (update with `grype db update`); no API key |
+| **Local storage** | No vulnerability database on disk (network-only) | Grype vulnerability DB (~600 MB on first download; cached under Grype’s data directory, e.g. `~/.cache/grype` on Linux) |
+| **Speed** | Slower: per-component NVD HTTP calls and API rate limits | Fast after the DB is present: local scan of the SBOM |
 | **Used in batch CSAF** | Yes — default for `vex/<label>.csaf.json` component CVEs | No — standalone CVE Excel reports only |
-| **Typical tradeoff** | Authoritative NVD records; same path batch uses for published VEX | Faster setup without a key; broader matching and EPSS; results may differ from strict NVD CPE lookup |
+| **Typical tradeoff** | Authoritative NVD CPE records; no large local DB; same path batch uses for published VEX | No API key; broader matching and EPSS; one-time DB download and disk use; CVE rows may differ from strict NVD lookup |
+
+**Observed timing (eight quarterly SBOMs, component CVE step only):** with `NVD_API_KEY`, roughly **12 minutes** end-to-end for all eight releases; with Grype after the vulnerability database is already on disk, roughly **7 seconds** for the same eight runs via `get_cve_response.py` / `--scanner grype`. First Grype use still pays the **~600 MB** database download (and update time) before those fast runs. Published batch CSAF in this repo uses the NVD path unless you change the tooling.
 
 **Which CLI uses which scanner**
 
@@ -94,6 +95,9 @@ curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh \
 
 # Windows
 winget install Anchore.Grype
+
+# First run: download/update the local vulnerability database (~600 MB)
+grype db update
 ```
 
 **Standalone CVE report** (Grype does not feed batch CSAF today):
