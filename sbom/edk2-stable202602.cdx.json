@@ -1,15 +1,15 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:7dbfd37c-2d7a-4ace-a2ce-a96f85c38138",
+  "serialNumber": "urn:uuid:349d63fe-f520-4a4a-a4bb-20e1b40f271c",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-06-03T05:20:56Z",
+    "timestamp": "2026-06-03T14:41:40Z",
     "tools": [
       {
         "vendor": "SBOM4EDK2",
         "name": "SBOM4EDK2",
-        "version": "0.6.0"
+        "version": "0.6.1"
       }
     ],
     "lifecycles": [

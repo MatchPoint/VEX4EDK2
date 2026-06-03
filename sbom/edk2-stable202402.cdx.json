@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:e77f80a6-f25d-47ce-9e75-8c047c398b08",
+  "serialNumber": "urn:uuid:28174a43-655b-477f-8918-713ea59920bc",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-06-03T14:33:10Z",
+    "timestamp": "2026-06-03T14:29:59Z",
     "tools": [
       {
         "vendor": "SBOM4EDK2",
@@ -19,10 +19,10 @@
     ],
     "component": {
       "type": "firmware",
-      "bom-ref": "pkg:github/tianocore/edk2@edk2-stable202408",
-      "cpe": "cpe:2.3:a:tianocore:edk2:edk2-stable202408:*:*:*:*:*:*:*",
+      "bom-ref": "pkg:github/tianocore/edk2@edk2-stable202402",
+      "cpe": "cpe:2.3:a:tianocore:edk2:edk2-stable202402:*:*:*:*:*:*:*",
       "name": "EDK II",
-      "version": "202408",
+      "version": "202402",
       "description": "A cross-platform firmware development environment for UEFI and PI specifications",
       "authors": [
         {
@@ -2889,9 +2889,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/gost-engine/engine@3.0.1+18.g80bf4a4",
+      "bom-ref": "pkg:github/gost-engine/engine@3.0.1+18.g3834da4",
       "name": "GOST Engine",
-      "version": "3.0.1+18.g80bf4a4",
+      "version": "3.0.1+18.g3834da4",
       "description": "A reference implementation of the Russian GOST crypto algorithms",
       "authors": [
         {
@@ -3003,7 +3003,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/9258e92b79dde22be40cdf1d5e7bf7eacda59cf9"
+              "url": "https://github.com/gost-engine/engine/commit/5be8bbca82cfd95c9b63d73a14e35ee228bd6066"
             },
             "resolves": [
               {
@@ -3015,7 +3015,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/06f5a0d7cdec684e906ccf67322f9f0c550cd095"
+              "url": "https://github.com/gost-engine/engine/commit/dc2a966d0f724b8939f4eab2f4486810e3f8433e"
             },
             "resolves": [
               {
@@ -3027,7 +3027,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/c462560da918dcaf570dcabcf7b63e2b5bf6a08c"
+              "url": "https://github.com/gost-engine/engine/commit/3c9aafe55a6f11291b3323056b326229419073a5"
             },
             "resolves": [
               {
@@ -3039,7 +3039,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/9874747e2f711e87eff90d94d0c5117fadb833b0"
+              "url": "https://github.com/gost-engine/engine/commit/0f8ac78ed1696b17574606b3eaa4a8be2c193d5b"
             },
             "resolves": [
               {
@@ -3051,7 +3051,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/73e1e53ceb05d9ad149aef33e3cf4720442d872a"
+              "url": "https://github.com/gost-engine/engine/commit/f36af0f5b0e520f8a3bed475cb42e9a7079d2dcb"
             },
             "resolves": [
               {
@@ -3063,7 +3063,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/aad02ee65abed26c49c2263da7dd11566741e4eb"
+              "url": "https://github.com/gost-engine/engine/commit/6bb96ea8d6b9784cea75162f6b24b2c7c34baf08"
             },
             "resolves": [
               {
@@ -3075,7 +3075,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/fae7b7568ba53793d5d2732907c900bae11359a3"
+              "url": "https://github.com/gost-engine/engine/commit/3e073236bd4c11a0642c47795ceff0602fcee894"
             },
             "resolves": [
               {
@@ -3087,7 +3087,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/98834868273d5cfaa45e95b6bab784e7a1518375"
+              "url": "https://github.com/gost-engine/engine/commit/8b8cee82f4e16c93a6ba36cea71a3a190ea1a26a"
             },
             "resolves": [
               {
@@ -3099,7 +3099,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/e485bffc5cf6402883ed1739594d2bf6db70e32e"
+              "url": "https://github.com/gost-engine/engine/commit/729c16f20e8cbfe0182ba8e6436110c1fdda5768"
             },
             "resolves": [
               {
@@ -3111,7 +3111,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/24dddf9b1ede6f531db85e13b00d216c14f12e3e"
+              "url": "https://github.com/gost-engine/engine/commit/1374101559aa3c6b0bb005df8f7f4f61523fd6ef"
             },
             "resolves": [
               {
@@ -3123,7 +3123,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/80bf4a47b36514294c057437292e0991742cc333"
+              "url": "https://github.com/gost-engine/engine/commit/3834da4bce5384ff78f0e8bb7906363f2e65ad24"
             },
             "resolves": [
               {
@@ -3397,309 +3397,6 @@
               {
                 "type": "defect",
                 "description": "[vendor pin] No release tag found; pinned at commit 0b445c7"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:github/DMTF/libspdm@3.3.0+23.g50924a4",
-      "name": "libspdm",
-      "version": "3.3.0+23.g50924a4",
-      "description": "Sample implementation of DMTF SPDM",
-      "supplier": {
-        "name": "DMTF"
-      },
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/DMTF/libspdm"
-        }
-      ],
-      "pedigree": {
-        "patches": [
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/45902d26104bb9eb8a7a54f41ddd2e0dceb566ea"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] update version"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/fbcec930e6707061ae3cb2d547202311a257f0c7"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] add spdm-utils in readme."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/dfe8bee610fe50b6156681538b1537fd9bc4b216"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix vendor defined request size"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/1d27682bf3d838ecac971f4cc13663b26f64e808"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix the vendor defined message length check in requester."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/53b02a7fd9a032e6cd6fef02c0344b3e16931d10"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add vendor_request length check in responder."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/fa4e002b9ae649c751c7595832867ba99592e76a"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] fix vendor_defined message unit test issue."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/266c3ca50b10df5f8aea3e90429e7b23b2e3cfd2"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] fix typo for vendor_req msg."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/ab6e3436413e23cd2339e7d053a91c7b0ae423ae"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add fuzz testing for VENDOR_DEFINED_REQUEST"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/d772117caa8137180729b4d932aa43978f23308e"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Delete LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/8d0bddaad11cc4fc6d8cb62fca1693e98ca01a39"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Create LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/0ccbdf0ec22c73c92028ab9cce4e98ed7a0cbe17"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/81791b8b958085cd9ed2f1a51336de20d0eb81bd"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/16bf4380cdb514e0a6d7682955e2f48cc0e1e9eb"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix req_vendor_id and req_size duplication"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/908994f780bfc487b06ef534c09b4f97fa83b3ff"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add ignore unhandle critical extension check flag"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/347dd253763b21773d654ff28f55cd57894e3b44"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix verify authority and integrity logic"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/ceb880200dcb6d7e3f5ed88cb2f25445dda7e388"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Merge test_spdm_vendor_cmds into test_spdm_requester or test_spdm_responder"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/05f59eb7d04cb67b139a949dbfc5338037cc790b"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Rectify the four-byte alignment issue in the fuzzy testing."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/999ed70ee185c065ae09fed7b85c69a19179fcf1"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix cert verify logic in rsp_encap_get_certificate"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/ddfd7a1080cdbeffbe02267e6a164a0a3149be1a"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update cmocka version file"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/5fb242b9a90d271dfa2bf67ca161a75b42a35e76"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add verify cert callback function for DiceTcbInfo."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/a5768464b8d3d8b0eb4b33a0cae411bd51b273fb"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix acquiring Session ID in Vendor Defined Response"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/e27d0a22b8d553c92af533f7cd6c6e47911ee263"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix vendor response test case issues"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/50924a4c8145fc721e17208f55814d2b38766fe6"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update cmocka submodule to gitlab"
               }
             ]
           }
@@ -7055,15 +6752,37 @@
           }
         ]
       }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:github/mbed-tls/mbedtls-framework@0.0.0",
+      "name": "framework",
+      "version": "0.0.0",
+      "supplier": {
+        "name": "Arm"
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/mbed-tls/mbedtls-framework"
+        }
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] No release tag found; pinned at commit 94599c0e3"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "dependencies": [
-    {
-      "ref": "pkg:github/DMTF/libspdm@3.3.0+23.g50924a4",
-      "dependsOn": [
-        "pkg:gitlab/cmocka/cmocka@1.1.7"
-      ]
-    },
     {
       "ref": "pkg:github/MIPI-Alliance/public-mipi-sys-t@1.1",
       "dependsOn": [
@@ -7071,7 +6790,7 @@
       ]
     },
     {
-      "ref": "pkg:github/gost-engine/engine@3.0.1+18.g80bf4a4",
+      "ref": "pkg:github/gost-engine/engine@3.0.1+18.g3834da4",
       "dependsOn": [
         "pkg:github/provider-corner/libprov@0.0.0"
       ]
@@ -7081,7 +6800,7 @@
       "dependsOn": [
         "pkg:github/C2SP/wycheproof@0.0.0",
         "pkg:github/google/boringssl@20210429+2974.gf1c7534",
-        "pkg:github/gost-engine/engine@3.0.1+18.g80bf4a4",
+        "pkg:github/gost-engine/engine@3.0.1+18.g3834da4",
         "pkg:github/krb5/krb5@0.0.0",
         "pkg:github/pyca/cryptography@38.0.4",
         "pkg:github/tlsfuzzer/python-ecdsa@0.19.0+15.gea96669",
@@ -7090,9 +6809,8 @@
       ]
     },
     {
-      "ref": "pkg:github/tianocore/edk2@edk2-stable202408",
+      "ref": "pkg:github/tianocore/edk2@edk2-stable202402",
       "dependsOn": [
-        "pkg:github/DMTF/libspdm@3.3.0+23.g50924a4",
         "pkg:github/MIPI-Alliance/public-mipi-sys-t@1.1",
         "pkg:github/Mbed-TLS/mbedtls@3.3.0",
         "pkg:github/akheron/jansson@2.13.1",
@@ -7100,10 +6818,12 @@
         "pkg:github/google/brotli@1.0.9+35.gf4153a0",
         "pkg:github/google/googletest@1.11.0+238.g86add13",
         "pkg:github/kkos/oniguruma@6.9.4",
+        "pkg:github/mbed-tls/mbedtls-framework@0.0.0",
         "pkg:github/openssl/openssl@3.0.9",
         "pkg:github/tianocore/edk2-cmocka@1.1.5+23.g1cc9cde",
         "pkg:github/ucb-bar/berkeley-softfloat-3@0.0.0",
-        "pkg:github/zeex/subhook@0.0.0"
+        "pkg:github/zeex/subhook@0.0.0",
+        "pkg:gitlab/cmocka/cmocka@1.1.7"
       ]
     }
   ]

@@ -19,7 +19,7 @@ from .edk2_checkout import (
     ensure_uswid_data,
     remove_worktree,
 )
-from .releases import quarterly_tags
+from .releases import quarterly_tags_in_range, resolve_tip_output_name
 
 logger = logging.getLogger(__name__)
 
@@ -272,11 +272,32 @@ def update_manifest(manifest_path: str, entry: Dict[str, Any]) -> None:
 def main(argv: Optional[List[str]] = None) -> None:
     load_project_env()
     parser = argparse.ArgumentParser(
-        description="Generate quarterly EDK II SBOM + CSAF VEX bundles.",
+        description="Generate EDK II SBOM + CSAF VEX for quarterly stables, one release, or tip.",
     )
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--all", action="store_true", help="Process all quarterly tags")
-    group.add_argument("--tag", metavar="TAG", help="Process a single edk2-stableYYYYMM tag")
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument(
+        "--tag",
+        metavar="TAG",
+        help="Process one release (e.g. edk2-stable202411)",
+    )
+    mode.add_argument(
+        "--tip",
+        action="store_true",
+        help=(
+            "Process the current development tip in --edk2-dir (no checkout; "
+            "output name from git describe)"
+        ),
+    )
+    mode.add_argument(
+        "--from-date",
+        metavar="YYYY-MM",
+        help="First quarterly release month in range (use with --to-date)",
+    )
+    parser.add_argument(
+        "--to-date",
+        metavar="YYYY-MM",
+        help="Last quarterly release month in range (use with --from-date)",
+    )
     parser.add_argument(
         "--vex-only",
         action="store_true",
@@ -363,20 +384,56 @@ def main(argv: Optional[List[str]] = None) -> None:
     cache_dir = os.path.abspath(args.cache_dir)
     repo_root = os.path.abspath(args.repo_root)
 
-    if args.tag:
-        tags = [args.tag]
-    else:
-        tags = quarterly_tags()
-
     edk2_dir = normalize_env_value(args.edk2_dir or os.environ.get("EDK2_DIR"))
     if edk2_dir:
         edk2_dir = os.path.abspath(edk2_dir)
 
+    use_current = args.use_current
+
+    if args.tip:
+        if not edk2_dir:
+            logger.error("--tip requires --edk2-dir (or EDK2_DIR)")
+            sys.exit(1)
+        tags = [resolve_tip_output_name(edk2_dir)]
+        use_current = True
+    elif args.tag:
+        tags = [args.tag]
+    elif args.from_date:
+        if not args.to_date:
+            logger.error("--to-date is required when --from-date is set")
+            sys.exit(1)
+        try:
+            tags = quarterly_tags_in_range(
+                args.from_date,
+                args.to_date,
+                cache_dir=cache_dir,
+                edk2_dir=edk2_dir,
+            )
+        except ValueError as exc:
+            logger.error("%s", exc)
+            sys.exit(1)
+        if not tags:
+            logger.error(
+                "No edk2-stableYYYYMM tags in range %s .. %s",
+                args.from_date,
+                args.to_date,
+            )
+            sys.exit(1)
+    else:
+        logger.error("Specify --from-date and --to-date, --tag, or --tip")
+        sys.exit(1)
+
+    if args.to_date and not args.from_date:
+        logger.error("--from-date is required when --to-date is set")
+        sys.exit(1)
+
     if args.use_current and not edk2_dir:
         logger.error("--use-current requires --edk2-dir (or EDK2_DIR)")
         sys.exit(1)
-    if args.use_current and args.all:
-        logger.error("--use-current cannot be used with --all (one tag at a time)")
+    if args.use_current and args.from_date:
+        logger.error(
+            "--use-current applies to --tag or --tip only (not a date range batch)"
+        )
         sys.exit(1)
 
     if args.dry_run:
@@ -386,7 +443,7 @@ def main(argv: Optional[List[str]] = None) -> None:
                 mode = "vex-only (existing SBOM)"
             else:
                 mode = f"edk2-dir={edk2_dir}" if edk2_dir else "worktree"
-                if edk2_dir and args.use_current:
+                if edk2_dir and use_current:
                     mode = f"edk2-dir={edk2_dir} (current HEAD)"
             print(f"{tag} [{mode}]\n  {cdx}\n  {csaf}")
         return
@@ -459,7 +516,7 @@ def main(argv: Optional[List[str]] = None) -> None:
                 write_xlsx=args.write_xlsx,
                 keep_worktree=args.keep_worktree,
                 edk2_dir=edk2_dir,
-                use_current=args.use_current,
+                use_current=use_current,
                 restore_edk2=not args.keep_worktree,
             )
             update_manifest(manifest_path, entry)

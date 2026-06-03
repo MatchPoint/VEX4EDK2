@@ -1,7 +1,7 @@
 {
   "document": {
     "category": "csaf_vex",
-    "title": "VEX for edk2-stable202408",
+    "title": "VEX for edk2-stable202311",
     "publisher": {
       "category": "vendor",
       "name": "Brian Mullen",
@@ -9,31 +9,31 @@
       "contact_details": "Brian Mullen <brian.desmond.mullen@gmail.com>"
     },
     "tracking": {
-      "id": "vex4edk2-edk2-stable202408",
+      "id": "vex4edk2-edk2-stable202311",
       "version": "1.0.0",
       "status": "final",
       "revision_history": [
         {
           "number": "1.0.0",
-          "date": "2026-06-03T14:51:46Z",
-          "summary": "Automated VEX from VEX4EDK2 CVE scan of edk2-stable202408"
+          "date": "2026-06-03T14:51:30Z",
+          "summary": "Automated VEX from VEX4EDK2 CVE scan of edk2-stable202311"
         }
       ],
-      "initial_release_date": "2026-06-03T14:51:46Z",
-      "current_release_date": "2026-06-03T14:51:46Z",
+      "initial_release_date": "2026-06-03T14:51:30Z",
+      "current_release_date": "2026-06-03T14:51:30Z",
       "generator": {
         "engine": {
           "name": "VEX4EDK2",
           "version": "0.3.1"
         },
         "author": "Brian Mullen",
-        "date": "2026-06-03T14:51:46Z"
+        "date": "2026-06-03T14:51:30Z"
       }
     },
     "notes": [
       {
         "category": "summary",
-        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202408. SBOM produced by SBOM4EDK2 (unknown). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
+        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202311. SBOM produced by SBOM4EDK2 (unknown). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
         "title": "Summary"
       }
     ]
@@ -49,11 +49,11 @@
             "category": "product_name",
             "branches": [
               {
-                "name": "202408",
+                "name": "202311",
                 "category": "product_version",
                 "product": {
-                  "product_id": "pid-pkg_github_tianocore_edk2_edk2-stable202408",
-                  "name": "EDK II 202408"
+                  "product_id": "pid-pkg_github_tianocore_edk2_edk2-stable202311",
+                  "name": "EDK II 202311"
                 }
               }
             ]
@@ -119,11 +119,11 @@
             "category": "product_name",
             "branches": [
               {
-                "name": "3.0.1+18.g80bf4a4",
+                "name": "3.0.1+18.g70c9bc9",
                 "category": "product_version",
                 "product": {
-                  "product_id": "pid-pkg_github_gost-engine_engine_3.0.1_18.g80bf4a4",
-                  "name": "GOST Engine 3.0.1+18.g80bf4a4"
+                  "product_id": "pid-pkg_github_gost-engine_engine_3.0.1_18.g70c9bc9",
+                  "name": "GOST Engine 3.0.1+18.g70c9bc9"
                 }
               }
             ]
@@ -180,20 +180,6 @@
                 "product": {
                   "product_id": "pid-pkg_github_provider-corner_libprov_0.0.0",
                   "name": "libprov 0.0.0"
-                }
-              }
-            ]
-          },
-          {
-            "name": "libspdm",
-            "category": "product_name",
-            "branches": [
-              {
-                "name": "3.3.0+23.g50924a4",
-                "category": "product_version",
-                "product": {
-                  "product_id": "pid-pkg_github_DMTF_libspdm_3.3.0_23.g50924a4",
-                  "name": "libspdm 3.3.0+23.g50924a4"
                 }
               }
             ]
@@ -376,6 +362,20 @@
                 "product": {
                   "product_id": "pid-pkg_github_tlsfuzzer_tlslite-ng_0.8.0_2.g4e16574",
                   "name": "tlslite-ng 0.8.0+2.g4e16574"
+                }
+              }
+            ]
+          },
+          {
+            "name": "framework",
+            "category": "product_name",
+            "branches": [
+              {
+                "name": "0.0.0",
+                "category": "product_version",
+                "product": {
+                  "product_id": "pid-pkg_github_mbed-tls_mbedtls-framework_0.0.0",
+                  "name": "framework 0.0.0"
                 }
               }
             ]
@@ -638,6 +638,123 @@
       ]
     },
     {
+      "title": "Heap Buffer Overflow in Tcg2MeasureGptTable()",
+      "cve": "CVE-2022-36763",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Heap Buffer Overflow in Tcg2MeasureGptTable()",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-xvv8-66cq-prwr",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-xvv8-66cq-prwr",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 7.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Heap Buffer Overflow in Tcg2MeasurePeImage()",
+      "cve": "CVE-2022-36764",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Heap Buffer Overflow in Tcg2MeasurePeImage()",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-4hcq-p8q8-hj8j",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-4hcq-p8q8-hj8j",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 7.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Integer Overflow in CreateHob() could lead to HOB OOB R/W",
+      "cve": "CVE-2022-36765",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Integer Overflow in CreateHob() could lead to HOB OOB R/W",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-ch4w-v7m3-g8wx",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-ch4w-v7m3-g8wx",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 7.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H"
+          }
+        }
+      ]
+    },
+    {
       "title": "CVE-2023-23931",
       "cve": "CVE-2023-23931",
       "product_status": {
@@ -717,6 +834,45 @@
             "version": "3.1",
             "baseScore": 5.3,
             "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Vulnerabilities in EDK2 NetworkPkg IP stack implementation",
+      "cve": "CVE-2023-45229",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Vulnerabilities in EDK2 NetworkPkg IP stack implementation",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-hc6x-cw6p-gj7h",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-hc6x-cw6p-gj7h",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 8.3,
+            "vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H"
           }
         }
       ]
@@ -918,6 +1074,45 @@
       ]
     },
     {
+      "title": "Temporary DoS vulnerability in FirmwarePerformancePei",
+      "cve": "CVE-2024-1298",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Temporary DoS vulnerability in FirmwarePerformancePei",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-chfw-xj8f-6m53",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-chfw-xj8f-6m53",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 6.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H"
+          }
+        }
+      ]
+    },
+    {
       "title": "CVE-2024-26130",
       "cve": "CVE-2024-26130",
       "product_status": {
@@ -950,7 +1145,7 @@
       "cve": "CVE-2024-38796",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -974,7 +1169,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -989,7 +1184,7 @@
       "cve": "CVE-2024-38797",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -1013,7 +1208,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -1028,7 +1223,7 @@
       "cve": "CVE-2024-38798",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -1055,7 +1250,7 @@
       "cve": "CVE-2024-38805",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -1079,7 +1274,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -1150,7 +1345,7 @@
       "cve": "CVE-2025-2295",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -1174,7 +1369,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -1189,7 +1384,7 @@
       "cve": "CVE-2025-2296",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -1216,7 +1411,7 @@
       "cve": "CVE-2025-3770",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202311"
         ]
       },
       "notes": [
@@ -1240,7 +1435,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202311"
           ],
           "cvss_v3": {
             "version": "3.1",

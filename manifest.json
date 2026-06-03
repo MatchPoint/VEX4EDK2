@@ -1,102 +1,206 @@
 {
   "releases": [
     {
+      "tag": "edk2-stable202105",
+      "started_at": "2026-06-03T14:50:31Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202105.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202105.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 22,
+      "finished_at": "2026-06-03T14:50:37Z"
+    },
+    {
+      "tag": "edk2-stable202108",
+      "started_at": "2026-06-03T14:50:37Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202108.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202108.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 22,
+      "finished_at": "2026-06-03T14:50:43Z"
+    },
+    {
+      "tag": "edk2-stable202111",
+      "started_at": "2026-06-03T14:50:43Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202111.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202111.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 22,
+      "finished_at": "2026-06-03T14:50:47Z"
+    },
+    {
+      "tag": "edk2-stable202202",
+      "started_at": "2026-06-03T14:50:47Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202202.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202202.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 21,
+      "finished_at": "2026-06-03T14:50:52Z"
+    },
+    {
+      "tag": "edk2-stable202205",
+      "started_at": "2026-06-03T14:50:52Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202205.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202205.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 21,
+      "finished_at": "2026-06-03T14:50:57Z"
+    },
+    {
+      "tag": "edk2-stable202208",
+      "started_at": "2026-06-03T14:50:57Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202208.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202208.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 21,
+      "finished_at": "2026-06-03T14:51:02Z"
+    },
+    {
+      "tag": "edk2-stable202211",
+      "started_at": "2026-06-03T14:51:02Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202211.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202211.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 21,
+      "finished_at": "2026-06-03T14:51:07Z"
+    },
+    {
+      "tag": "edk2-stable202302",
+      "started_at": "2026-06-03T14:51:07Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202302.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202302.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 21,
+      "finished_at": "2026-06-03T14:51:12Z"
+    },
+    {
+      "tag": "edk2-stable202305",
+      "started_at": "2026-06-03T14:51:12Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202305.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202305.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 21,
+      "finished_at": "2026-06-03T14:51:19Z"
+    },
+    {
+      "tag": "edk2-stable202308",
+      "started_at": "2026-06-03T14:51:19Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202308.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202308.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 54,
+      "finished_at": "2026-06-03T14:51:25Z"
+    },
+    {
+      "tag": "edk2-stable202311",
+      "started_at": "2026-06-03T14:51:25Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202311.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202311.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 49,
+      "finished_at": "2026-06-03T14:51:30Z"
+    },
+    {
+      "tag": "edk2-stable202402",
+      "started_at": "2026-06-03T14:51:30Z",
+      "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202402.cdx.json",
+      "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202402.csaf.json",
+      "status": "ok",
+      "vex_only": true,
+      "vulnerability_count": 45,
+      "finished_at": "2026-06-03T14:51:35Z"
+    },
+    {
       "tag": "edk2-stable202405",
-      "started_at": "2026-06-03T05:11:04Z",
+      "started_at": "2026-06-03T14:51:35Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202405.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202405.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 44,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:12:05Z"
+      "finished_at": "2026-06-03T14:51:40Z"
     },
     {
       "tag": "edk2-stable202408",
-      "started_at": "2026-06-03T05:12:38Z",
+      "started_at": "2026-06-03T14:51:40Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202408.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202408.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 44,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:13:35Z"
+      "finished_at": "2026-06-03T14:51:46Z"
     },
     {
       "tag": "edk2-stable202411",
-      "started_at": "2026-06-03T05:14:07Z",
+      "started_at": "2026-06-03T14:51:46Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202411.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202411.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 29,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:15:11Z"
+      "finished_at": "2026-06-03T14:51:51Z"
     },
     {
       "tag": "edk2-stable202502",
-      "started_at": "2026-06-03T05:15:43Z",
+      "started_at": "2026-06-03T14:51:51Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202502.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202502.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 10,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:16:37Z"
+      "finished_at": "2026-06-03T14:51:56Z"
     },
     {
       "tag": "edk2-stable202505",
-      "started_at": "2026-06-03T05:16:55Z",
+      "started_at": "2026-06-03T14:51:56Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202505.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202505.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 29,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:17:47Z"
+      "finished_at": "2026-06-03T14:52:01Z"
     },
     {
       "tag": "edk2-stable202508",
-      "started_at": "2026-06-03T05:18:04Z",
+      "started_at": "2026-06-03T14:52:01Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202508.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202508.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 25,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:18:57Z"
+      "finished_at": "2026-06-03T14:52:05Z"
     },
     {
       "tag": "edk2-stable202511",
-      "started_at": "2026-06-03T05:19:14Z",
+      "started_at": "2026-06-03T14:52:05Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202511.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202511.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 24,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:20:02Z"
+      "finished_at": "2026-06-03T14:52:10Z"
     },
     {
       "tag": "edk2-stable202602",
-      "started_at": "2026-06-03T05:20:17Z",
+      "started_at": "2026-06-03T14:52:10Z",
       "cdx": "C:\\Users\\gt164\\repos\\VEX4EDK2\\sbom\\edk2-stable202602.cdx.json",
       "csaf": "C:\\Users\\gt164\\repos\\VEX4EDK2\\vex\\edk2-stable202602.csaf.json",
       "status": "ok",
-      "edk2_dir": "C:\\Users\\gt164\\repos\\SBOM4EDK2\\work\\edk2-stable202602",
-      "use_current": false,
+      "vex_only": true,
       "vulnerability_count": 29,
-      "sbom4edk2_version": "0.6.0",
-      "finished_at": "2026-06-03T05:21:00Z"
+      "finished_at": "2026-06-03T14:52:15Z"
     }
   ],
-  "updated_at": "2026-06-03T05:21:12Z",
-  "vex4edk2_version": "0.3.0"
+  "updated_at": "2026-06-03T14:52:15Z",
+  "vex4edk2_version": "0.3.1"
 }

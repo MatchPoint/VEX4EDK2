@@ -1,15 +1,15 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:3cdb20f7-7ed5-4fa3-a9bf-02692cd18f74",
+  "serialNumber": "urn:uuid:35c80286-3763-4b22-9a04-794b8e17f87e",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-06-03T05:12:00Z",
+    "timestamp": "2026-06-03T14:31:37Z",
     "tools": [
       {
         "vendor": "SBOM4EDK2",
         "name": "SBOM4EDK2",
-        "version": "0.6.0"
+        "version": "0.6.1"
       }
     ],
     "lifecycles": [
@@ -2852,9 +2852,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/gost-engine/engine@3.0.1+18.g77dcdf2",
+      "bom-ref": "pkg:github/gost-engine/engine@3.0.1+18.ga65debb",
       "name": "GOST Engine",
-      "version": "3.0.1+18.g77dcdf2",
+      "version": "3.0.1+18.ga65debb",
       "description": "A reference implementation of the Russian GOST crypto algorithms",
       "authors": [
         {
@@ -2966,7 +2966,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/629032911e04df5cc23c8f388856103f5f92f6d0"
+              "url": "https://github.com/gost-engine/engine/commit/b5f3c9fed53865c0644ddde5567e1d94c6caef5c"
             },
             "resolves": [
               {
@@ -2978,7 +2978,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/6a69c51af8d0484c4ad134c212a3c99c614a9032"
+              "url": "https://github.com/gost-engine/engine/commit/aa219925ae11488aaa610bcbf22076126135b9f1"
             },
             "resolves": [
               {
@@ -2990,7 +2990,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/f6b822cea13f875b40c0dc6010af43d2a2f69f9b"
+              "url": "https://github.com/gost-engine/engine/commit/9d1d1d86eaad37b340fe3fc85f4796573c5e08dd"
             },
             "resolves": [
               {
@@ -3002,7 +3002,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/70845bbd0151ee9e496a077700820fd6f0d2161b"
+              "url": "https://github.com/gost-engine/engine/commit/0962715ff154807a24745268768b3206a6992156"
             },
             "resolves": [
               {
@@ -3014,7 +3014,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/2c3941f18bb03ecbbf79d6cd31487281041f1fd9"
+              "url": "https://github.com/gost-engine/engine/commit/a20cd6be7ec0707f60eff7aa76015ede499e97fa"
             },
             "resolves": [
               {
@@ -3026,7 +3026,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/fa36ef30c857e2bc383038d9db805785e0ae3972"
+              "url": "https://github.com/gost-engine/engine/commit/cbc865475d5f27c0e92c996e96d87b745c9be1c9"
             },
             "resolves": [
               {
@@ -3038,7 +3038,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/8c0b214f3dcdfe30018948453e69b5cfa51c9c14"
+              "url": "https://github.com/gost-engine/engine/commit/00a54a129162461f97c80b2cbb84386e998b5360"
             },
             "resolves": [
               {
@@ -3050,7 +3050,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/40b30cd1d4245da616f914ebbbcb3d07d849a769"
+              "url": "https://github.com/gost-engine/engine/commit/eda3f3a126498548e511d586afcbac9ff9fb2fc9"
             },
             "resolves": [
               {
@@ -3062,7 +3062,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/3d245b2604c385594d5cbc54f61a1de0d1553545"
+              "url": "https://github.com/gost-engine/engine/commit/4bbceb15e47a06d5e1dd4f8aaa81d2bffe8064fe"
             },
             "resolves": [
               {
@@ -3074,7 +3074,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/f74db959f559122e94d6fc1c75bedd8458ac215c"
+              "url": "https://github.com/gost-engine/engine/commit/782cbc8bbe20784ae8c3cc0d4082b8a53e1ee178"
             },
             "resolves": [
               {
@@ -3086,7 +3086,7 @@
           {
             "type": "cherry-pick",
             "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/77dcdf2009313cf32391ea9c289f2e5e09a4c16d"
+              "url": "https://github.com/gost-engine/engine/commit/a65debbac59899ec8ea3285d65496f4246d50ccf"
             },
             "resolves": [
               {
@@ -6769,7 +6769,7 @@
       ]
     },
     {
-      "ref": "pkg:github/gost-engine/engine@3.0.1+18.g77dcdf2",
+      "ref": "pkg:github/gost-engine/engine@3.0.1+18.ga65debb",
       "dependsOn": [
         "pkg:github/provider-corner/libprov@0.0.0"
       ]
@@ -6779,7 +6779,7 @@
       "dependsOn": [
         "pkg:github/C2SP/wycheproof@0.0.0",
         "pkg:github/google/boringssl@20210429+2974.gf1c7534",
-        "pkg:github/gost-engine/engine@3.0.1+18.g77dcdf2",
+        "pkg:github/gost-engine/engine@3.0.1+18.ga65debb",
         "pkg:github/krb5/krb5@0.0.0",
         "pkg:github/pyca/cryptography@38.0.4",
         "pkg:github/tlsfuzzer/python-ecdsa@0.19.0+15.gea96669",

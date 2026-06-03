@@ -20,9 +20,10 @@ python -m unittest discover -s tests -v
 | File | Coverage |
 |------|----------|
 | `tests/test_csaf.py` | CSAF document shape, generator `engine.version`, SBOM4EDK2 summary note |
-| `tests/test_cve_scan.py` | CPE patterns, GHSA version logic, NVD/Grype/GHSA mocks |
+| `tests/test_cve_scan.py` | CPE patterns, GHSA version logic, NVD/Grype/GHSA mocks ([CVE sourcing](../README.md#component-cve-sourcing-nvd-vs-grype), [GHSA behavior](../README.md#tianocore-ghsa-advisories)) |
 | `tests/test_batch_smoke.py` | CLI helpers, `.env` CRLF normalization, manifest `vex4edk2_version` |
-| `tests/test_releases_outputs.py` | All eight `sbom/` + `vex/` artifacts; CSAF metadata vs package version |
+| `tests/test_releases.py` | Date-range parsing and quarterly tag filtering |
+| `tests/test_releases_outputs.py` | Committed `sbom/` + `vex/` artifacts; CSAF metadata vs package version |
 
 ## Version metadata in CSAF
 
@@ -44,12 +45,12 @@ note. Those tests are **skipped** until `vex/` is regenerated; after refresh the
 run automatically. Regenerate with:
 
 ```bash
-python -m vex4edk2.batch --all --vex-only
+python -m vex4edk2.batch --from-date 2024-05 --to-date 2026-02 --vex-only
 ```
 
 ## What unit tests assert
 
-- Quarterly tag list (eight `edk2-stableYYYYMM` releases)
+- Quarterly tag filtering by `YYYY-MM` date range (no fixed tag count in code)
 - CSAF merges NVD component CVEs and applicable TianoCore GHSA rows
 - `manifest.json` updates include `vex4edk2_version` and per-release `sbom4edk2_version`
 - CVE scanners import from `vex4edk2` (not SBOM4EDK2)

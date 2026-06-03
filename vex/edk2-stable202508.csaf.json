@@ -15,25 +15,25 @@
       "revision_history": [
         {
           "number": "1.0.0",
-          "date": "2026-06-03T05:18:57Z",
+          "date": "2026-06-03T14:52:05Z",
           "summary": "Automated VEX from VEX4EDK2 CVE scan of edk2-stable202508"
         }
       ],
-      "initial_release_date": "2026-06-03T05:18:57Z",
-      "current_release_date": "2026-06-03T05:18:57Z",
+      "initial_release_date": "2026-06-03T14:52:05Z",
+      "current_release_date": "2026-06-03T14:52:05Z",
       "generator": {
         "engine": {
           "name": "VEX4EDK2",
-          "version": "0.3.0"
+          "version": "0.3.1"
         },
         "author": "Brian Mullen",
-        "date": "2026-06-03T05:18:57Z"
+        "date": "2026-06-03T14:52:05Z"
       }
     },
     "notes": [
       {
         "category": "summary",
-        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202508. SBOM produced by SBOM4EDK2 (0.6.0). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
+        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202508. SBOM produced by SBOM4EDK2 (unknown). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
         "title": "Summary"
       }
     ]

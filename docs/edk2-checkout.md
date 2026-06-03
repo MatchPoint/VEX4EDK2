@@ -53,16 +53,17 @@ python -m vex4edk2.batch --tag edk2-stable202602 \
   --use-current
 ```
 
-`--use-current` is only valid with a single `--tag`, not with `--all`.
+`--use-current` is valid with `--tag` or implied by `--tip`. It cannot be used with
+a `--from-date` / `--to-date` batch.
 
-### Batch all releases with one clone
+### Date-range batch with one clone
 
-`--all` with `--edk2-dir` still works: each quarterly tag is checked out in turn,
-submodules are refreshed, and `HEAD` is restored after each tag (unless
+`--from-date` / `--to-date` with `--edk2-dir` checks out each quarterly tag in the
+range in turn, refreshes submodules, and restores `HEAD` after each tag (unless
 `--keep-worktree` leaves the tree on the last processed tag).
 
 ```bash
-python -m vex4edk2.batch --all --skip-existing \
+python -m vex4edk2.batch --from-date 2021-05 --to-date 2026-02 --skip-existing \
   --edk2-dir C:\path\to\edk2
 ```
 
@@ -75,3 +76,4 @@ Expect this to modify your clone repeatedly; commit or stash local work first.
 | Worktree (default) | Clean machine, no existing EDK II tree, parallel-friendly cache |
 | `--edk2-dir` | You already use SBOM4EDK2’s `edk2/` checkout |
 | `--edk2-dir --use-current` | One-off scan of the tree you have open now |
+| `--edk2-dir --tip` | Development tip (`git describe` output name) |

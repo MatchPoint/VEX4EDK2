@@ -23,7 +23,7 @@ vex4edk2.batch
     ├── edk2_checkout.py     git mirror / worktree / --edk2-dir checkout + submodule scrub
     │
     ├── sbom4edk2.sbom       generate_sbom_from_checkout (source SBOM; PYTHONPATH)
-    ├── vex4edk2.cve_analyzer + nvd + ghsa + grype (cve_scan)   CVE DataFrames
+    ├── vex4edk2.cve_analyzer + nvd + ghsa + grype (cve_scan)   CVE DataFrames (GHSA: [README](../README.md#tianocore-ghsa-advisories))
     │
     └── csaf.py              build_csaf_document / write_csaf
             │
@@ -62,7 +62,7 @@ Use **LF line endings** in `.env` (or rely on `load_project_env()` which strips 
 ```bash
 python -m vex4edk2.batch --tag edk2-stable202411 --dry-run
 python -m vex4edk2.batch --tag edk2-stable202411 --edk2-dir /path/to/edk2
-python -m vex4edk2.batch --all --skip-existing
+python -m vex4edk2.batch --from-date 2021-05 --to-date 2026-02 --skip-existing
 ```
 
 Verify CSAF parity against committed baseline:
@@ -91,4 +91,4 @@ python -m unittest discover -s tests -v
 
 See [docs/testing.md](docs/testing.md). Committed `vex/*.csaf.json` files must carry
 `tracking.generator.engine.version` equal to `vex4edk2.__version__`; regenerate with
-`python -m vex4edk2.batch --all --vex-only` after a version bump.
+`python -m vex4edk2.batch --from-date … --to-date … --vex-only` after a version bump.

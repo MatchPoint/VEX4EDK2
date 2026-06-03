@@ -15,25 +15,25 @@
       "revision_history": [
         {
           "number": "1.0.0",
-          "date": "2026-06-03T05:12:05Z",
+          "date": "2026-06-03T14:51:40Z",
           "summary": "Automated VEX from VEX4EDK2 CVE scan of edk2-stable202405"
         }
       ],
-      "initial_release_date": "2026-06-03T05:12:05Z",
-      "current_release_date": "2026-06-03T05:12:05Z",
+      "initial_release_date": "2026-06-03T14:51:40Z",
+      "current_release_date": "2026-06-03T14:51:40Z",
       "generator": {
         "engine": {
           "name": "VEX4EDK2",
-          "version": "0.3.0"
+          "version": "0.3.1"
         },
         "author": "Brian Mullen",
-        "date": "2026-06-03T05:12:05Z"
+        "date": "2026-06-03T14:51:40Z"
       }
     },
     "notes": [
       {
         "category": "summary",
-        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202405. SBOM produced by SBOM4EDK2 (0.6.0). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
+        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202405. SBOM produced by SBOM4EDK2 (unknown). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
         "title": "Summary"
       }
     ]
@@ -105,11 +105,11 @@
             "category": "product_name",
             "branches": [
               {
-                "name": "3.0.1+18.g77dcdf2",
+                "name": "3.0.1+18.ga65debb",
                 "category": "product_version",
                 "product": {
-                  "product_id": "pid-pkg_github_gost-engine_engine_3.0.1_18.g77dcdf2",
-                  "name": "GOST Engine 3.0.1+18.g77dcdf2"
+                  "product_id": "pid-pkg_github_gost-engine_engine_3.0.1_18.ga65debb",
+                  "name": "GOST Engine 3.0.1+18.ga65debb"
                 }
               }
             ]

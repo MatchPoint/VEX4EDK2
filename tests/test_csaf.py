@@ -13,7 +13,7 @@ import pandas as pd
 
 from vex4edk2 import __version__ as vex4edk2_version
 from vex4edk2.csaf import build_csaf_document, product_id_from_bom_ref, write_csaf
-from vex4edk2.releases import quarterly_tags, yyyymm_from_tag
+from vex4edk2.releases import filter_tags_by_yyyymm_range, yyyymm_from_tag
 
 _FIXTURE = os.path.join(
     os.path.dirname(__file__), "fixtures", "minimal.cdx.json"
@@ -21,11 +21,19 @@ _FIXTURE = os.path.join(
 
 
 class TestReleases(unittest.TestCase):
-    def test_quarterly_list(self) -> None:
-        tags = quarterly_tags()
+    def test_quarterly_range_filter(self) -> None:
+        tags = filter_tags_by_yyyymm_range(
+            [
+                "edk2-stable202405",
+                "edk2-stable202408",
+                "edk2-stable202602",
+            ],
+            202405,
+            202602,
+        )
+        self.assertEqual(len(tags), 3)
         self.assertIn("edk2-stable202405", tags)
         self.assertIn("edk2-stable202602", tags)
-        self.assertEqual(len(tags), 8)
 
     def test_yyyymm_from_tag(self) -> None:
         self.assertEqual(yyyymm_from_tag("edk2-stable202411"), 202411)

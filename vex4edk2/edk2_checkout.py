@@ -42,6 +42,52 @@ def _run_git_optional(args: list[str], *, cwd: Optional[str] = None) -> None:
         logger.warning("git %s in %s: %s", " ".join(args), cwd or ".", stderr)
 
 
+def list_quarterly_stable_tags_in_repo(
+    repo_path: str,
+    *,
+    fetch_tags: bool = False,
+) -> list[str]:
+    """Return sorted ``edk2-stableYYYYMM`` tags (no ``-rc``, no ``.NN`` point releases)."""
+    if fetch_tags:
+        _run_git(["fetch", "--tags", "--prune", "origin"], cwd=repo_path)
+    result = subprocess.run(
+        ["git", "tag", "-l", "edk2-stable*"],
+        cwd=repo_path,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    from vex4edk2.releases import is_quarterly_stable_tag, yyyymm_from_tag
+
+    tags = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+    quarterly = [t for t in tags if is_quarterly_stable_tag(t)]
+    return sorted(quarterly, key=lambda t: yyyymm_from_tag(t) or 0)
+
+
+def discover_quarterly_stable_tags(
+    *,
+    cache_dir: Optional[str] = None,
+    edk2_dir: Optional[str] = None,
+) -> list[str]:
+    """List quarterly stable tags from a mirror and/or local EDK II clone."""
+    seen: dict[str, None] = {}
+    if edk2_dir:
+        repo = validate_edk2_repo(edk2_dir)
+        for tag in list_quarterly_stable_tags_in_repo(repo, fetch_tags=True):
+            seen[tag] = None
+    if cache_dir:
+        mirror = ensure_edk2_mirror(cache_dir)
+        for tag in list_quarterly_stable_tags_in_repo(mirror, fetch_tags=False):
+            seen[tag] = None
+    if not seen:
+        raise ValueError(
+            "Need --cache-dir and/or --edk2-dir to discover edk2-stableYYYYMM tags"
+        )
+    from vex4edk2.releases import yyyymm_from_tag
+
+    return sorted(seen.keys(), key=lambda t: yyyymm_from_tag(t) or 0)
+
+
 def ensure_edk2_mirror(cache_dir: str) -> str:
     """Clone or fetch the EDK II mirror; return its path."""
     mirror = os.path.join(cache_dir, "edk2-mirror")

@@ -1,7 +1,7 @@
 {
   "document": {
     "category": "csaf_vex",
-    "title": "VEX for edk2-stable202408",
+    "title": "VEX for edk2-stable202308",
     "publisher": {
       "category": "vendor",
       "name": "Brian Mullen",
@@ -9,31 +9,31 @@
       "contact_details": "Brian Mullen <brian.desmond.mullen@gmail.com>"
     },
     "tracking": {
-      "id": "vex4edk2-edk2-stable202408",
+      "id": "vex4edk2-edk2-stable202308",
       "version": "1.0.0",
       "status": "final",
       "revision_history": [
         {
           "number": "1.0.0",
-          "date": "2026-06-03T14:51:46Z",
-          "summary": "Automated VEX from VEX4EDK2 CVE scan of edk2-stable202408"
+          "date": "2026-06-03T14:51:25Z",
+          "summary": "Automated VEX from VEX4EDK2 CVE scan of edk2-stable202308"
         }
       ],
-      "initial_release_date": "2026-06-03T14:51:46Z",
-      "current_release_date": "2026-06-03T14:51:46Z",
+      "initial_release_date": "2026-06-03T14:51:25Z",
+      "current_release_date": "2026-06-03T14:51:25Z",
       "generator": {
         "engine": {
           "name": "VEX4EDK2",
           "version": "0.3.1"
         },
         "author": "Brian Mullen",
-        "date": "2026-06-03T14:51:46Z"
+        "date": "2026-06-03T14:51:25Z"
       }
     },
     "notes": [
       {
         "category": "summary",
-        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202408. SBOM produced by SBOM4EDK2 (unknown). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
+        "text": "Machine-generated CSAF VEX for TianoCore edk2-stable202308. SBOM produced by SBOM4EDK2 (unknown). Component CVEs from NVD CPE matching; platform advisories from TianoCore GitHub Security Advisories.",
         "title": "Summary"
       }
     ]
@@ -49,11 +49,11 @@
             "category": "product_name",
             "branches": [
               {
-                "name": "202408",
+                "name": "202308",
                 "category": "product_version",
                 "product": {
-                  "product_id": "pid-pkg_github_tianocore_edk2_edk2-stable202408",
-                  "name": "EDK II 202408"
+                  "product_id": "pid-pkg_github_tianocore_edk2_edk2-stable202308",
+                  "name": "EDK II 202308"
                 }
               }
             ]
@@ -119,11 +119,11 @@
             "category": "product_name",
             "branches": [
               {
-                "name": "3.0.1+18.g80bf4a4",
+                "name": "3.0.1+18.g45bd9a9",
                 "category": "product_version",
                 "product": {
-                  "product_id": "pid-pkg_github_gost-engine_engine_3.0.1_18.g80bf4a4",
-                  "name": "GOST Engine 3.0.1+18.g80bf4a4"
+                  "product_id": "pid-pkg_github_gost-engine_engine_3.0.1_18.g45bd9a9",
+                  "name": "GOST Engine 3.0.1+18.g45bd9a9"
                 }
               }
             ]
@@ -185,29 +185,15 @@
             ]
           },
           {
-            "name": "libspdm",
-            "category": "product_name",
-            "branches": [
-              {
-                "name": "3.3.0+23.g50924a4",
-                "category": "product_version",
-                "product": {
-                  "product_id": "pid-pkg_github_DMTF_libspdm_3.3.0_23.g50924a4",
-                  "name": "libspdm 3.3.0+23.g50924a4"
-                }
-              }
-            ]
-          },
-          {
             "name": "mbedtls",
             "category": "product_name",
             "branches": [
               {
-                "name": "3.3.0",
+                "name": "3.6.2",
                 "category": "product_version",
                 "product": {
-                  "product_id": "pid-pkg_github_Mbed-TLS_mbedtls_3.3.0",
-                  "name": "mbedtls 3.3.0"
+                  "product_id": "pid-pkg_github_Mbed-TLS_mbedtls_3.6.2",
+                  "name": "mbedtls 3.6.2"
                 }
               }
             ]
@@ -334,6 +320,20 @@
                 "product": {
                   "product_id": "pid-pkg_github_zeex_subhook_0.0.0",
                   "name": "subhook 0.0.0"
+                }
+              }
+            ]
+          },
+          {
+            "name": "framework",
+            "category": "product_name",
+            "branches": [
+              {
+                "name": "4.0.0",
+                "category": "product_version",
+                "product": {
+                  "product_id": "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0",
+                  "name": "framework 4.0.0"
                 }
               }
             ]
@@ -610,6 +610,34 @@
       ]
     },
     {
+      "title": "CVE-2020-19316",
+      "cve": "CVE-2020-19316",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "OS Command injection vulnerability in function link in Filesystem.php in Laravel Framework before 5.8.17.",
+          "title": "Description"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 8.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+          }
+        }
+      ]
+    },
+    {
       "title": "CVE-2020-36325",
       "cve": "CVE-2020-36325",
       "product_status": {
@@ -633,6 +661,179 @@
             "version": "3.1",
             "baseScore": 7.5,
             "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "CVE-2021-43617",
+      "cve": "CVE-2021-43617",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Laravel Framework through 8.70.2 does not sufficiently block the upload of executable PHP content because Illuminate/Validation/Concerns/ValidatesAttributes.php lacks a check for .phar files, which are handled as application/x-httpd-php on systems based on Debian. NOTE: this CVE Record is for Laravel Framework, and is unrelated to any reports concerning incorrectly written user applications for image upload.",
+          "title": "Description"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 9.8,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "CVE-2021-43808",
+      "cve": "CVE-2021-43808",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Laravel is a web application framework. Laravel prior to versions 8.75.0, 7.30.6, and 6.20.42 contain a possible cross-site scripting (XSS) vulnerability in the Blade templating engine. A broken HTML element may be clicked and the user taken to another location in their browser due to XSS. This is due to the user being able to guess the parent placeholder SHA-1 hash by trying common names of sections. If the parent template contains an exploitable HTML structure an XSS vulnerability can be exposed. This vulnerability has been patched in versions 8.75.0, 7.30.6, and 6.20.42 by determining the parent placeholder at runtime and using a random hash that is unique to each request.",
+          "title": "Description"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Heap Buffer Overflow in Tcg2MeasureGptTable()",
+      "cve": "CVE-2022-36763",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Heap Buffer Overflow in Tcg2MeasureGptTable()",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-xvv8-66cq-prwr",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-xvv8-66cq-prwr",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 7.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Heap Buffer Overflow in Tcg2MeasurePeImage()",
+      "cve": "CVE-2022-36764",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Heap Buffer Overflow in Tcg2MeasurePeImage()",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-4hcq-p8q8-hj8j",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-4hcq-p8q8-hj8j",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 7.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Integer Overflow in CreateHob() could lead to HOB OOB R/W",
+      "cve": "CVE-2022-36765",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Integer Overflow in CreateHob() could lead to HOB OOB R/W",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-ch4w-v7m3-g8wx",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-ch4w-v7m3-g8wx",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 7.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:L/I:L/A:H"
           }
         }
       ]
@@ -717,6 +918,45 @@
             "version": "3.1",
             "baseScore": 5.3,
             "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Vulnerabilities in EDK2 NetworkPkg IP stack implementation",
+      "cve": "CVE-2023-45229",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Vulnerabilities in EDK2 NetworkPkg IP stack implementation",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-hc6x-cw6p-gj7h",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-hc6x-cw6p-gj7h",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 8.3,
+            "vectorString": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H"
           }
         }
       ]
@@ -918,6 +1158,45 @@
       ]
     },
     {
+      "title": "Temporary DoS vulnerability in FirmwarePerformancePei",
+      "cve": "CVE-2024-1298",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Temporary DoS vulnerability in FirmwarePerformancePei",
+          "title": "Description"
+        },
+        {
+          "category": "other",
+          "text": "GHSA-chfw-xj8f-6m53",
+          "title": "GitHub Security Advisory"
+        }
+      ],
+      "references": [
+        {
+          "url": "https://github.com/tianocore/edk2/security/advisories/GHSA-chfw-xj8f-6m53",
+          "summary": "TianoCore GHSA advisory"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 6.0,
+            "vectorString": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:C/C:N/I:N/A:H"
+          }
+        }
+      ]
+    },
+    {
       "title": "CVE-2024-26130",
       "cve": "CVE-2024-26130",
       "product_status": {
@@ -950,7 +1229,7 @@
       "cve": "CVE-2024-38796",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -974,7 +1253,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -989,7 +1268,7 @@
       "cve": "CVE-2024-38797",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -1013,7 +1292,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -1028,7 +1307,7 @@
       "cve": "CVE-2024-38798",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -1055,7 +1334,7 @@
       "cve": "CVE-2024-38805",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -1079,12 +1358,40 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
           ],
           "cvss_v3": {
             "version": "3.1",
             "baseScore": 6.3,
             "vectorString": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H"
+          }
+        }
+      ]
+    },
+    {
+      "title": "CVE-2024-52301",
+      "cve": "CVE-2024-52301",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Laravel is a web application framework. When the register_argc_argv php directive is set to on , and users call any URL with a special crafted query string, they are able to change the environment used by the framework when handling the request. The vulnerability fixed in 6.20.45, 7.30.7, 8.83.28, 9.52.17, 10.48.23, and 11.31.0. The framework now ignores argv values for environment detection on non-cli SAPIs.",
+          "title": "Description"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 8.7,
+            "vectorString": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
           }
         }
       ]
@@ -1150,7 +1457,7 @@
       "cve": "CVE-2025-2295",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -1174,7 +1481,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
           ],
           "cvss_v3": {
             "version": "3.1",
@@ -1189,7 +1496,7 @@
       "cve": "CVE-2025-2296",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -1212,11 +1519,39 @@
       ]
     },
     {
+      "title": "CVE-2025-27515",
+      "cve": "CVE-2025-27515",
+      "product_status": {
+        "known_affected": [
+          "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+        ]
+      },
+      "notes": [
+        {
+          "category": "description",
+          "text": "Laravel is a web application framework. When using wildcard validation to validate a given file or image field (`files.*`), a user-crafted malicious request could potentially bypass the validation rules. This vulnerability is fixed in 11.44.1 and 12.1.1.",
+          "title": "Description"
+        }
+      ],
+      "scores": [
+        {
+          "products": [
+            "pid-pkg_github_mbed-tls_mbedtls-framework_4.0.0"
+          ],
+          "cvss_v3": {
+            "version": "3.1",
+            "baseScore": 6.9,
+            "vectorString": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          }
+        }
+      ]
+    },
+    {
       "title": "SMM IDT privilege escalation vulnerability  ",
       "cve": "CVE-2025-3770",
       "product_status": {
         "known_affected": [
-          "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+          "pid-pkg_github_tianocore_edk2_edk2-stable202308"
         ]
       },
       "notes": [
@@ -1240,7 +1575,7 @@
       "scores": [
         {
           "products": [
-            "pid-pkg_github_tianocore_edk2_edk2-stable202408"
+            "pid-pkg_github_tianocore_edk2_edk2-stable202308"
           ],
           "cvss_v3": {
             "version": "3.1",

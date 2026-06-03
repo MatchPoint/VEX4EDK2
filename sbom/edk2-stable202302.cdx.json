@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:e77f80a6-f25d-47ce-9e75-8c047c398b08",
+  "serialNumber": "urn:uuid:d92ca987-37c1-4c96-9e59-24e0c26aa592",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-06-03T14:33:10Z",
+    "timestamp": "2026-06-03T14:24:21Z",
     "tools": [
       {
         "vendor": "SBOM4EDK2",
@@ -19,10 +19,10 @@
     ],
     "component": {
       "type": "firmware",
-      "bom-ref": "pkg:github/tianocore/edk2@edk2-stable202408",
-      "cpe": "cpe:2.3:a:tianocore:edk2:edk2-stable202408:*:*:*:*:*:*:*",
+      "bom-ref": "pkg:github/tianocore/edk2@edk2-stable202302",
+      "cpe": "cpe:2.3:a:tianocore:edk2:edk2-stable202302:*:*:*:*:*:*:*",
       "name": "EDK II",
-      "version": "202408",
+      "version": "202302",
       "description": "A cross-platform firmware development environment for UEFI and PI specifications",
       "authors": [
         {
@@ -2889,9 +2889,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/gost-engine/engine@3.0.1+18.g80bf4a4",
+      "bom-ref": "pkg:github/gost-engine/engine@3.0.2",
       "name": "GOST Engine",
-      "version": "3.0.1+18.g80bf4a4",
+      "version": "3.0.2",
       "description": "A reference implementation of the Russian GOST crypto algorithms",
       "authors": [
         {
@@ -2913,227 +2913,7 @@
           "type": "vcs",
           "url": "https://github.com/gost-engine/engine"
         }
-      ],
-      "pedigree": {
-        "patches": [
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/021a2b61b5d904caaf4ceb26ff3163f1f0e4219f"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] gost_ec_sign: Fix sig verify step 1 range checks"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/fcca1ab049978ae66a3dfeff5e4704fa8127095e"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Refactor little-to-big-endian subroutine for magma"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/624bf7d20c0d1258391bda222d16f099241ad1c1"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Refactored acpkm_magma_key_meshing"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/e19c3e04fddc64c30535eb042dbf948fc5687398"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] We need to init submodule explicitly"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/bd6c4f8c5c8a087ce0ea65c3dc5ee38b38b8802c"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add magma-ecb mode. Fixes #410"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/a6b90523e4ea6010b1109b0bae7e2a73b5b025c5"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] updating CA constraints"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/f3de3689c492f4f45e1bbf4af2b6fab5b57dcecf"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] CI: cirrus: bump image to freebsd 13.1"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/9258e92b79dde22be40cdf1d5e7bf7eacda59cf9"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] engine: create missing NIDs"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/06f5a0d7cdec684e906ccf67322f9f0c550cd095"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Implementation of the MGM mode for magma/kuznyechik"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/c462560da918dcaf570dcabcf7b63e2b5bf6a08c"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] provider wrapping for -mgm ciphers"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/9874747e2f711e87eff90d94d0c5117fadb833b0"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Correct CMake files installation path"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/73e1e53ceb05d9ad149aef33e3cf4720442d872a"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix gcc13 error: writing 1 byte into a region of size 0"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/aad02ee65abed26c49c2263da7dd11566741e4eb"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Adjust CA test according to new wording"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/fae7b7568ba53793d5d2732907c900bae11359a3"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Big-Endian platforms magma-mgm fix"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/98834868273d5cfaa45e95b6bab784e7a1518375"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] tcl_tests: Introduce new exitStatus -1 to ignore exit codes"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/e485bffc5cf6402883ed1739594d2bf6db70e32e"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] tcl_tests: ca.try: Ignore openssl crl exit status for 'corrupted CRL' test"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/24dddf9b1ede6f531db85e13b00d216c14f12e3e"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] tcl_tests: ca.try: Ignore multi-space indentation in openssl crl output"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/gost-engine/engine/commit/80bf4a47b36514294c057437292e0991742cc333"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] update to latest version of libprov"
-              }
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "type": "library",
@@ -3170,9 +2950,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/krb5/krb5@0.0.0",
+      "bom-ref": "pkg:github/krb5/krb5@5",
       "name": "krb5",
-      "version": "0.0.0",
+      "version": "5",
       "description": "Reference implementation of Kerberos, a network authentication protocol",
       "supplier": {
         "name": "Massachusetts Institute of Technology"
@@ -3278,92 +3058,7 @@
           "type": "vcs",
           "url": "https://github.com/krb5/krb5"
         }
-      ],
-      "pedigree": {
-        "patches": [
-          {
-            "type": "cherry-pick",
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] No release tag found; pinned at commit aa9b4a2a6"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:github/dgibson/libfdt@1.6.1+3.gcfff805",
-      "name": "libfdt",
-      "version": "1.6.1+3.gcfff805",
-      "description": "Utility library for reading and manipulating the FDT binary format",
-      "supplier": {
-        "name": "libfdt developers"
-      },
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-2-Clause"
-          }
-        },
-        {
-          "license": {
-            "id": "GPL-2.0-or-later"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/dgibson/dtc"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/devicetree-org/pylibfdt"
-        }
-      ],
-      "pedigree": {
-        "patches": [
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dgibson/dtc/commit/eb6330deb46cf67ff77913b56710052eba0dc9f9"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Sync to upstream dtc v1.7.0"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dgibson/dtc/commit/68a49c5715f287fc344c6a21acd2bf1b6738f2f5"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Sync libfdt.i from upstream dtc"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dgibson/dtc/commit/cfff805481bdea27f900c32698171286542b8d3c"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add a script to sync from dtc sources"
-              }
-            ]
-          }
-        ]
-      }
+      ]
     },
     {
       "type": "library",
@@ -3405,312 +3100,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/DMTF/libspdm@3.3.0+23.g50924a4",
-      "name": "libspdm",
-      "version": "3.3.0+23.g50924a4",
-      "description": "Sample implementation of DMTF SPDM",
-      "supplier": {
-        "name": "DMTF"
-      },
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/DMTF/libspdm"
-        }
-      ],
-      "pedigree": {
-        "patches": [
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/45902d26104bb9eb8a7a54f41ddd2e0dceb566ea"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] update version"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/fbcec930e6707061ae3cb2d547202311a257f0c7"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] add spdm-utils in readme."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/dfe8bee610fe50b6156681538b1537fd9bc4b216"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix vendor defined request size"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/1d27682bf3d838ecac971f4cc13663b26f64e808"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix the vendor defined message length check in requester."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/53b02a7fd9a032e6cd6fef02c0344b3e16931d10"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add vendor_request length check in responder."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/fa4e002b9ae649c751c7595832867ba99592e76a"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] fix vendor_defined message unit test issue."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/266c3ca50b10df5f8aea3e90429e7b23b2e3cfd2"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] fix typo for vendor_req msg."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/ab6e3436413e23cd2339e7d053a91c7b0ae423ae"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add fuzz testing for VENDOR_DEFINED_REQUEST"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/d772117caa8137180729b4d932aa43978f23308e"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Delete LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/8d0bddaad11cc4fc6d8cb62fca1693e98ca01a39"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Create LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/0ccbdf0ec22c73c92028ab9cce4e98ed7a0cbe17"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/81791b8b958085cd9ed2f1a51336de20d0eb81bd"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update LICENSE.md"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/16bf4380cdb514e0a6d7682955e2f48cc0e1e9eb"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix req_vendor_id and req_size duplication"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/908994f780bfc487b06ef534c09b4f97fa83b3ff"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add ignore unhandle critical extension check flag"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/347dd253763b21773d654ff28f55cd57894e3b44"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix verify authority and integrity logic"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/ceb880200dcb6d7e3f5ed88cb2f25445dda7e388"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Merge test_spdm_vendor_cmds into test_spdm_requester or test_spdm_responder"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/05f59eb7d04cb67b139a949dbfc5338037cc790b"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Rectify the four-byte alignment issue in the fuzzy testing."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/999ed70ee185c065ae09fed7b85c69a19179fcf1"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix cert verify logic in rsp_encap_get_certificate"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/ddfd7a1080cdbeffbe02267e6a164a0a3149be1a"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update cmocka version file"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/5fb242b9a90d271dfa2bf67ca161a75b42a35e76"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Add verify cert callback function for DiceTcbInfo."
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/a5768464b8d3d8b0eb4b33a0cae411bd51b273fb"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix acquiring Session ID in Vendor Defined Response"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/e27d0a22b8d553c92af533f7cd6c6e47911ee263"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Fix vendor response test case issues"
-              }
-            ]
-          },
-          {
-            "type": "cherry-pick",
-            "diff": {
-              "url": "https://github.com/dmtf/libspdm/commit/50924a4c8145fc721e17208f55814d2b38766fe6"
-            },
-            "resolves": [
-              {
-                "type": "defect",
-                "description": "[vendor pin] Update cmocka submodule to gitlab"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:github/Mbed-TLS/mbedtls@3.3.0",
+      "bom-ref": "pkg:github/Mbed-TLS/mbedtls@3.6.2",
       "name": "mbedtls",
-      "version": "3.3.0",
+      "version": "3.6.2",
       "description": "Implements cryptographic primitives, X.509 certificate manipulation and SSL/TLS and DTLS protocols",
       "supplier": {
         "name": "Arm"
@@ -3735,35 +3127,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/ARMmbed/mbedtls"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "bom-ref": "pkg:github/MIPI-Alliance/public-mipi-sys-t@1.1",
-      "name": "MIPI SyS-T",
-      "version": "1.1",
-      "description": "MIPI Alliance Specification for System Software-Trace defines a platform-independent, low bandwidth trace data protocol and software API",
-      "supplier": {
-        "name": "MIPI Alliance"
-      },
-      "authors": [
-        {
-          "name": "NOASSERTION",
-          "url": "https://github.com/MIPI-Alliance/public-mipi-sys-t/blob/main/CODEOWNERS"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "vcs",
-          "url": "https://github.com/MIPI-Alliance/public-mipi-sys-t"
         }
       ]
     },
@@ -3798,10 +3161,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/openssl/openssl@3.0.9",
-      "cpe": "cpe:2.3:a:openssl:openssl:3.0.9:*:*:*:*:*:*:*",
+      "bom-ref": "pkg:github/openssl/openssl@1",
       "name": "OpenSSL",
-      "version": "3.0.9",
+      "version": "1",
       "description": "TLS/SSL and crypto library",
       "authors": [
         {
@@ -3976,10 +3338,9 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/pyca/cryptography@38.0.4",
-      "cpe": "cpe:2.3:a:cryptography.io:cryptography:38.0.4:*:*:*:*:python:*:*",
+      "bom-ref": "pkg:github/pyca/cryptography@35.0.0+73.gfa84d18",
       "name": "Python Cryptography",
-      "version": "38.0.4",
+      "version": "35.0.0+73.gfa84d18",
       "description": "Cryptographic standard library for Python",
       "authors": [
         {
@@ -4010,7 +3371,887 @@
           "type": "vcs",
           "url": "https://github.com/pyca/cryptography"
         }
-      ]
+      ],
+      "pedigree": {
+        "patches": [
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/d3e80d141dc29de27de1cd7a7c993f7be2b763b0"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] reopen main for 36th release (#6335)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/5ca120918fe45d306273b5adfe76e37e6a8b508b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] release.py event we want is push not create (#6334)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/0392f7851530fd84b4897d2af6ed92f6dc6c6edb"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Require asn1 >= 0.6.4 (#6338)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/3f6a359125af8b73e3dde76d95b852d6746d1519"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump ouroboros from 0.11.1 to 0.12.0 in /src/rust (#6341)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/481bf97237211d73ddf9b34bbcf28c2171b9ec62"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] fixes #6351 -- document PEM parser requirement (#6352)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/8882ab80f4caf5c95bd16036c824f11238042ffe"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump pem from 0.8.3 to 1.0.0 in /src/rust (#6354)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/51221b2c48cd04fa6e31099d949f5d7bd564984d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] support legacy PEM headers for certificate and CSR (#6356)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/ba880f4dde6c09f0888c083f68099ac36e9e3f6e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove unused bindings (#6358)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/69fbf6eb0d7e5b97ed69b70fd37a3ac370366138"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove unused bindings (#6357)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/94f232fad1ee4dafffbdbce0f278e93fedf657b2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Replace broken viewcode with linkcode in doc (#6207)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/5c2fe56875eae822cd4f75436a7204efaae82ba5"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Support LibreSSL 3.4.0 (#6360)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/c45b6466db9e64d603d567f6a333f30cdd912bd6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] order defines consistently (#6361)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/4feca6d03bb6a183c531a6fcf21411ca209e8f19"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] bump libressl in CI (#6362)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/703de3afa0977404e4607faf45fa0f6fff78625d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Accept combined PEM files with multiple sections (#6365)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/65e2055cbb0a93740d14480c85e36016d7113840"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] fixes #6363 - restores cert repr to its pre-oxidized form (#6364)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/e8e301ae2c51a8bac60c84249b86d0ddbbf960b3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump syn from 1.0.77 to 1.0.78 in /src/rust (#6367)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/05dc3580a421a6d75132b811364b9918c731ffa2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove envlist from tox (#6374)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/f5d464c9dbe91dcfa1f6876087504dce550b73e8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Structure X.509 code to start moving extension encoding to Rust (#6369)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/d28553d5b3fb055c623a304639257d52183cc4f1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Migrate nonce and basic constraint extensions to Rust (#6375)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/79fe5e0a0647589894511d7497fb306f1c79ba70"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Convert a few more simple extensions to Rust encoding (#6376)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/6a6ed3ee77e22b5ddfa5b3140708be2111419992"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] add downstream tests for mitmproxy (#6377)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/7dd2252a89a3b8a0ff067af6479b713ad5d9e4da"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump quote from 1.0.9 to 1.0.10 in /src/rust (#6379)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/4e21adc88046383bbdfb4b26ce57e9d249db62d7"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove non-real type declaration in x509.pyi (#6381)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/b6734858e534f10435adaebd33d79f12c9dd7389"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Split Rust x.509 support into multiple files for readability (#6382)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/2a6f15c8b30410603b443e846477475a324a8dde"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] lower timeouts in GHA (#6384)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/f3243541aa9ae8e6ea0f459ef80d7c46e18baa4d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] py310 is out and in GHA (#6385)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/667e7a5f4c034c594269f1bf801941f48ece7a49"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add new PKCS12 test vectors (#6383)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/17aeaa6f60883c94a6525385f6bed426ef96d16a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] PKCS12: return 'friendly name' with PKCS12KeyAndCertificates API (#6348)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/e860945648738a2d9c4d04e7f202ea3501062c8b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump syn from 1.0.78 to 1.0.80 in /src/rust (#6387)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/b1c8d3fc9944930df05266b26215f886ce606ff6"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Port EKU, PC, and CRL reason extensions to Rust (#6388)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/2749c7cf8905f91c89dda98d88d21cc82c9c0adf"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] fixes #6386 -- clarified invalid x509 parsing in docs (#6389)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/72ce6c2f56b868d4d4153d9132dd3dc234d13a11"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] fixes #6391 -- link AWS's lamba docs (#6394)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/04b85f8b003481acb68b934f527ca089a0be0cc8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump asn1 from 0.6.4 to 0.6.5 in /src/rust (#6396)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/9fe494f277bfdbb417664ee36fe0b2d5c6210c22"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Port InvalidityDate and KeyUsage serialization to Rust (#6397)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/4d5f0f0ea81705e6ccaa347ba018cddf1b60ef67"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove unused binding (#6398)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/87f1f3a2c16b98264a87943b113c330065441cc7"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove low level aes bindings that are no longer necessary (#6399)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/553b5727b9418c3c92b11e7f22d76515ce331159"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump to rust-asn1 0.7.0 (#6401)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/49490ee01fb1e5b46cb679fee4e7a8eb731805ab"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump ouroboros from 0.12.0 to 0.13.0 in /src/rust (#6402)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/753d3e412a341e157e6b55b135b8a4c1efbb5622"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Specify the out length when obtaining the tag for poly1305 (#6403)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/dc4642821746779656f5c3979bec6cf0390dcf51"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Added debian bookworm to CI (#6406)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/49c531f37828e5e8a108da389e28bd28593947af"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Convert CertificatePolicies to Rust (#6400)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/6df5f6476141bccf43e922c45a97495069587dbf"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove a ton of unused bindings (#6407)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/138ce0ceb8ca11d132c8e890952f9fd901ef8f68"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove family of unused bindings (#6408)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/1d996e598775766627649ff44507787d2e713e1d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] remove unused error constant (#6409)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/c3fcc6759a86bbd847e3da067152ee7d2b88c194"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump proc-macro2 from 1.0.29 to 1.0.30 in /src/rust (#6412)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/bba65084eadca64776d520004ded10375ab5d30e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Ban cffi version that makes CI sad (#6418)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/238aaef8bf63a72764f8ffc80006111855e4894d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Simplify the implementation of Asn1ReadableOrWritable for our use case (#6417)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/24c6ee1e3ad0489178a28caf7c7734b69f762555"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump asn1 from 0.7.0 to 0.8.0 in /src/rust (#6420)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/15056ce01e3935072ffbd21235165c548923dfdd"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump libc from 0.2.103 to 0.2.104 in /src/rust (#6419)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/e896de2f382cfc61c631428106c99d3fccebf6e3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] parse othernames correctly (#6422)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/11e78316ff2955881ac1b2ac29d1d438f117969b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Prep x509::Name for being encoded (#6421)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/d0d114cd0a0b7418de6f2c38fb5f0b9d2708f3d9"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] encode x509.Name.public_bytes using rust (#6424)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/0fb5dbe38af1caff128cb038b3ee5bee39e38d1a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Encode general names in rust (#6423)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/491f99850fad6a18c3372574adf11e5626070485"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] port some crl extensions, refactor a bit (#6425)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/b65aa2003e271eae8fd9b9cb3b0ac47e4fb59ba2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Use asn1::SimpleAsn1Readable for Asn1ReadableOrWritable (#6426)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/df8ca37f5fca0053a6a84495474a4f2413ea4d0d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] rust nameconstraints (#6427)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/3d80afea2f729a7c0352269ae26c60a3ef8caa7d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] implement AIA/SIA in rust (#6428)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/471ac6fd7a73ccf574cda096e664a6069ab8bdb1"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] rust authoritykeyidentifier support (#6429)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/64d901e70543564948d0994399a1c13ee4d53827"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] less builds on zuul (#6430)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/a38817f57b0b397bad4f48187868a9c243fa1d0c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] split up arm64 wheel build jobs for speed (#6431)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/9899ff1c2213996175aef60416c80f38aa5faa2f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] continued optimization of zuul builds (#6432)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/fab122df1bc958cfb7ed34ad7bb7175b5f6a8954"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump instant from 0.1.11 to 0.1.12 in /src/rust (#6435)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/3c0db7d128554e198e5e37bfd18b03c64da36eb0"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump asn1 from 0.8.0 to 0.8.1 in /src/rust (#6437)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/f9aa2070841edcbf7661199a54431b40230e0e47"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Port encoding of IssuingDistributionPoint to Rust (#6436)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/4e580f7726165543d3967f8107c3f573aedbb94b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Complete the migration of extension serialization to Rust! (#6439)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/16f6e14818dbebe71f8bdf6dbf9e4917c193470b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Make memleak test assertion more precise (#6440)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/fb9186eb4bfd68830bdf9947f0fa0a2efbd2e6b2"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] shrink bindings now that we have oxidized all extensions (#6442)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/b6760af9f95b2041107700ced51c8ea45a9f9f1c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Revert \"Ban cffi version that makes CI sad (#6418)\" (#6441)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/7a64fe78f62851c31d09f287153d99f570025b66"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Slim down GENERAL_NAME declaration (#6443)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/3fd5d71d3e8fe1e2063936c66da3198153b7e52f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove unused asn1.h bindings (#6444)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/ad113aa3f55c8dc79d82347d6685e2c0f3bfef57"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Uncomment line in OCSPRequest (#6445)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/1e4352bd9224132a424be49cacfce5a4fcf1a25a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] fix spki type (#6447)"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://github.com/pyca/cryptography/commit/fa84d185c0fefa7d612759e02a26def2f948fe34"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Bump asn1 from 0.8.1 to 0.8.2 in /src/rust (#6449)"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "type": "application",
@@ -4390,26 +4631,536 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:github/zeex/subhook@0.0.0",
-      "name": "subhook",
-      "version": "0.0.0",
+      "bom-ref": "pkg:github/mbed-tls/mbedtls-framework@4.0.0",
+      "name": "framework",
+      "version": "4.0.0",
       "supplier": {
-        "name": "zeex"
+        "name": "Arm"
       },
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "https://github.com/zeex/subhook"
+          "url": "https://github.com/mbed-tls/mbedtls-framework"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:submodule/CryptoPkg/Library/OpensslLib/openssl/boringssl@9.0+42.g2070f8a",
+      "name": "boringssl",
+      "version": "9.0+42.g2070f8a",
+      "supplier": {
+        "name": "NOASSERTION"
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://boringssl.googlesource.com/boringssl"
         }
       ],
       "pedigree": {
         "patches": [
           {
             "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/898be92b67a69f243e2c61d7a2d3f1fcc5284ed8"
+            },
             "resolves": [
               {
                 "type": "defect",
-                "description": "[vendor pin] No release tag found; pinned at commit 83d4e1e"
+                "description": "[vendor pin] Support P-224 certificates as a server."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/218f51bcefd05444349933da6fa558082148526f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Fix Android bots."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/ba9557d0efeba40a40fd2007dd118524ab3f02fe"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Benchmark open & seal separately for AES-GCM-SIV."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/591f251bf3c9473f8f630a06f2c31278f2c153ff"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove direct calls to BN_mod_exp."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/0d3c96337a1122f14a6fbe69fd1553c5861a9470"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Build with -fsanitize-address-use-after-scope if -DASAN=1"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/2ff7933f22e41be517224c770268d82c1b92ad80"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add test for |SSL_get_client_CA_list|."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/34b4c829fd4c0803bb0fca6088814985205f900b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Hold CA names as |CRYPTO_BUFFER|s."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/0bdef0926371d95dff977fb9e0f846c4fe9dcfae"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Check CA names during the handshake."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/415c010d4a2079f1873c8efc2f1db90ee180de1d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Make all X509-related functions check the X509_METHOD."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/2a3b3439c8137083b43b0034ae413adefd02b8ac"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Move X509-related verification code into ssl_x509.c."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/94a62e61aaca7201e7ce121850c52407593e021d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Hang ssl_auto_chain_if_needed off |X509_METHOD|."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/d5c565a98d4d036db91d34810e39fb116bf38c56"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Name ssl_x509.c functions consistently."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/39425b0f3697e15c9b33f306678b0a10f29ef80c"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add |TLS_with_buffers_method|."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/7e429991223e6f6ba58cd0433e245b67d7b12125"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Convert evp_extra_test into GTest."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/11c82895d7a827afc62097210c676ae1a82abf7d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove support for blocking DTLS timeout handling."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/7dd4e429a5b2dc3ec4e9bb274f76c442035abe81"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Convert x25519_test to GTest."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/ad8f5e1de94676fd674178705beb1e9697a67ab3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Don't use long for timestamps."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/a58baaf9e68f887a9e1daf88cb25d911a376851f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Forbid the server certificate from changing on renego."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/84cd49385c081eac66ce675bbf724324785305a8"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Don't pass |overhead_len| when testing \u201copen\u201d speed."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/919d8cf94e47bde8a4ff6ddc0fb927682cb966a3"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Sync util/bot with Chromium."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/d6c22ee93831c93833db6edbcc2d33b047120f6b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add |SSL_get0_server_requested_CAs|."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/9ea9f9ce511dfdd813aefb60205868b066756a5b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Updating fuzzer corpus"
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/924a352d1bcb6908704803c65f4d4d6fe28e47bf"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove experimental TLS 1.3 short record header extension."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/f4654610623397339cfbd86783c765104ea09d3a"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add SSL_get0_peer_certificates."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/f29c429324503b395fdaece95d2f01868a05ba2e"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove support for old-style SSL_PRIVATE_KEY_METHOD types."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/8ebeabf0e2e01b331e56d0a491c12539baa55d3d"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add SSL_CTX_get_ciphers."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/ab1d28e305c5c503b753490b7856edf8d41e2fd4"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Trim x509.h includes."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/54689ed91e9e864efacf16459e9400402f0f9edc"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Move ssl_verify_alarm_type into ssl_x509.c."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/b6473199a37b8bc71a4797d2893231405ea1cb41"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Avoid the error case in |bn_mul_mont|."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/0cade989e7e36165cd9213a701c9f10a5afd5d21"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Make the no-op verify function push an error."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/fe36672bf5baa3d407be2a6fb61ed9d9c1cc6dc4"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Allow users of the |CRYPTO_BUFFER|-based methods to verify certs after the handshake."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/35ac5b7500f4beb3061e6da48adb112e3067501b"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Export server-side ticket_age skew."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/c77ea04c81435d6955082d3221857bdfcf71b697"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Enable RSA AVX2 code."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/d04ca95356c5b79e9ad80f3e8d1bd9784213dc93"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Add |SSL[_CTX]_set_chain_and_key|."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/130d529b7174952cbc5ed64e3420dd12ebb97d12"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Adding version to AEAD."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/6ad20dc91231d5855cdd44c49008b6718d55e5a7"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Move error-on-empty-cipherlist into ssl_create_cipher_list()."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/91222b8d3835844802b7564ac12e92055e8554eb"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Fix configuring the empty cipher list."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/93103177a5259ce231336a8213aae179660a3571"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Remove 'file:' feature in v3_pci.c's CONF hooks."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/be49706c42e135b273a9eaaec5d3f22f7bd8c7c9"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Rename initial_ctx to session_ctx."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/4c341d0299c9eef218a5e7219d0b12da0d88dd42"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Support asynchronous ticket decryption with TLS 1.0\u20131.2."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/707af294a8af53160bd94c1dc788f8587092d997"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Support asynchronous ticket decryption with TLS 1.3."
+              }
+            ]
+          },
+          {
+            "type": "cherry-pick",
+            "diff": {
+              "url": "https://boringssl.googlesource.com/boringssl/commit/2070f8ad9151dc8f3a73bffaa146b5e6937a583f"
+            },
+            "resolves": [
+              {
+                "type": "defect",
+                "description": "[vendor pin] Apply bugs to second, TLS 1.3 ClientHello."
               }
             ]
           }
@@ -7059,51 +7810,34 @@
   ],
   "dependencies": [
     {
-      "ref": "pkg:github/DMTF/libspdm@3.3.0+23.g50924a4",
-      "dependsOn": [
-        "pkg:gitlab/cmocka/cmocka@1.1.7"
-      ]
-    },
-    {
-      "ref": "pkg:github/MIPI-Alliance/public-mipi-sys-t@1.1",
-      "dependsOn": [
-        "pkg:github/zeux/pugixml@1.9+9.gc53fdab"
-      ]
-    },
-    {
-      "ref": "pkg:github/gost-engine/engine@3.0.1+18.g80bf4a4",
-      "dependsOn": [
-        "pkg:github/provider-corner/libprov@0.0.0"
-      ]
-    },
-    {
-      "ref": "pkg:github/openssl/openssl@3.0.9",
+      "ref": "pkg:github/openssl/openssl@1",
       "dependsOn": [
         "pkg:github/C2SP/wycheproof@0.0.0",
         "pkg:github/google/boringssl@20210429+2974.gf1c7534",
-        "pkg:github/gost-engine/engine@3.0.1+18.g80bf4a4",
-        "pkg:github/krb5/krb5@0.0.0",
-        "pkg:github/pyca/cryptography@38.0.4",
+        "pkg:github/krb5/krb5@5",
+        "pkg:github/provider-corner/libprov@0.0.0",
+        "pkg:github/pyca/cryptography@35.0.0+73.gfa84d18",
         "pkg:github/tlsfuzzer/python-ecdsa@0.19.0+15.gea96669",
         "pkg:github/tlsfuzzer/tlsfuzzer@0.0.0",
-        "pkg:github/tlsfuzzer/tlslite-ng@0.8.0+2.g4e16574"
+        "pkg:github/tlsfuzzer/tlslite-ng@0.8.0+2.g4e16574",
+        "pkg:submodule/CryptoPkg/Library/OpensslLib/openssl/boringssl@9.0+42.g2070f8a"
       ]
     },
     {
-      "ref": "pkg:github/tianocore/edk2@edk2-stable202408",
+      "ref": "pkg:github/tianocore/edk2@edk2-stable202302",
       "dependsOn": [
-        "pkg:github/DMTF/libspdm@3.3.0+23.g50924a4",
-        "pkg:github/MIPI-Alliance/public-mipi-sys-t@1.1",
-        "pkg:github/Mbed-TLS/mbedtls@3.3.0",
+        "pkg:github/Mbed-TLS/mbedtls@3.6.2",
         "pkg:github/akheron/jansson@2.13.1",
-        "pkg:github/dgibson/libfdt@1.6.1+3.gcfff805",
         "pkg:github/google/brotli@1.0.9+35.gf4153a0",
         "pkg:github/google/googletest@1.11.0+238.g86add13",
+        "pkg:github/gost-engine/engine@3.0.2",
         "pkg:github/kkos/oniguruma@6.9.4",
-        "pkg:github/openssl/openssl@3.0.9",
+        "pkg:github/mbed-tls/mbedtls-framework@4.0.0",
+        "pkg:github/openssl/openssl@1",
         "pkg:github/tianocore/edk2-cmocka@1.1.5+23.g1cc9cde",
         "pkg:github/ucb-bar/berkeley-softfloat-3@0.0.0",
-        "pkg:github/zeex/subhook@0.0.0"
+        "pkg:github/zeux/pugixml@1.9+9.gc53fdab",
+        "pkg:gitlab/cmocka/cmocka@1.1.7"
       ]
     }
   ]
