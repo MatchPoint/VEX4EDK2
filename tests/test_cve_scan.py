@@ -609,6 +609,17 @@ class TestCveAnalyzer(unittest.TestCase):
         self.assertEqual(len(details), 1)
         self.assertEqual(details[0]["id"], "CVE-2024-0001")
 
+    def test_primary_edk2_single_nvd_lookup(self):
+        client = self._make_mock_client()
+        comp = {
+            "name": "EDK II",
+            "version": "202411",
+            "cpe": "cpe:2.3:a:tianocore:edk2:202411:*:*:*:*:*:*:*",
+            "licenses": [{"license": {"id": "BSD-2-Clause"}}],
+        }
+        _analyse_component(client, comp, 0, 1)
+        client.search_cves_for_cpe.assert_called_once_with(comp["cpe"])
+
 
 if __name__ == "__main__":
     unittest.main()

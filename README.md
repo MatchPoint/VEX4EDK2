@@ -19,8 +19,8 @@ The `sbom/` and `vex/` trees are **version-controlled** for quarterly stables yo
 Each `vex/<label>.csaf.json` document includes:
 
 - **Product tree** — TianoCore EDK II firmware (primary product) plus SBOM components with stable `product_id` values derived from CycloneDX `bom-ref`.
-- **Component CVEs (NVD)** — CVEs matched to SBOM component CPEs via the NVD API. Each entry lists affected components under `vulnerabilities[].product_status.known_affected`. Batch runs use NVD for this step; see [Component CVE sourcing](#component-cve-sourcing-nvd-vs-grype).
-- **Platform advisories (GHSA)** — Published [TianoCore EDK II GitHub Security Advisories](https://github.com/tianocore/edk2/security/advisories) that apply to the release’s YYYYMM version. These appear in the same `vulnerabilities[]` array with CVE IDs, CVSS when available, a link to the GHSA page, and the GHSA identifier in document notes. Platform issues are attributed to the primary EDK II firmware product, not individual submodules.
+- **Component CVEs (NVD)** — CVEs matched to SBOM component CPEs via the NVD API, including every entry in `components[]` **and** the primary EDK II product in `metadata.component` (same CPE as the platform firmware). Each entry lists affected components under `vulnerabilities[].product_status.known_affected`. Batch runs use NVD for this step; see [Component CVE sourcing](#component-cve-sourcing-nvd-vs-grype).
+- **Platform CVEs (GHSA + NVD)** — Published [TianoCore EDK II GitHub Security Advisories](https://github.com/tianocore/edk2/security/advisories) that apply to the release’s YYYYMM version, **plus** NVD CVEs tied to the primary `tianocore:edk2` CPE from the SBOM (version field such as `edk2-stable202602`). GHSA-sourced rows include a link to the advisory page and the GHSA identifier in document notes; NVD-only platform CVEs (no matching GHSA) **are in scope** when NVD associates them with that versioned `edk2` CPE. Legacy NVD product name `tianocore:edk_ii` (UDK-era versions only) is **not** queried — it would attach pre-2020 CVEs to modern quarterly releases. Platform issues are attributed to the primary EDK II firmware product, not individual submodules.
 
 v1 documents are **machine-generated** and report `known_affected` status only. Manual VEX justifications (`not_affected`, `fixed`, and similar) are out of scope.
 
@@ -44,7 +44,7 @@ VEX4EDK2 can build component CVE lists from **NVD** (live API, CPE-based) or **G
 
 | | **NVD** | **Grype** |
 |---|---------|-----------|
-| **What it does** | Queries the [NVD API](https://nvd.nist.gov/developers) per SBOM component CPE pattern | Runs the [Grype](https://github.com/anchore/grype) CLI against the CycloneDX SBOM |
+| **What it does** | Queries the [NVD API](https://nvd.nist.gov/developers) per SBOM CPE pattern (`metadata.component` + `components[]`) | Runs the [Grype](https://github.com/anchore/grype) CLI against the CycloneDX SBOM |
 | **Requirements** | Free `NVD_API_KEY` ([request here](https://nvd.nist.gov/developers/request-an-api-key)); network access | `grype` binary on PATH (or `~/.local/bin/grype` on Linux/WSL; `winget install Anchore.Grype` on Windows) |
 | **Matching** | CPE 2.3 patterns built from SBOM metadata | CPE and PURL; merges NVD, GitHub Advisory, OSV, and other DBs Grype ships |
 | **Output** | `CVE_List.xlsx` | `CVE_List_grype_<sbom>.xlsx` (includes EPSS when available) |
@@ -118,7 +118,7 @@ Scanner flags for the standalone tool: `--scanner auto|nvd|grype|both` (default 
 
 ### TianoCore GHSA advisories
 
-Firmware and platform CVEs often appear on GitHub months before NVD indexes them. VEX4EDK2 queries the public [TianoCore EDK II security advisories API](https://github.com/tianocore/edk2/security/advisories?state=published) on every scan (no API key required; optional `GITHUB_TOKEN` raises rate limits).
+Platform CVE coverage uses **both** feeds: NVD on the primary EDK II CPE (including CVEs that never received a TianoCore GHSA) and the GitHub advisories API below. Advisories often appear on GitHub months before NVD indexes them; NVD-only platform CVEs are still included in CSAF output. VEX4EDK2 queries the public [TianoCore EDK II security advisories API](https://github.com/tianocore/edk2/security/advisories?state=published) on every scan (no API key required; optional `GITHUB_TOKEN` raises rate limits).
 
 For each advisory, the tool:
 

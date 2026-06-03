@@ -10,7 +10,7 @@ import pandas as pd
 
 from .cpe import build_cpe_pattern, extract_cve_details, is_valid_component
 from .nvd import NvdClient
-from .sbom_parse import parse_sbom
+from .sbom_parse import components_for_cve_scan
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +26,7 @@ def generate_cve_report(
 
     Returns the CVE DataFrame, or ``None`` if no CVEs were found.
     """
-    components = parse_sbom(cdx_path)
+    components, _primary_key = components_for_cve_scan(cdx_path)
     if not components:
         logger.warning("No components in %s — nothing to analyse", cdx_path)
         return None
@@ -76,7 +76,10 @@ def generate_cve_report(
 
 
 def _analyse_component(
-    client: NvdClient, component: dict, idx: int, total: int
+    client: NvdClient,
+    component: dict,
+    idx: int,
+    total: int,
 ) -> tuple[list[dict], list[dict]]:
     if not is_valid_component(component):
         return [], []
@@ -85,15 +88,14 @@ def _analyse_component(
     if not cpe:
         return [], []
 
+    details: list[dict] = []
+    invalids: list[dict] = []
+
     logger.info("[%d/%d] CPE: %s", idx + 1, total, cpe)
     cve_df, status, invalid_info = client.search_cves_for_cpe(cpe)
-
-    details: list[dict] = []
     if not cve_df.empty:
         for _, row in cve_df.iterrows():
             details.append(extract_cve_details(component, cpe, row))
-
-    invalids: list[dict] = []
     if invalid_info:
         invalids.append(invalid_info)
 

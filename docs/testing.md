@@ -45,7 +45,7 @@ note. Those tests are **skipped** until `vex/` is regenerated; after refresh the
 run automatically. Regenerate with:
 
 ```bash
-python -m vex4edk2.batch --from-date 2024-05 --to-date 2026-02 --vex-only
+python -m vex4edk2.batch --from-date 2021-05 --to-date 2026-02 --vex-only
 ```
 
 ## What unit tests assert
