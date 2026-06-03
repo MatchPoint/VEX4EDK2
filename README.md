@@ -12,7 +12,7 @@ For each EDK II release label (quarterly stable tag or tip `git describe` name),
 | `vex/<label>.csaf.json` | CSAF 2.0 VEX profile — machine-readable vulnerability status for that release |
 | `manifest.json` | Per-tag scan metadata (status, paths, vulnerability count, SBOM4EDK2 version, timestamps) |
 
-The `sbom/` and `vex/` trees are **version-controlled** for quarterly stables you choose to publish. Optional Excel CVE reports (`CVE_List*.xlsx`) stay under `cache/` and are gitignored.
+The `sbom/` and `vex/` trees are **version-controlled** for quarterly stables you choose to publish. Each scan also writes NVD/GHSA **Excel CVE reports** under `cache/scratch/<tag>/` (`CVE_List.xlsx`, `CVE_List_ghsa.xlsx`) for review; they are **gitignored** and kept by default.
 
 ### CSAF VEX contents
 
@@ -36,7 +36,7 @@ Three CLI patterns cover the same SBOM → CVE scan → CSAF pipeline:
 | **Single tag** | `--tag edk2-stableYYYYMM` | One quarterly release |
 | **Tip** | `--tip --edk2-dir …` | Current development tree (`git describe` label; no checkout) |
 
-`--skip-existing` resumes a batch; `--vex-only` rebuilds CSAF from committed SBOMs without checking out EDK II. Details in [Usage](#usage).
+`--skip-existing` resumes a batch; `--vex-only` rebuilds CSAF from committed SBOMs without checking out EDK II. Pass `--cleanup-scratch-excel` to delete the scratch Excel files after each successful CSAF write (default is to keep them). Details in [Usage](#usage).
 
 ### Component CVE sourcing (NVD vs Grype)
 
@@ -206,8 +206,8 @@ The committed artifacts in this repository today cover **2024-05 through 2026-02
 ```bash
 python -m vex4edk2.batch --tag edk2-stable202411
 
-# Optional: keep CVE Excel reports under cache/scratch/<tag>/
-python -m vex4edk2.batch --tag edk2-stable202411 --write-xlsx
+# Delete scratch Excel after CSAF is written (default keeps them under cache/scratch/<tag>/)
+python -m vex4edk2.batch --tag edk2-stable202411 --cleanup-scratch-excel
 ```
 
 ### Tip of EDK II development (current tree)

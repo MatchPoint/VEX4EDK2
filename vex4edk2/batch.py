@@ -72,6 +72,18 @@ def outputs_complete(cdx_path: str, csaf_path: str) -> bool:
     return os.path.isfile(cdx_path) and os.path.isfile(csaf_path)
 
 
+def cleanup_scratch_excel_reports(*paths: str) -> None:
+    """Remove CVE Excel sidecars under ``cache/scratch/<tag>/`` after a successful CSAF write."""
+    for path in paths:
+        if not path or not os.path.isfile(path):
+            continue
+        try:
+            os.remove(path)
+            logger.info("Removed scratch Excel %s", path)
+        except OSError as exc:
+            logger.warning("Could not remove %s: %s", path, exc)
+
+
 def scan_release(
     tag: str,
     *,
@@ -82,7 +94,7 @@ def scan_release(
     sbom_type: str = "source",
     use_nvd: bool = True,
     use_ghsa: bool = True,
-    write_xlsx: bool = False,
+    cleanup_scratch_excel: bool = False,
     keep_worktree: bool = False,
     edk2_dir: Optional[str] = None,
     use_current: bool = False,
@@ -137,6 +149,7 @@ def scan_release(
 
             nvd_df = None
             ghsa_df = None
+            excel_paths: list[str] = []
 
             if use_nvd:
                 if not api_key:
@@ -144,10 +157,12 @@ def scan_release(
                         "NVD_API_KEY required for NVD scan (or pass --no-nvd)"
                     )
                 xlsx = os.path.join(scratch_dir, "CVE_List.xlsx")
+                excel_paths.append(xlsx)
                 nvd_df = generate_cve_report(cdx_path, api_key, output_xlsx=xlsx)
 
             if use_ghsa:
                 ghsa_xlsx = os.path.join(scratch_dir, "CVE_List_ghsa.xlsx")
+                excel_paths.append(ghsa_xlsx)
                 ghsa_df = scan_sbom_with_ghsa(cdx_path, output_xlsx=ghsa_xlsx)
 
             write_csaf(
@@ -157,6 +172,9 @@ def scan_release(
                 nvd_df=nvd_df,
                 ghsa_df=ghsa_df,
             )
+
+            if cleanup_scratch_excel:
+                cleanup_scratch_excel_reports(*excel_paths)
 
             entry["status"] = "ok"
             entry["vulnerability_count"] = 0
@@ -195,6 +213,7 @@ def regenerate_vex_from_sbom(
     api_key: Optional[str],
     use_nvd: bool = True,
     use_ghsa: bool = True,
+    cleanup_scratch_excel: bool = False,
 ) -> Dict[str, Any]:
     """Rebuild CSAF VEX from an existing sbom/<tag>.cdx.json without regenerating the SBOM."""
     generate_cve_report, scan_sbom_with_ghsa = _import_cve_scanners()
@@ -218,15 +237,18 @@ def regenerate_vex_from_sbom(
 
     nvd_df = None
     ghsa_df = None
+    excel_paths: list[str] = []
 
     if use_nvd:
         if not api_key:
             raise RuntimeError("NVD_API_KEY required for NVD scan (or pass --no-nvd)")
         xlsx = os.path.join(scratch_dir, "CVE_List.xlsx")
+        excel_paths.append(xlsx)
         nvd_df = generate_cve_report(cdx_path, api_key, output_xlsx=xlsx)
 
     if use_ghsa:
         ghsa_xlsx = os.path.join(scratch_dir, "CVE_List_ghsa.xlsx")
+        excel_paths.append(ghsa_xlsx)
         ghsa_df = scan_sbom_with_ghsa(cdx_path, output_xlsx=ghsa_xlsx)
 
     write_csaf(
@@ -236,6 +258,9 @@ def regenerate_vex_from_sbom(
         nvd_df=nvd_df,
         ghsa_df=ghsa_df,
     )
+
+    if cleanup_scratch_excel:
+        cleanup_scratch_excel_reports(*excel_paths)
 
     entry["status"] = "ok"
     entry["vulnerability_count"] = 0
@@ -336,9 +361,12 @@ def main(argv: Optional[List[str]] = None) -> None:
     parser.add_argument("--no-nvd", action="store_true", help="Skip NVD CVE scan")
     parser.add_argument("--no-ghsa", action="store_true", help="Skip GHSA scan")
     parser.add_argument(
-        "--write-xlsx",
+        "--cleanup-scratch-excel",
         action="store_true",
-        help="Keep CVE_List.xlsx files under cache/scratch/<tag>/ (default: same, flag retained for scripts)",
+        help=(
+            "After a successful CSAF write, delete CVE_List*.xlsx under "
+            "cache/scratch/<tag>/ (default: keep for review)"
+        ),
     )
     parser.add_argument(
         "--keep-worktree",
@@ -471,6 +499,7 @@ def main(argv: Optional[List[str]] = None) -> None:
                     api_key=api_key,
                     use_nvd=use_nvd,
                     use_ghsa=not args.no_ghsa,
+                    cleanup_scratch_excel=args.cleanup_scratch_excel,
                 )
                 update_manifest(manifest_path, entry)
             except Exception as exc:
@@ -513,7 +542,7 @@ def main(argv: Optional[List[str]] = None) -> None:
                 sbom_type=args.sbom_type,
                 use_nvd=use_nvd,
                 use_ghsa=not args.no_ghsa,
-                write_xlsx=args.write_xlsx,
+                cleanup_scratch_excel=args.cleanup_scratch_excel,
                 keep_worktree=args.keep_worktree,
                 edk2_dir=edk2_dir,
                 use_current=use_current,

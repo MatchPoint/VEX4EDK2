@@ -17,5 +17,6 @@ venv/
 .idea/
 .vscode/
 
-# Optional local Excel from --write-xlsx (under cache/scratch/<tag>/)
-cache/scratch/**/*.xlsx
+# CVE scan Excel sidecars (default: retained under cache/scratch/<tag>/)
+cache/**/*.xlsx
+**/CVE_List*.xlsx

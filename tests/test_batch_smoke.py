@@ -12,6 +12,7 @@ from unittest import mock
 
 from vex4edk2 import __version__ as vex4edk2_version
 from vex4edk2.batch import (
+    cleanup_scratch_excel_reports,
     load_project_env,
     main,
     normalize_env_value,
@@ -47,6 +48,18 @@ class TestBatchHelpers(unittest.TestCase):
         cdx, csaf = release_output_paths("/tmp/repo", "edk2-stable202411")
         self.assertTrue(cdx.endswith(os.path.join("sbom", "edk2-stable202411.cdx.json")))
         self.assertTrue(csaf.endswith(os.path.join("vex", "edk2-stable202411.csaf.json")))
+
+    def test_cleanup_scratch_excel_reports(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            keep = os.path.join(tmp, "CVE_List.xlsx")
+            remove = os.path.join(tmp, "CVE_List_ghsa.xlsx")
+            with open(keep, "w", encoding="utf-8") as fh:
+                fh.write("stay")
+            with open(remove, "w", encoding="utf-8") as fh:
+                fh.write("go")
+            cleanup_scratch_excel_reports(remove)
+            self.assertFalse(os.path.isfile(remove))
+            self.assertTrue(os.path.isfile(keep))
 
 
 class TestBatchEdk2DirCli(unittest.TestCase):
